@@ -3,6 +3,7 @@
  * Works in a local metre frame so longitude isn’t stretched at UK latitudes.
  */
 
+import type { Feature, FeatureCollection, Polygon } from "geojson";
 export type LngLat = [number, number];
 
 const CHI2_95_2DF = 5.991; // ~95% of a bivariate normal cloud
@@ -51,7 +52,7 @@ function eigen2x2(a: number, b: number, c: number): [number, number, number, num
 export function pcaEllipseFeature(
   points: LngLat[],
   steps = 64,
-): GeoJSON.Feature<GeoJSON.Polygon> | null {
+): Feature<Polygon> | null {
   if (points.length < 3) return null;
 
   const lngs = points.map((p) => p[0]);
@@ -117,13 +118,13 @@ export function pcaEllipseFeature(
   };
 }
 
-export function emptyEllipseCollection(): GeoJSON.FeatureCollection {
+export function emptyEllipseCollection(): FeatureCollection {
   return { type: "FeatureCollection", features: [] };
 }
 
 export function ellipseCollectionForSites(
   sites: Array<{ geometry: { coordinates: number[] } }>,
-): GeoJSON.FeatureCollection {
+): FeatureCollection {
   const points: LngLat[] = sites.map((s) => [
     s.geometry.coordinates[0]!,
     s.geometry.coordinates[1]!,

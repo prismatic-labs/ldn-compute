@@ -30,13 +30,12 @@ export default function NearbyFinder({ sites, baseUrl }: Props) {
   const [postcode, setPostcode] = useState("");
   const [point, setPoint] = useState<{ lat: number; lng: number; label: string } | null>(null);
   const [minMw, setMinMw] = useState(0);
-  const [maturity, setMaturity] = useState("all");
+  const [maturity, setMaturity] = useState<"all" | "operating" | "pipeline">("all");
   const [includeClosed, setIncludeClosed] = useState(false);
   const [state, setState] = useState<"idle" | "loading" | "error">("idle");
   const [errMsg, setErrMsg] = useState("");
 
-  async function search(e: React.FormEvent) {
-    e.preventDefault();
+  async function search() {
     const pc = postcode.trim();
     if (!pc) return;
     setState("loading");
@@ -85,7 +84,7 @@ export default function NearbyFinder({ sites, baseUrl }: Props) {
 
   return (
     <div>
-      <form onSubmit={search} className="grid gap-3 sm:grid-cols-[1fr_auto] items-end">
+      <form onSubmit={(e) => { e.preventDefault(); void search(); }} className="grid gap-3 sm:grid-cols-[1fr_auto] items-end">
         <div className="grid gap-3 sm:grid-cols-3">
           <label className="block text-sm">
             <span className="text-[var(--muted)]">Postcode</span>
@@ -114,7 +113,7 @@ export default function NearbyFinder({ sites, baseUrl }: Props) {
             <span className="text-[var(--muted)]">Maturity</span>
             <select
               value={maturity}
-              onChange={(e) => setMaturity((e.target as HTMLSelectElement).value)}
+              onChange={(e) => setMaturity((e.target as HTMLSelectElement).value as "all" | "operating" | "pipeline")}
               className="mt-1 w-full border border-[var(--line)] rounded px-2 py-1.5 bg-transparent"
             >
               {MATURITY_OPTIONS.map((o) => (

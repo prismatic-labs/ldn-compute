@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 import type { Corridor, SiteFeature } from "../lib/types";
+import type { FeatureCollection } from "geojson";
 import { circleScale, mapRadiusMetres, statusColour } from "../lib/mapScale";
 import {
   ellipseCollectionForSites,
@@ -24,6 +25,24 @@ const CORRIDORS: Array<{ id: Corridor; label: string }> = [
   { id: "south", label: "South fringe" },
   { id: "inner", label: "Inner" },
 ];
+
+/** Short chip labels so all five areas fit one row in the panel. */
+const CORRIDOR_SHORT: Record<Corridor, string> = {
+  west: "West",
+  east: "East",
+  north: "North",
+  south: "South",
+  inner: "Inner",
+};
+
+function IconPin() {
+  return (
+    <svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
 
 /** Geographic framing extents [SW, NE] so zoom isn't pinned to the tight site cluster. */
 const CORRIDOR_BOUNDS: Record<Corridor, [[number, number], [number, number]]> = {
@@ -78,7 +97,7 @@ const ALL_VISIBLE: CorridorVisibility = {
 function filteredCollection(
   all: SiteFeature[],
   visibility: CorridorVisibility,
-): GeoJSON.FeatureCollection {
+): FeatureCollection {
   return {
     type: "FeatureCollection",
     features: all.filter((s) => visibility[s.properties.corridor]),
@@ -378,6 +397,7 @@ export default function SiteMap({ sites, baseUrl, center, zoom, stat }: Props) {
 
   const best = selected ? bestPower(selected.properties.power) : null;
   const scale = selected ? circleScale(selected.properties) : null;
+  const shownCount = CORRIDORS.filter(({ id }) => visibleCorridors[id]).length;
 
   function toggleCorridorDisplay(id: Corridor) {
     setVisibleCorridors((prev) => {
@@ -426,30 +446,36 @@ export default function SiteMap({ sites, baseUrl, center, zoom, stat }: Props) {
       />
 
       <div className="pointer-events-none absolute left-0 top-0 z-10 p-2.5 sm:p-3">
-        <div className="pointer-events-auto max-w-[18.5rem] rounded border border-[var(--line)] bg-[var(--map-panel)] px-3 py-2 shadow-sm sm:max-w-xs">
-          <a href={`${baseUrl}/`} className="wordmark block mb-1 no-underline text-[0.7rem]">
+        <div className="pointer-events-auto max-w-[20rem] rounded border border-[var(--line)] bg-[var(--map-panel)] px-3 py-2 shadow-sm sm:max-w-xs">
+          <a href={`${baseUrl}/`} className="wordmark block mb-1 no-underline text-[0.8125rem]">
             The London Compute Ring
           </a>
-          <p className="m-0 text-[0.75rem] text-[var(--ink)] font-display tracking-tight leading-snug">
+          <p className="m-0 text-[0.875rem] text-[var(--ink)] font-display tracking-tight leading-snug">
             AI and cloud leave a physical footprint: power, land, and water. This map plots the data centres
             across Greater London and the M25 fringe, and puts those figures where communities can see them.
           </p>
           {stat && (
-            <p className="m-0 mt-1.5 text-[0.72rem] font-tabular text-[var(--muted)]">{stat}</p>
+            <p className="m-0 mt-1.5 text-[0.8125rem] font-tabular text-[var(--muted)]">{stat}</p>
           )}
-          <nav className="mt-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-0.5 text-[0.75rem]" aria-label="Site">
+          <nav className="mt-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-0.5 text-[0.8125rem]" aria-label="Site">
             <a href={`${baseUrl}/nearby`} className="text-[var(--ink)]/75 no-underline hover:text-[var(--ink)]">Near you</a>
             <a href={`${baseUrl}/pipeline`} className="text-[var(--ink)]/75 no-underline hover:text-[var(--ink)]">Pipeline</a>
             <a href={`${baseUrl}/sites`} className="text-[var(--ink)]/75 no-underline hover:text-[var(--ink)]">Sites</a>
             <a href={`${baseUrl}/compare`} className="text-[var(--ink)]/75 no-underline hover:text-[var(--ink)]">Compare</a>
+            <a href={`${baseUrl}/context`} className="text-[var(--ink)]/75 no-underline hover:text-[var(--ink)]">Context</a>
             <a href={`${baseUrl}/research`} className="text-[var(--ink)]/75 no-underline hover:text-[var(--ink)]">Research</a>
             <a href={`${baseUrl}/methodology`} className="text-[var(--ink)]/75 no-underline hover:text-[var(--ink)]">Methodology</a>
             <a href={`${baseUrl}/contribute`} className="text-[var(--ink)]/75 no-underline hover:text-[var(--ink)]">Contribute</a>
           </nav>
 
           <div className="mt-2 border-t border-[var(--line)] pt-2">
-            <p className="m-0 mb-1.5 text-[0.65rem] uppercase tracking-wider text-[var(--muted)]">
-              Display
+            <p className="m-0 mb-0.5 text-[0.8125rem] uppercase tracking-wider text-[var(--muted)]">
+              Show areas
+            </p>
+            <p className="m-0 mb-1.5 text-[0.8125rem] leading-snug text-[var(--muted)]">
+              {shownCount === CORRIDORS.length
+                ? "Tap an area to hide it."
+                : "Tap a dimmed chip to show that area again."}
             </p>
             <div
               className="flex flex-wrap gap-1.5"
@@ -458,31 +484,55 @@ export default function SiteMap({ sites, baseUrl, center, zoom, stat }: Props) {
             >
               {CORRIDORS.map(({ id, label }) => {
                 const on = visibleCorridors[id];
+                const short = CORRIDOR_SHORT[id];
                 return (
                   <button
                     key={`display-${id}`}
                     type="button"
                     aria-pressed={on}
+                    aria-label={on ? `Hide ${label}` : `Show ${label}`}
                     onClick={() => toggleCorridorDisplay(id)}
-                    className="rounded border px-2 py-1 text-[0.7rem] leading-none cursor-pointer transition-colors"
+                    className="rounded border px-2 py-1 text-[0.8125rem] leading-none cursor-pointer transition-colors"
                     style={{
                       borderColor: on ? "var(--ink)" : "var(--line)",
                       background: on ? "var(--ink)" : "transparent",
                       color: on ? "var(--paper)" : "var(--muted)",
+                      opacity: on ? 1 : 0.72,
+                      textDecoration: on ? "none" : "line-through",
                     }}
                   >
-                    {label}
+                    {short}
                   </button>
                 );
               })}
             </div>
-            <div className="relative mt-1.5 inline-block group/ellipse">
+            <p className="m-0 mt-1.5 text-[0.8125rem] leading-snug text-[var(--muted)]" aria-live="polite">
+              {shownCount === CORRIDORS.length ? (
+                <>{shownCount} of {CORRIDORS.length} areas shown</>
+              ) : (
+                <>
+                  {shownCount} of {CORRIDORS.length}
+                  {" · "}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setVisibleCorridors(ALL_VISIBLE);
+                      setZoomFocus("all");
+                    }}
+                    className="border-0 bg-transparent p-0 cursor-pointer text-[var(--grid-blue)] underline underline-offset-2"
+                  >
+                    Show all
+                  </button>
+                </>
+              )}
+            </p>
+            <div className="relative mt-2 inline-block group/ellipse">
               <button
                 type="button"
                 aria-pressed={showEllipse}
                 aria-describedby={`${panelId}-ellipse-tip`}
                 onClick={() => setShowEllipse((v) => !v)}
-                className="rounded border px-2 py-1 text-[0.7rem] leading-none cursor-pointer transition-colors"
+                className="rounded border px-2 py-1 text-[0.8125rem] leading-none cursor-pointer transition-colors"
                 style={{
                   borderColor: ELLIPSE_COLOR,
                   background: showEllipse ? ELLIPSE_COLOR : "transparent",
@@ -494,29 +544,29 @@ export default function SiteMap({ sites, baseUrl, center, zoom, stat }: Props) {
               <span
                 id={`${panelId}-ellipse-tip`}
                 role="tooltip"
-                className="pointer-events-none absolute left-0 top-full z-30 mt-1.5 w-[min(16.5rem,calc(100vw-3rem))] rounded border border-[var(--line)] bg-[var(--paper)] px-2.5 py-2 text-[0.65rem] leading-snug text-[var(--ink)] shadow-sm opacity-0 invisible group-hover/ellipse:opacity-100 group-hover/ellipse:visible group-focus-within/ellipse:opacity-100 group-focus-within/ellipse:visible"
+                className="pointer-events-none absolute left-0 top-full z-30 mt-1.5 w-[min(16.5rem,calc(100vw-3rem))] rounded border border-[var(--line)] bg-[var(--paper)] px-2.5 py-2 text-[0.8125rem] leading-snug text-[var(--ink)] shadow-sm opacity-0 invisible group-hover/ellipse:opacity-100 group-hover/ellipse:visible group-focus-within/ellipse:opacity-100 group-focus-within/ellipse:visible"
               >
                 {ELLIPSE_TIP}
               </span>
             </div>
             {showEllipse && (
-              <p className="m-0 mt-1.5 text-[0.65rem] leading-snug" style={{ color: ELLIPSE_COLOR }}>
+              <p className="m-0 mt-1.5 text-[0.8125rem] leading-snug" style={{ color: ELLIPSE_COLOR }}>
                 Dashed red outline is a statistical spread of the visible pins (~95%), not a ring or
                 planning boundary.
               </p>
             )}
-            <p className="m-0 mt-2.5 mb-1.5 text-[0.65rem] uppercase tracking-wider text-[var(--muted)]">
-              Zoom
+            <p className="m-0 mt-2.5 mb-1.5 text-[0.8125rem] uppercase tracking-wider text-[var(--muted)]">
+              Jump to
             </p>
             <div
-              className="flex flex-wrap gap-1.5"
+              className="flex flex-wrap gap-x-2.5 gap-y-1"
               role="group"
-              aria-label="Zoom map to an area"
+              aria-label="Jump map to an area"
             >
               {(
                 [
                   { id: "all" as const, label: "All" },
-                  ...CORRIDORS,
+                  ...CORRIDORS.map(({ id }) => ({ id: id as ZoomFocus, label: CORRIDOR_SHORT[id] })),
                 ] as Array<{ id: ZoomFocus; label: string }>
               ).map(({ id, label }) => {
                 const on = zoomFocus === id;
@@ -524,16 +574,18 @@ export default function SiteMap({ sites, baseUrl, center, zoom, stat }: Props) {
                   <button
                     key={`zoom-${id}`}
                     type="button"
-                    aria-pressed={on}
+                    aria-current={on ? "true" : undefined}
+                    aria-label={`Jump to ${label}`}
                     onClick={() => flyToFocus(id)}
-                    className="rounded border px-2 py-1 text-[0.7rem] leading-none cursor-pointer transition-colors"
+                    className="inline-flex items-center gap-1 border-0 bg-transparent p-0 text-[0.8125rem] leading-none cursor-pointer transition-colors"
                     style={{
-                      borderColor: on ? "var(--ink)" : "var(--line)",
-                      background: "transparent",
-                      color: on ? "var(--ink)" : "var(--muted)",
-                      boxShadow: on ? "inset 0 0 0 1px var(--ink)" : "none",
+                      color: on ? "var(--ink)" : "var(--grid-blue)",
+                      textDecoration: "underline",
+                      textUnderlineOffset: "2px",
+                      fontWeight: on ? 600 : 400,
                     }}
                   >
+                    <IconPin />
                     {label}
                   </button>
                 );
@@ -639,14 +691,14 @@ function ScaleBar() {
       className="absolute bottom-3 left-3 z-10 max-w-[17.5rem] rounded-md border border-[var(--line)] bg-[var(--map-panel)] px-3 py-2.5 text-xs shadow-sm"
       aria-label="How to read map circles. Colour is planning status. Outline style is whether power is disclosed. Size is megawatts or site area. Nearby sites group into numbered clusters when zoomed out."
     >
-      <p className="m-0 mb-2 font-display tracking-wide uppercase text-[0.65rem] text-[var(--muted)]">
+      <p className="m-0 mb-2 font-display tracking-wide uppercase text-[0.8125rem] text-[var(--muted)]">
         How to read the circles
       </p>
 
-      <p className="m-0 mb-1 text-[0.65rem] text-[var(--muted)]">
+      <p className="m-0 mb-1 text-[0.8125rem] text-[var(--muted)]">
         Colour = planning status
       </p>
-      <ul className="m-0 mb-2.5 list-none grid grid-cols-2 grid-rows-3 grid-flow-col gap-x-3 gap-y-1 p-0 text-[0.7rem] leading-snug text-[var(--ink)]">
+      <ul className="m-0 mb-2.5 list-none grid grid-cols-2 grid-rows-3 grid-flow-col gap-x-3 gap-y-1 p-0 text-[0.8125rem] leading-snug text-[var(--ink)]">
         {statusKeys.map((s) => (
           <li key={s.label} className="flex items-center gap-1.5 min-w-0">
             <span
@@ -664,10 +716,10 @@ function ScaleBar() {
         ))}
       </ul>
 
-      <p className="m-0 mb-1 text-[0.65rem] text-[var(--muted)]">
+      <p className="m-0 mb-1 text-[0.8125rem] text-[var(--muted)]">
         Outline = size disclosed
       </p>
-      <ul className="m-0 mb-2.5 list-none space-y-1.5 p-0 text-[0.7rem] leading-snug text-[var(--ink)]">
+      <ul className="m-0 mb-2.5 list-none space-y-1.5 p-0 text-[0.8125rem] leading-snug text-[var(--ink)]">
         <li className="flex items-center gap-2">
           <span
             className="inline-block shrink-0 rounded-full border-2 border-[var(--ink)] bg-[var(--ink)]/20"
@@ -685,11 +737,11 @@ function ScaleBar() {
           <span>Dashed: megawatts not disclosed (sized by site area, or location only if area unknown)</span>
         </li>
       </ul>
-      <p className="m-0 mb-2 text-[0.65rem] text-[var(--muted)] leading-snug">
+      <p className="m-0 mb-2 text-[0.8125rem] text-[var(--muted)] leading-snug">
         Grey demos above are style only, not a status colour. Numbered dark circles group nearby sites: click to frame the next split of that group.
       </p>
 
-      <p className="m-0 mb-1.5 text-[0.65rem] text-[var(--muted)]">
+      <p className="m-0 mb-1.5 text-[0.8125rem] text-[var(--muted)]">
         Size = stated megawatts when known
       </p>
       <div className="flex items-end gap-3">

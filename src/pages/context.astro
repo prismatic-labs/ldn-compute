@@ -1,0 +1,257 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import { getItemizedSites, siteBestPower } from "../lib/sites";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+// London's whole mapped build-out (running + proposed), computed live so the
+// comparison can't drift. Excludes campus overlays and closed sites.
+const IN_SCOPE = new Set(["operating", "under_construction", "consented", "pipeline"]);
+let londonMw = 0;
+for (const f of getItemizedSites()) {
+  const best = siteBestPower(f.properties);
+  const r = f.properties.operational_reality;
+  if (best && r && IN_SCOPE.has(r)) londonMw += best.quantity.value;
+}
+const londonGw = (londonMw / 1000).toFixed(1);
+
+/**
+ * Scale comparison — cluster vs cluster, but still two different measurements.
+ * London: total STATED build-out on this map (running + proposed).
+ * Loudoun: MEASURED county-wide data-centre power consumption (2025).
+ */
+const COMPARE = [
+  {
+    id: "london",
+    label: "London — all mapped sites",
+    detail: `≈${londonGw} GW stated (running + proposed)`,
+    barLabel: `${londonGw} GW`,
+    mw: londonMw,
+    colour: "#0072B2",
+    year: "2026 map",
+  },
+  {
+    id: "loudoun",
+    label: "Loudoun County, Virginia",
+    detail: "5.33 GW measured cluster load (2025)",
+    barLabel: "5.33 GW",
+    mw: 5330,
+    colour: "#E69F00",
+    year: "2025",
+  },
+];
+const compareMax = Math.max(...COMPARE.map((c) => c.mw));
+const pct = (v: number, of: number) => (of > 0 ? (v / of) * 100 : 0);
+---
+
+<BaseLayout
+  title="Context"
+  description="How London data centres press on power, water, jobs, noise, and land: UK evidence, US precedents, mitigations, and a like-for-like scale note."
+>
+  <div class="max-w-2xl mx-auto">
+    <h1 class="font-display text-3xl m-0 tracking-tight">Context</h1>
+    <p class="text-[var(--muted)] mt-2">
+      The map plots sites and sourced figures. This page sets out the pressures those sites put on grids and
+      communities, what US regions already show at larger scale, and mitigations already appearing in London
+      dossiers. Benefits sit next to costs. Every claim below is linked; if we cannot source it, we cut it.
+    </p>
+    <p class="text-sm text-[var(--muted)] mt-3">
+      Stance matches the rest of the site: disclosed, not neutral. See
+      <a href={`${base}/methodology`}>methodology</a>.
+    </p>
+
+    <!-- 1. Power -->
+    <section class="mt-12" id="power">
+      <h2 class="font-display text-xl m-0">Power and the grid</h2>
+      <p class="mt-3">
+        Data centres take large, steady electricity loads. Where the local grid is already tight, new
+        connections for housing and other uses can wait years.
+      </p>
+      <p class="mt-3">
+        <strong>UK.</strong> In 2022 the Greater London Authority was alerted that parts of West London
+        (Ealing, Hillingdon and Hounslow) faced electricity capacity constraints. Investigations linked the
+        queue partly to rapid data-centre growth along the M4 corridor; some applicants were quoted
+        connection dates into the 2030s (including figures up to about 2035–2037 in GLA materials). There
+        was no formal ban on housing. Short-term fixes and connection reforms have since unlocked many
+        homes, while transmission upgrades remain necessary for the long term.
+        (<a href="https://www.london.gov.uk/programmes-strategies/better-infrastructure/infrastructure-coordination/development-service/west-london-electricity-capacity-constraints">GLA West London constraints</a>;
+        <a href="https://www.london.gov.uk/sites/default/files/2025-12/Planning%20Regeneration%20Committee%20-%20Energy%20Infrastructure%20Report%20FINAL.pdf">GLA Planning &amp; Regeneration Committee, Dec 2025</a>.)
+      </p>
+      <p class="mt-3">
+        <strong>US.</strong> Northern Virginia’s “Data Center Alley” is the world’s densest cluster. Loudoun
+        County alone reported about <strong>5.33 GW</strong> of data-centre power consumption in 2025, up
+        from about 2.0 GW in 2021. Dominion Energy has reported tens of gigawatts of data-centre capacity
+        under contract across its Virginia service area. Residents and regulators have argued over how much
+        of rising bills and grid spend is driven by that load; Dominion disputes a simple causal story, and
+        a new large-load rate class (GS-5) is due from 2027 to shift more cost onto big users.
+        (<a href="https://www.loudoun.gov/DocumentCenter/View/217605/Loudoun-County-Data-Center-Brief---Turner">Loudoun County brief, 2025</a>;
+        <a href="https://www.datacenterdynamics.com/en/news/dominion-energy-nearly-doubles-data-center-capacity-under-contract-to-40gw/">DCD on Dominion contract pipeline, 2025</a>;
+        <a href="https://www.loudounnow.com/news/scc-approves-new-data-center-rate-class-for-dominion/article_02d5fa0c-1ed8-4771-b57d-c24765739854.html">Loudoun Now on GS-5, 2025</a>.)
+      </p>
+      <p class="mt-3">
+        <strong>London on this map.</strong> The west corridor (Slough–Heathrow) still holds most operating
+        megawatts; large proposed schemes push north and east of the M25. See
+        <a href={`${base}/pipeline`}>pipeline</a>.
+      </p>
+      <p class="mt-3 text-sm">
+        <strong>Mitigations on record here:</strong> grid reinforcement and flexible connection products
+        (the GLA/SSEN work above), and
+        <a href={`${base}/site/manor-farm-slough`}>Manor Farm</a>’s consented ~100 MW battery energy storage
+        alongside the data centre.
+      </p>
+    </section>
+
+    <!-- 2. Water -->
+    <section class="mt-12" id="water">
+      <h2 class="font-display text-xl m-0">Water</h2>
+      <p class="mt-3">
+        Cooling can use large volumes of potable water. UK operators are
+        <strong>not required to disclose</strong> water use, and data centres are excluded from the
+        Environment Agency’s National Framework for Water Resources, so most dossiers here show water as
+        not disclosed, not as zero. Full method note:
+        <a href={`${base}/methodology#water`}>methodology § water</a>.
+      </p>
+      <p class="mt-3">
+        <strong>UK.</strong> An April 2026 Global Action Plan analysis reported that about
+        <strong>84%</strong> of proposed UK data centres sit in areas already water-stressed or projected
+        to be by 2040
+        (<a href="https://www.watermagazine.co.uk/2026/04/27/84-of-proposed-uk-data-centres-to-be-built-in-water-stressed-areas/">Water Magazine</a>).
+        Water UK has told Parliament that some proposed centres in the Affinity Water region have requested
+        up to about <strong>three million litres a day</strong>, and that the sector’s demand is not built
+        into national water planning
+        (<a href="https://www.theguardian.com/environment/2026/jul/21/not-enough-water-for-uks-datacentre-plans-trade-body-says">Guardian / Water UK, Jul 2026</a>).
+      </p>
+      <p class="mt-3">
+        <strong>US.</strong> In The Dalles, Oregon, a public-records fight over Google’s data-centre water
+        use ended in a 2022 settlement that forced disclosure; later reporting showed Google taking a large
+        share of city water as campuses expanded
+        (<a href="https://www.oregonlive.com/silicon-forest/2022/12/the-dalles-settles-public-records-lawsuit-over-googles-data-centers-will-disclose-water-use.html">Oregonian, Dec 2022</a>;
+        <a href="https://oregoncapitalchronicle.com/2026/01/19/as-googles-water-demands-grow-the-dalles-aims-to-pull-more-from-mount-hood-forest/">Oregon Capital Chronicle, Jan 2026</a>).
+        Drought-constrained states such as Arizona show the same conflict pathway when cooling competes with
+        other users. Treat these as precedents for politics and disclosure, not as identical hydrology to the
+        Thames basin.
+      </p>
+      <p class="mt-3 text-sm">
+        <strong>Mitigations on record here:</strong> operator claims of air or closed-loop cooling with low
+        on-site water at
+        <a href={`${base}/site/ada-docklands`}>Ada Docklands</a>,
+        <a href={`${base}/site/google-waltham-cross`}>Google Waltham Cross</a>, and
+        <a href={`${base}/site/vantage-lhr1-powergate`}>Vantage</a>, all flagged as claims until metered.
+        Ada and Google also state heat-reuse or district-heat provisions, which we show as claims.
+        “Waterless” on site still shifts water to the power station through higher electricity use
+        (<a href={`${base}/methodology#water`}>methodology</a>).
+      </p>
+    </section>
+
+    <!-- 3. Jobs -->
+    <section class="mt-12" id="jobs">
+      <h2 class="font-display text-xl m-0">Jobs and the local economy</h2>
+      <p class="mt-3">
+        Promoters emphasise capital investment, business rates, and construction employment. Permanent
+        on-site staffing is usually small relative to the land and power take.
+      </p>
+      <p class="mt-3">
+        <strong>Example on this map.</strong> Manor Farm’s economic statement and inquiry materials put
+        construction at about <strong>430–490</strong> full-time-equivalent jobs over the build, and
+        operations at about <strong>65</strong> FTE once running
+        (<a href="https://www.slough.gov.uk/downloads/file/4995/cd-1-39-economic-statement">Economic Statement</a>;
+        <a href="https://www.bbc.co.uk/news/articles/ckg0717xr3wo">BBC</a>).
+        Those are applicant figures in the consent trail, not independent audits.
+      </p>
+      <p class="mt-3">
+        <strong>Benefit side.</strong> The same facilities underpin cloud and AI services used across the
+        wider economy. That is a real claim. It is also diffuse: rates and jobs land locally, while many
+        digital benefits do not. We do not score “net public value” on this site.
+      </p>
+    </section>
+
+    <!-- 4. Noise -->
+    <section class="mt-12" id="noise">
+      <h2 class="font-display text-xl m-0">Noise and health</h2>
+      <p class="mt-3">
+        Continuous cooling plant and periodic diesel (or other) generator testing are among the impacts
+        residents cite most often in objections. Emissions from testing add an air-quality concern beside
+        noise.
+      </p>
+      <p class="mt-3">
+        <strong>US.</strong> Suburban complaints in Northern Virginia and places such as Chandler, Arizona,
+        have turned on overnight noise and generator exercises. The pattern is useful: once campuses sit
+        beside housing, acoustic conditions become a planning lever.
+      </p>
+      <p class="mt-3 text-sm">
+        <strong>Mitigations:</strong> planning conditions on plant enclosure, hours for generator testing,
+        acoustic barriers, and (where proposed) HVO or electric backup. Check each dossier’s planning
+        documents rather than assuming a London-wide standard.
+      </p>
+    </section>
+
+    <!-- 5. Land -->
+    <section class="mt-12" id="land">
+      <h2 class="font-display text-xl m-0">Land</h2>
+      <p class="mt-3">
+        London’s build-out mixes brownfield industrial reuse (Docklands, Trading Estate halls) with
+        green-belt and farmland schemes on the fringe:
+        <a href={`${base}/site/manor-farm-slough`}>Manor Farm</a>,
+        <a href={`${base}/site/equinix-south-mimms`}>Equinix South Mimms</a>, and
+        <a href={`${base}/site/digital-reef-east-havering`}>Digital Reef East Havering</a>.
+        Brownfield-first is the usual mitigation in policy language; green-belt loss is decided case by
+        case, often at appeal or by the Secretary of State.
+      </p>
+    </section>
+
+    <!-- 6. London vs US -->
+    <section class="mt-12" id="london-vs-us">
+      <h2 class="font-display text-xl m-0">How London compares with the US</h2>
+      <p class="mt-3">
+        Single US AI and cloud campuses are often quoted in the <strong>multi-gigawatt</strong> range, and
+        Loudoun County’s measured cluster load alone was about <strong>5.33 GW in 2025</strong>. London’s
+        entire mapped build-out, running plus proposed, is about <strong>{londonGw} GW</strong> stated; its
+        largest single scheme is about <strong>600 MW</strong> (Digital Reef East Havering). London is
+        smaller per site and far more constrained on land, water, and grid headroom, so friction such as
+        connection delays, water stress, and green-belt fights shows up at lower absolute megawatts. Some of
+        it is already here.
+      </p>
+
+      <div class="mt-6 space-y-4" role="img"
+        aria-label={`Scale comparison: London's whole mapped build-out about ${londonGw} gigawatts stated; Loudoun County 2025 measured cluster load 5.33 gigawatts.`}>
+        {COMPARE.map((row) => (
+          <div>
+            <div class="flex flex-wrap items-baseline justify-between gap-2 text-sm">
+              <p class="m-0 font-medium">{row.label}</p>
+              <p class="m-0 font-tabular text-[var(--muted)]">
+                {row.barLabel}<span class="text-xs"> · {row.year}</span>
+              </p>
+            </div>
+            <p class="m-0 mt-0.5 text-xs text-[var(--muted)]">{row.detail}</p>
+            <div class="mt-2 h-8 rounded overflow-hidden bg-[var(--line)]">
+              <div
+                class="h-full flex items-center px-2 text-xs font-medium text-white whitespace-nowrap"
+                style={`width:${Math.max(pct(row.mw, compareMax), 12)}%;background:${row.colour}`}
+              >
+                {row.barLabel}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <p class="mt-4 text-sm text-[var(--muted)]">
+        Metric caution: both sides are cluster-scale, but they are not the same measurement. London’s figure
+        is the stated total of every mapped site, running and proposed. Loudoun’s is measured power actually
+        consumed across the county cluster in 2025. Read it as scale, not a like-for-like league table.
+      </p>
+    </section>
+
+    <section class="mt-12 border-t border-[var(--line)] pt-8">
+      <h2 class="font-display text-xl m-0">Use the map</h2>
+      <p class="mt-3 text-sm">
+        <a href={`${base}/`}>Map</a>
+        · <a href={`${base}/pipeline`}>Pipeline</a>
+        · <a href={`${base}/nearby`}>Near you</a>
+        · <a href={`${base}/research`}>Research</a>
+        · <a href={`${base}/methodology`}>Methodology</a>
+        · <a href={`${base}/data/sites.geojson`}>GeoJSON</a>
+      </p>
+    </section>
+  </div>
+</BaseLayout>

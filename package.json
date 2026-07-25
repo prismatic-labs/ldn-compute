@@ -14,6 +14,7 @@
     "astro": "astro",
     "test": "vitest run",
     "lint": "eslint .",
+    "check": "astro check",
     "sync:data": "node scripts/sync-public-data.mjs",
     "validate:data": "node --experimental-strip-types scripts/validate-sites.ts"
   },
@@ -30,6 +31,7 @@
     "tailwindcss": "^4.3.2"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.9",
     "@eslint/js": "^9.39.5",
     "@types/geojson": "^7946.0.16",
     "@types/react": "^19.2.17",
@@ -39,6 +41,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
     "globals": "^17.7.0",
+    "typescript": "^6.0.3",
     "typescript-eslint": "^8.65.0",
     "vitest": "^4.1.10"
   }

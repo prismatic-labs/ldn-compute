@@ -67,6 +67,62 @@ const stat = `≈${formatNumber(operatingMw)} MW operating · ≈${formatNumber(
       )}
     </p>
 
+    <div class="mt-10 mb-12">
+      <h3 class="font-display text-xl m-0 tracking-tight">How you might use this</h3>
+      <p class="text-sm text-[var(--muted)] mt-1 mb-5 max-w-2xl">
+        Three ways in. Each link goes to a tool already on the site.
+      </p>
+      <div class="grid gap-4 sm:grid-cols-3">
+        <div class="border-t border-[var(--ink)] pt-3">
+          <p class="m-0 text-xs uppercase tracking-wider text-[var(--muted)]">Journalists</p>
+          <p class="m-0 mt-2 text-sm leading-snug">
+            Check a scheme behind a story: every figure is sourced or blank, with the planning reference and objection window.
+          </p>
+          <p class="m-0 mt-3 text-sm">
+            <a href={`${base}/research`}>Research checklist</a>
+            <span class="text-[var(--muted)]"> · </span>
+            <a href={`${base}/data/sites.geojson`}>Download GeoJSON</a>
+          </p>
+        </div>
+        <div class="border-t border-[var(--ink)] pt-3">
+          <p class="m-0 text-xs uppercase tracking-wider text-[var(--muted)]">Residents</p>
+          <p class="m-0 mt-2 text-sm leading-snug">
+            See what’s proposed or running near you, and how to have your say.
+          </p>
+          <p class="m-0 mt-3 text-sm">
+            <a href={`${base}/nearby`}>Near you</a>
+            <span class="text-[var(--muted)]"> · </span>
+            <a href={`${base}/contribute`}>Contribute</a>
+          </p>
+        </div>
+        <div class="border-t border-[var(--ink)] pt-3">
+          <p class="m-0 text-xs uppercase tracking-wider text-[var(--muted)]">Researchers</p>
+          <p class="m-0 mt-2 text-sm leading-snug">
+            Open, sourced data — download the GeoJSON and read how figures are chosen.
+          </p>
+          <p class="m-0 mt-3 text-sm">
+            <a href={`${base}/data/sites.geojson`}>Download GeoJSON</a>
+            <span class="text-[var(--muted)]"> · </span>
+            <a href={`${base}/methodology`}>Methodology</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12 border border-[var(--line)] rounded-md px-4 py-4 sm:px-5">
+      <p class="m-0 text-xs uppercase tracking-wider text-[var(--muted)]">Context</p>
+      <p class="m-0 mt-2 font-display text-lg tracking-tight">
+        Power, water, jobs, noise, and land, and how London compares with the US build-out.
+      </p>
+      <p class="m-0 mt-2 text-sm text-[var(--muted)] max-w-2xl">
+        A sourced explainer of the pressures these sites put on grids and communities, with mitigations already
+        appearing in London dossiers. Benefits sit next to costs.
+      </p>
+      <p class="m-0 mt-3 text-sm">
+        <a href={`${base}/context`}>Read the context →</a>
+      </p>
+    </div>
+
     <div class="overflow-x-auto">
       <table class="w-full text-sm border-collapse">
         <thead>
@@ -103,6 +159,7 @@ const stat = `≈${formatNumber(operatingMw)} MW operating · ≈${formatNumber(
     <p class="mt-8 mb-0 flex flex-wrap gap-4 text-sm">
       <a href={`${base}/sites`}>Full sortable table</a>
       <a href={`${base}/compare`}>Compare view</a>
+      <a href={`${base}/context`}>Context</a>
       <a href={`${base}/research`}>Research log</a>
       <a href={`${base}/methodology`}>Methodology</a>
     </p>
