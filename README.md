@@ -45,7 +45,7 @@ Contributions: GitHub Issue Forms and email `marco@prismaticlabs.ai` (subject: `
 
 Maintained by Prismatic Labs (`marco@prismaticlabs.ai`). Freshness is mostly event-driven (a site is updated when its status changes); the ~20 active planning cases are swept about monthly, and the wider map targets a review age within `staleness_banner_days` (90; see `data/config.json`), past which a site-wide staleness banner shows. Corrections and new sites come in via the review queue (`/contribute`, GitHub Issue Forms, email) and are logged in `data/CHANGELOG.md`. CI (`.github/workflows/ci.yml`) runs lint + tests + `validate:data` + build on every push and PR, so no change lands that breaks the schema or editorial rules.
 
-## Prior art
+## More from Prismatic Labs
 
 [The Yorkshire Compute Belt](https://prismatic-labs.github.io/yorkshire-compute-belt/) · [Cloud Kettle Index](https://prismatic-labs.github.io/cloud-kettle-index/) · [CULM](https://prismatic-labs.github.io/culm/)
 
