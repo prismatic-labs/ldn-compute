@@ -431,8 +431,8 @@ export default function SiteMap({ sites, baseUrl, center, zoom, stat }: Props) {
             The London Compute Ring
           </a>
           <p className="m-0 text-[0.75rem] text-[var(--ink)] font-display tracking-tight leading-snug">
-            AI and cloud leave a physical footprint: power, land, and water. This map puts data centres
-            across Greater London and the M25 fringe, and those figures, where communities can see them.
+            AI and cloud leave a physical footprint: power, land, and water. This map plots the data centres
+            across Greater London and the M25 fringe, and puts those figures where communities can see them.
           </p>
           {stat && (
             <p className="m-0 mt-1.5 text-[0.72rem] font-tabular text-[var(--muted)]">{stat}</p>
