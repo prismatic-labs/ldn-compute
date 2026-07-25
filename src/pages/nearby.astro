@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import NearbyFinder from "../components/NearbyFinder";
+import { getItemizedSites } from "../lib/sites";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const sites = getItemizedSites(); // exclude campus overlays
+---
+
+<BaseLayout
+  title="What's near you"
+  description="Find the data centre schemes nearest a London postcode, filtered by size and build maturity, from sourced figures."
+>
+  <h1 class="font-display text-3xl m-0 tracking-tight">What's near you</h1>
+  <p class="text-[var(--muted)] mt-2 max-w-2xl">
+    Enter a postcode to see the data centre schemes closest to it. Set a minimum size or limit to what is
+    running now versus still in the pipeline. Distances are straight-line to each site's mapped location.
+  </p>
+
+  <div class="mt-8">
+    <NearbyFinder client:load sites={sites} baseUrl={base} />
+  </div>
+</BaseLayout>

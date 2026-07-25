@@ -1,0 +1,45 @@
+{
+  "name": "ldn-compute",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "predev": "npm run sync:data",
+    "dev": "astro dev",
+    "prebuild": "npm run validate:data && npm run sync:data",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "test": "vitest run",
+    "lint": "eslint .",
+    "sync:data": "node scripts/sync-public-data.mjs",
+    "validate:data": "node --experimental-strip-types scripts/validate-sites.ts"
+  },
+  "dependencies": {
+    "@astrojs/react": "^6.0.1",
+    "@astrojs/sitemap": "^3.7.3",
+    "@fontsource/familjen-grotesk": "^5.2.8",
+    "@fontsource/source-sans-3": "^5.2.9",
+    "@tailwindcss/vite": "^4.3.2",
+    "astro": "^7.0.9",
+    "maplibre-gl": "^5.24.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/geojson": "^7946.0.16",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "ajv": "^8.20.0",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.7.0",
+    "typescript-eslint": "^8.65.0",
+    "vitest": "^4.1.10"
+  }
+}

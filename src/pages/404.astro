@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<BaseLayout title="Page not found" description="That page does not exist on The London Compute Ring.">
+  <h1 class="font-display text-3xl m-0 tracking-tight">Page not found</h1>
+  <p class="text-[var(--muted)] mt-2 max-w-2xl">
+    That page does not exist, or the site may have moved. Try the map or the full list of sites.
+  </p>
+  <p class="mt-6">
+    <a href={`${base}/`}>Back to the map</a>
+    · <a href={`${base}/sites`}>All sites</a>
+    · <a href={`${base}/methodology`}>Methodology</a>
+  </p>
+</BaseLayout>

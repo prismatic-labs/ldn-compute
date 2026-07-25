@@ -1,0 +1,214 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import { getItemizedSites, formatBestPower } from "../lib/sites";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const ABOVE_PROPOSED = new Set([
+  "in_planning", "approved", "under_construction", "operating", "refused", "withdrawn",
+]);
+
+function portalLabel(url: string): string {
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, "");
+    if (host.includes("gov.uk")) return "GOV.UK";
+    const org = host.split(".")[0];
+    return `${org} portal`;
+  } catch {
+    return "Application";
+  }
+}
+
+// Generated from the mapped dataset so it can never drift from the map/table.
+const checklist = getItemizedSites()
+  .map((f) => {
+    const p = f.properties;
+    const url = p.planning_ref?.url ?? null;
+    const ref = p.planning_ref?.id ?? "—";
+    const power = formatBestPower(p);
+    const statusLabel = p.status.replaceAll("_", " ");
+    let notes: string;
+    if (url) {
+      notes = `${statusLabel[0].toUpperCase()}${statusLabel.slice(1)}; application linked.`;
+    } else if (ABOVE_PROPOSED.has(p.status)) {
+      notes = `Status "${statusLabel}" still needs a lasting portal URL.`;
+    } else {
+      notes = "Held at proposed until a lasting portal URL is linked.";
+    }
+    if (power === "Not disclosed") notes += " Megawatts not yet extracted.";
+    return {
+      id: p.id,
+      site: p.beyond_m25 ? `${p.name} (beyond M25)` : p.name,
+      ref,
+      url,
+      urlLabel: url ? portalLabel(url) : null,
+      urlNote: url ? null : ref !== "—" ? "Reference only; no lasting URL" : "No lasting portal URL yet",
+      power,
+      notes,
+    };
+  })
+  // Outstanding rows (no resolving URL) first — that is what the checklist is for.
+  .sort((a, b) => (!!a.url === !!b.url ? a.site.localeCompare(b.site) : a.url ? 1 : -1));
+
+const newhamLetter = `[Your name]
+[Date]
+
+Information Governance
+London Borough of Newham
+[published FOI/EIR email or portal]
+
+Dear Sir/Madam,
+
+Freedom of Information Act 2000 / Environmental Information Regulations 2004
+
+I request information about planning application 24/02660/REM and any related hybrid / outline applications for the Ada Infrastructure Docklands data centre campus (former Allnex / paint factory site, West Silvertown).
+
+Please provide:
+
+1. The lasting public URL (or Idox system keyVal) that opens each related application’s live case page on Public Access, not only a search form.
+
+2. Decision notices and committee reports for the hybrid consent and reserved matters, with titles and dates.
+
+3. Any Environmental Statement chapters or energy statements that state megawatt capacity, grid connection size, water demand, or cooling method.
+
+I am happy to receive the response electronically. If the cost limit applies, please advise how to refine the request. This is for a public-interest project assembling sourced environmental figures for regional data centre proposals (The London Compute Ring).
+
+Yours faithfully,
+[Name]
+[Email]`;
+
+const thamesWaterLetter = `[Your name]
+[Date]
+
+Thames Water
+[published EIR address]
+
+Dear Sir/Madam,
+
+Environmental Information Regulations 2004: request for information
+
+I am requesting environmental information about water supply and wastewater impacts of proposed and consented data centre developments in Greater London and the M25 fringe.
+
+Please treat this as a request under the Environmental Information Regulations 2004.
+
+For the period 1 January 2020 to the date of your response, please provide:
+
+1. Any assessments, capacity studies, network constraint notes, or correspondence assessing the impact on public water supply or sewerage/wastewater capacity of data centre developments at or near:
+   a) Manor Farm / Poyle Road, Slough (appeal ref 3366043);
+   b) Yondr campus, Slough;
+   c) Premier Park / Park Royal (Pure DC / SEGRO);
+   d) Ada Docklands / West Silvertown, Newham;
+   e) Bidder Street, Canning Town (24/00088/FUL);
+   f) Grey Eagle Street / Truman Brewery, Tower Hamlets (PA/24/01450).
+
+2. For each of the above where held: stated or estimated annual or peak water demand, whether supply is potable / non-potable / private, and any discharge consent volumes or temperatures relevant to cooling.
+
+3. Any documents in which an operator claimed “zero water use”, “eliminates water usage”, or closed-loop / no potable offtake for a data centre in your area, and Thames Water’s recorded view on that claim.
+
+I am happy to receive information electronically. If any part exceeds the cost limit or engages an exception, please advise what can be disclosed within the limit.
+
+This information is sought for a public-interest project assembling sourced environmental figures for data centre proposals in the region (The London Compute Ring). I do not seek personal data of individuals.
+
+Yours faithfully,
+[Name]
+[Email]`;
+---
+
+<BaseLayout
+  title="Research"
+  description="Verification gaps and sample information-request letters for documenting the physical footprint of data centres across Greater London and the M25 fringe."
+>
+  <h1 class="font-display text-3xl m-0 tracking-tight">Research</h1>
+  <p class="text-[var(--muted)] mt-2 max-w-2xl">
+    Evidence-protocol status for every mapped site, generated from the live dataset (so it never drifts
+    from the map). Rows without a resolving planning URL are listed first — that is the outstanding work.
+    This is not a census of every rack in London; see <a href={`${base}/methodology#inclusion`}>what we include</a>.
+  </p>
+
+  <section class="mt-10" id="checklist">
+    <h2 class="font-display text-xl m-0">Site checklist</h2>
+    <div class="mt-4 overflow-x-auto">
+      <table class="w-full text-sm text-left border-collapse min-w-[40rem]">
+        <thead>
+          <tr class="border-b border-[var(--line)] text-[var(--muted)]">
+            <th class="py-2 pr-3 font-medium">Site</th>
+            <th class="py-2 pr-3 font-medium">Ref</th>
+            <th class="py-2 pr-3 font-medium">Portal</th>
+            <th class="py-2 pr-3 font-medium">Stated size</th>
+            <th class="py-2 font-medium">Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            checklist.map((row) => (
+              <tr class="border-b border-[var(--line)] align-top">
+                <td class="py-2.5 pr-3"><a href={`${base}/site/${row.id}`}>{row.site}</a></td>
+                <td class="py-2.5 pr-3 font-tabular whitespace-nowrap">{row.ref}</td>
+                <td class="py-2.5 pr-3">
+                  {row.url ? (
+                    <a href={row.url} rel="noopener noreferrer">
+                      {row.urlLabel}
+                    </a>
+                  ) : (
+                    <span class="text-[var(--muted)]">{row.urlNote}</span>
+                  )}
+                </td>
+                <td class="py-2.5 pr-3">{row.power}</td>
+                <td class="py-2.5 text-[var(--muted)]">{row.notes}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mt-12" id="not-yet-mapped">
+    <h2 class="font-display text-xl m-0">Not yet on the map</h2>
+    <ul class="mt-3 max-w-2xl space-y-2">
+      <li>
+        Remaining Slough Trading Estate halls (further Equinix / Virtus buildings as separate pins; Iron Mountain LON-1/2/3 are now mapped).
+      </li>
+      <li>
+        Stack Infrastructure and EdgeConneX London campuses, and Colt Welwyn Garden City (Colt Hayes is now mapped).
+      </li>
+      <li>
+        Decommissioned or closed halls (the <code>decommissioned</code> status is ready in the schema).
+      </li>
+      <li>
+        Existing smaller rented server halls and city hosting rooms (often no public megawatt figure).
+      </li>
+    </ul>
+  </section>
+
+  <section class="mt-12" id="outstanding">
+    <h2 class="font-display text-xl m-0">Outstanding before we treat figures as fully checked</h2>
+    <ol class="mt-3 max-w-2xl space-y-2">
+      <li>Save an archived copy of every source link when we add it.</li>
+      <li>
+        Find lasting council planning pages for Yondr, Pure Premier Park, Ada Docklands, and Truman Grey Eagle, then
+        update statuses where that allows.
+      </li>
+      <li>Cite exact pages inside planning PDFs and SoS inspector reports.</li>
+      <li>Check map pins against the official site-boundary drawings in each application.</li>
+      <li>Confirm DESNZ local-authority electricity totals against the latest stacked CSV.</li>
+    </ol>
+  </section>
+
+  <section class="mt-12" id="foi">
+    <h2 class="font-display text-xl m-0">Sample information requests</h2>
+    <p class="mt-3 max-w-2xl text-[var(--muted)]">
+      Copy, personalise, and send via each body’s published channel. These are starting points, not legal advice.
+    </p>
+
+    <h3 class="font-display text-lg m-0 mt-10" id="foi-newham">Newham · Ada Docklands deep-link</h3>
+    <pre class="mt-3 max-w-2xl whitespace-pre-wrap text-sm leading-relaxed border border-[var(--line)] bg-[var(--paper)] p-4 rounded">{newhamLetter}</pre>
+
+    <h3 class="font-display text-lg m-0 mt-10" id="foi-thames-water">Thames Water · water capacity and zero-water claims</h3>
+    <pre class="mt-3 max-w-2xl whitespace-pre-wrap text-sm leading-relaxed border border-[var(--line)] bg-[var(--paper)] p-4 rounded">{thamesWaterLetter}</pre>
+  </section>
+
+  <p class="mt-12 mb-0 text-sm text-[var(--muted)]">
+    Full research log also lives in the repo as <a href={`${base}/../`}>RESEARCH.md</a> for contributors.
+  </p>
+</BaseLayout>

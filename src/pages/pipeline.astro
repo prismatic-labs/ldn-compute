@@ -1,0 +1,192 @@
+---
+import BaseLayout from "../components/BaseLayout.astro";
+import { getItemizedSites, siteBestPower } from "../lib/sites";
+import { formatNumber } from "../lib/units";
+import type { OperationalReality } from "../lib/types";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+// Maturity encoding reuses the map's Okabe–Ito status colours so "blue = operating"
+// means the same thing here as on the map. Order is the build progression.
+const MATURITY: { key: OperationalReality; label: string; colour: string }[] = [
+  { key: "operating", label: "Operating", colour: "#0072B2" },
+  { key: "under_construction", label: "Under construction", colour: "#009E73" },
+  { key: "consented", label: "Consented, not built", colour: "#B59F00" },
+  { key: "pipeline", label: "Proposed", colour: "#9A8B76" },
+];
+
+const sites = getItemizedSites(); // excludes campus aggregate overlays
+function mw(p: (typeof sites)[number]["properties"]): number {
+  const best = siteBestPower(p);
+  return best ? best.quantity.value : 0;
+}
+
+// Footprint bar excludes closed sites (historical, not part of current/pipeline).
+const live = sites.filter((f) => f.properties.operational_reality !== "closed");
+const closed = sites.filter((f) => f.properties.operational_reality === "closed");
+
+const byMaturity = MATURITY.map((m) => {
+  const rows = live.filter((f) => (f.properties.operational_reality ?? "pipeline") === m.key);
+  return { ...m, mw: rows.reduce((s, f) => s + mw(f.properties), 0), count: rows.length };
+});
+const totalMw = byMaturity.reduce((s, m) => s + m.mw, 0);
+const runningMw = byMaturity.find((m) => m.key === "operating")!.mw;
+const futureMw = totalMw - runningMw;
+const ratio = runningMw > 0 ? futureMw / runningMw : 0;
+
+const CORRIDORS = [
+  { key: "west", label: "West (Slough–Heathrow)" },
+  { key: "east", label: "East (Docklands, Thames)" },
+  { key: "north", label: "North fringe" },
+  { key: "south", label: "South fringe" },
+  { key: "inner", label: "Inner London" },
+];
+const byCorridor = CORRIDORS.map((c) => {
+  const rows = live.filter((f) => f.properties.corridor === c.key);
+  const seg = MATURITY.map((m) => ({
+    ...m,
+    mw: rows
+      .filter((f) => (f.properties.operational_reality ?? "pipeline") === m.key)
+      .reduce((s, f) => s + mw(f.properties), 0),
+  }));
+  return { ...c, seg, total: seg.reduce((s, x) => s + x.mw, 0) };
+}).filter((c) => c.total > 0)
+  .sort((a, b) => b.total - a.total);
+const maxCorridor = Math.max(...byCorridor.map((c) => c.total));
+
+const pct = (v: number, of: number) => (of > 0 ? (v / of) * 100 : 0);
+---
+
+<BaseLayout
+  title="Pipeline"
+  description="How much London data-centre capacity is running today versus consented or proposed — by build maturity and corridor, from sourced figures."
+>
+  <h1 class="font-display text-3xl m-0 tracking-tight">The pipeline</h1>
+  <p class="text-[var(--muted)] mt-2 max-w-2xl">
+    This page adds up the <strong>stated</strong> megawatts on the map and groups them by how far each scheme
+    has got: running, being built, consented, or still only proposed. It counts what is on the public record
+    and does not try to predict what gets built. Stated size is capacity on paper, not the electricity a site
+    draws day to day, and plenty of these schemes will not happen.
+  </p>
+
+  <!-- Hero numbers -->
+  <div class="mt-8 grid gap-4 sm:grid-cols-3">
+    <div class="border-t border-[var(--ink)] pt-3">
+      <p class="font-display text-4xl m-0 font-tabular">{formatNumber(runningMw)}<span class="text-lg"> MW</span></p>
+      <p class="text-sm text-[var(--muted)] m-0 mt-1">operating today ({byMaturity.find((m)=>m.key==="operating")!.count} sites)</p>
+    </div>
+    <div class="border-t border-[var(--ink)] pt-3">
+      <p class="font-display text-4xl m-0 font-tabular">{formatNumber(futureMw)}<span class="text-lg"> MW</span></p>
+      <p class="text-sm text-[var(--muted)] m-0 mt-1">under construction, consented, or proposed</p>
+    </div>
+    <div class="border-t border-[var(--ink)] pt-3">
+      <p class="font-display text-4xl m-0 font-tabular">{ratio.toFixed(1)}×</p>
+      <p class="text-sm text-[var(--muted)] m-0 mt-1">more capacity coming than is running now</p>
+    </div>
+  </div>
+
+  <!-- Total stacked bar -->
+  <section class="mt-12">
+    <h2 class="font-display text-xl m-0">Capacity by build maturity</h2>
+    <p class="text-sm text-[var(--muted)] mt-1 mb-4">≈{formatNumber(totalMw)} MW stated across {live.length} sites (campus overlays and closed sites excluded).</p>
+    <div class="flex w-full h-10 rounded overflow-hidden gap-[2px] bg-[var(--line)]" role="img"
+      aria-label={`Total ${formatNumber(totalMw)} megawatts: ` + byMaturity.map((m)=>`${m.label} ${formatNumber(m.mw)} megawatts`).join(", ")}>
+      {byMaturity.filter((m)=>m.mw>0).map((m) => (
+        <div
+          class="h-full flex items-center px-2 text-xs font-medium text-white whitespace-nowrap overflow-hidden"
+          style={`width:${pct(m.mw,totalMw)}%;background:${m.colour}`}
+          title={`${m.label}: ${formatNumber(m.mw)} MW (${Math.round(pct(m.mw,totalMw))}%)`}
+        >
+          {pct(m.mw,totalMw) > 9 && `${formatNumber(m.mw)} MW`}
+        </div>
+      ))}
+    </div>
+    <ul class="flex flex-wrap gap-x-5 gap-y-1 mt-3 list-none p-0 m-0 text-sm">
+      {byMaturity.map((m) => (
+        <li class="flex items-center gap-2">
+          <span class="inline-block w-3 h-3 rounded-sm" style={`background:${m.colour}`}></span>
+          {m.label} <span class="text-[var(--muted)] font-tabular">{formatNumber(m.mw)} MW · {m.count}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <!-- By corridor -->
+  <section class="mt-12">
+    <h2 class="font-display text-xl m-0">Where it is heading</h2>
+    <p class="text-sm text-[var(--muted)] mt-1 mb-4">
+      The running capacity sits in the old west (Slough) and east (Docklands) clusters; the largest
+      <em>proposed</em> schemes are pushing out to the north and east M25 fringe.
+    </p>
+    <div class="space-y-3">
+      {byCorridor.map((c) => (
+        <div>
+          <div class="flex justify-between text-sm">
+            <span>{c.label}</span>
+            <span class="text-[var(--muted)] font-tabular">{formatNumber(c.total)} MW</span>
+          </div>
+          <div class="flex h-6 rounded overflow-hidden gap-[2px] mt-1" style={`width:${Math.max(pct(c.total,maxCorridor),4)}%`}>
+            {c.seg.filter((s)=>s.mw>0).map((s) => (
+              <div class="h-full" style={`width:${pct(s.mw,c.total)}%;background:${s.colour}`}
+                title={`${c.label} — ${s.label}: ${formatNumber(s.mw)} MW`}></div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Data table (accessible fallback) -->
+  <section class="mt-12">
+    <h2 class="font-display text-xl m-0">The numbers</h2>
+    <div class="mt-3 overflow-x-auto">
+      <table class="w-full text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-[var(--line)] text-left text-[var(--muted)]">
+            <th class="py-2 pr-3 font-medium">Maturity</th>
+            <th class="py-2 pr-3 font-medium">Stated MW</th>
+            <th class="py-2 pr-3 font-medium">Share</th>
+            <th class="py-2 font-medium">Sites</th>
+          </tr>
+        </thead>
+        <tbody>
+          {byMaturity.map((m) => (
+            <tr class="border-b border-[var(--line)]">
+              <td class="py-2 pr-3">{m.label}</td>
+              <td class="py-2 pr-3 font-tabular">{formatNumber(m.mw)}</td>
+              <td class="py-2 pr-3 font-tabular">{Math.round(pct(m.mw,totalMw))}%</td>
+              <td class="py-2 font-tabular">{m.count}</td>
+            </tr>
+          ))}
+          <tr class="border-b border-[var(--line)] font-medium">
+            <td class="py-2 pr-3">Total (live + pipeline)</td>
+            <td class="py-2 pr-3 font-tabular">{formatNumber(totalMw)}</td>
+            <td class="py-2 pr-3 font-tabular">100%</td>
+            <td class="py-2 font-tabular">{live.length}</td>
+          </tr>
+          {closed.length > 0 && (
+            <tr class="text-[var(--muted)]">
+              <td class="py-2 pr-3">Closed (excluded)</td>
+              <td class="py-2 pr-3 font-tabular">—</td>
+              <td class="py-2 pr-3">—</td>
+              <td class="py-2 font-tabular">{closed.length}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="mt-12 max-w-2xl text-sm text-[var(--muted)]">
+    <h2 class="font-display text-base text-[var(--ink)] m-0">How to read this</h2>
+    <ul class="mt-2 space-y-1">
+      <li><strong>Maturity is our read, not the planning status.</strong> The map holds most sites at
+        <code>proposed</code> until a lasting portal URL is linked; this view uses a separate judgement of what is
+        actually running. See <a href={`${base}/methodology#inclusion`}>methodology</a>.</li>
+      <li>Figures are <strong>stated size</strong> (nameplate/contracted MW), not electricity drawn. Load factor is unknown.</li>
+      <li>Two of London’s largest operating sites — <strong>Google Waltham Cross</strong> and <strong>Microsoft Park Royal</strong> —
+        disclose no megawatts, so real operating capacity is higher than shown.</li>
+      <li>Campus overlays are excluded to avoid double-counting; closed sites are excluded from the totals.</li>
+    </ul>
+  </section>
+</BaseLayout>

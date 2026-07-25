@@ -1,0 +1,27 @@
+{
+  "$version": "0.1.0",
+  "source": {
+    "publisher": "DESNZ",
+    "title": "Subnational electricity consumption statistics — local authority stacked table",
+    "year": 2024,
+    "url": "https://www.gov.uk/government/statistical-data-sets/stacked-electricity-consumption-statistics-data",
+    "file": "elec_LA_stacked_2005-2024.csv",
+    "retrieved": "2026-07-20",
+    "note": "Phase 0 seed rows for London boroughs + Slough. Reconcile against the DESNZ stacked CSV before treating as definitive. All_consumption_GWh = domestic + non-domestic metered electricity for the calendar year."
+  },
+  "unit": "GWh/year",
+  "authorities": [
+    { "code": "E06000039", "name": "Slough", "total_gwh": 812.4, "domestic_gwh": 198.2 },
+    { "code": "E09000009", "name": "Ealing", "total_gwh": 1486.1, "domestic_gwh": 612.4 },
+    { "code": "E09000018", "name": "Hounslow", "total_gwh": 1320.5, "domestic_gwh": 448.7 },
+    { "code": "E09000012", "name": "Hackney", "total_gwh": 721.3, "domestic_gwh": 312.8 },
+    { "code": "E09000025", "name": "Newham", "total_gwh": 1184.6, "domestic_gwh": 421.5 },
+    { "code": "E09000030", "name": "Tower Hamlets", "total_gwh": 1652.8, "domestic_gwh": 398.2 },
+    { "code": "E09000002", "name": "Barking and Dagenham", "total_gwh": 654.2, "domestic_gwh": 268.1 },
+    { "code": "E09000028", "name": "Southwark", "total_gwh": 1421.7, "domestic_gwh": 456.3 },
+    { "code": "E09000011", "name": "Greenwich", "total_gwh": 982.4, "domestic_gwh": 401.2 },
+    { "code": "E09000019", "name": "Islington", "total_gwh": 891.5, "domestic_gwh": 278.6 },
+    { "code": "E09000007", "name": "Camden", "total_gwh": 1245.8, "domestic_gwh": 312.4 },
+    { "code": "E09000033", "name": "Westminster", "total_gwh": 2891.2, "domestic_gwh": 421.7 }
+  ]
+}

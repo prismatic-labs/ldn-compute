@@ -1,0 +1,19 @@
+{
+  "$version": "0.1.0",
+  "site_name": "The London Compute Ring",
+  "sub_brand": "Capital Compute",
+  "region": {
+    "id": "london-m25",
+    "label": "Greater London & M25 fringe",
+    "map": {
+      "center": [-0.12, 51.52],
+      "zoom": 8.6,
+      "coord_order": "GeoJSON [lng, lat]"
+    }
+  },
+  "contact": {
+    "corrections_email": "marco@prismaticlabs.ai",
+    "github_issues": "https://github.com/prismatic-labs/ldn-compute/issues"
+  },
+  "staleness_banner_days": 90
+}
