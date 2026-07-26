@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../components/BaseLayout.astro";
-import { getItemizedSites, formatBestPower } from "../lib/sites";
+import { getItemizedSites, formatBestPower, siteBestPower } from "../lib/sites";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -25,6 +25,7 @@ const checklist = getItemizedSites()
     const p = f.properties;
     const url = p.planning_ref?.url ?? null;
     const ref = p.planning_ref?.id ?? "—";
+    const best = siteBestPower(p);
     const power = formatBestPower(p);
     const statusLabel = p.status.replaceAll("_", " ");
     let notes: string;
@@ -44,11 +45,12 @@ const checklist = getItemizedSites()
       urlLabel: url ? portalLabel(url) : null,
       urlNote: url ? null : ref !== "—" ? "Reference only; no lasting URL" : "No lasting portal URL yet",
       power,
+      mw: best ? best.quantity.value : null,
       notes,
     };
   })
-  // Outstanding rows (no resolving URL) first — that is what the checklist is for.
-  .sort((a, b) => (!!a.url === !!b.url ? a.site.localeCompare(b.site) : a.url ? 1 : -1));
+  // Biggest first (matches /sites); the Status column shows sourcing inline.
+  .sort((a, b) => (b.mw ?? -1) - (a.mw ?? -1) || a.site.localeCompare(b.site));
 
 const newhamLetter = `[Your name]
 [Date]
@@ -127,10 +129,15 @@ Yours faithfully,
 
   <section class="mt-10" id="checklist">
     <h2 class="font-display text-xl m-0">Site checklist</h2>
+    <p class="text-sm text-[var(--muted)] mt-1">
+      <span style="color:#0a7f5f">✓</span> the site has a resolving planning application or decision URL;
+      <span class="text-[var(--amber)]">○</span> it still needs one. Largest schemes first.
+    </p>
     <div class="mt-4 overflow-x-auto">
       <table class="w-full text-sm text-left border-collapse min-w-[40rem]">
         <thead>
           <tr class="border-b border-[var(--line)] text-[var(--muted)]">
+            <th class="py-2 pr-2 font-medium">Status</th>
             <th class="py-2 pr-3 font-medium">Site</th>
             <th class="py-2 pr-3 font-medium">Ref</th>
             <th class="py-2 pr-3 font-medium">Portal</th>
@@ -142,6 +149,13 @@ Yours faithfully,
           {
             checklist.map((row) => (
               <tr class="border-b border-[var(--line)] align-top">
+                <td class="py-2.5 pr-2 whitespace-nowrap">
+                  {row.url ? (
+                    <span title="Resolving planning URL linked" class="font-medium" style="color:#0a7f5f">✓<span class="sr-only"> sourced</span></span>
+                  ) : (
+                    <span title="No resolving planning URL yet" class="text-[var(--amber)]">○<span class="sr-only"> outstanding</span></span>
+                  )}
+                </td>
                 <td class="py-2.5 pr-3"><a href={`${base}/site/${row.id}`}>{row.site}</a></td>
                 <td class="py-2.5 pr-3 font-tabular whitespace-nowrap">{row.ref}</td>
                 <td class="py-2.5 pr-3">
