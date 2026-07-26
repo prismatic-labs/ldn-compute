@@ -126,7 +126,7 @@
           "id": null,
           "url": null
         },
-        "summary": "Hyperscale campus on the former Uxbridge Road gas works / Akzo Nobel paint factory in Slough. Operator materials describe about 100 MW across three buildings, with phases reported ready for service from 2024 onward. Listed as proposed until a lasting Slough Public Access case page is linked.",
+        "summary": "Hyperscale campus on the former Uxbridge Road gas works / Akzo Nobel paint factory in Slough. Operator materials describe about 100 MW across three buildings, with phases reported ready for service from 2024 onward. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -290,8 +290,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.028,
-          51.502
+          0.01725,
+          51.50328
         ]
       },
       "properties": {
@@ -540,8 +540,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.595,
-          51.523
+          -0.6337,
+          51.524
         ]
       },
       "properties": {
@@ -618,8 +618,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.58,
-          51.52
+          -0.62135,
+          51.52271
         ]
       },
       "properties": {
@@ -629,7 +629,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "VIRTUS Slough campus building LONDON4. Operator spec sheet states 27 MW of IT load and over 10,600 m² net technical space. Operator materials present it as an operating / ready campus facility; held at proposed until a lasting Slough Public Access URL is linked.",
+        "summary": "VIRTUS Slough campus building LONDON4. Operator spec sheet states 27 MW of IT load and over 10,600 m² net technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": {
             "value": 40,
@@ -690,8 +690,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.605,
-          51.518
+          -0.62394,
+          51.52305
         ]
       },
       "properties": {
@@ -701,7 +701,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Purpose-built colocation at 12 Liverpool Road, Slough. Operator datasheet states 8.72 MW IT capacity across about 4,309 m² technical space. Operator presents the site as operating; held at proposed until a lasting Slough Public Access URL is linked.",
+        "summary": "Purpose-built colocation at 12 Liverpool Road, Slough. Operator datasheet states 8.72 MW IT capacity across about 4,309 m² technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": {
             "value": 15,
@@ -773,7 +773,7 @@
         "status": "operating",
         "local_authority": "London Borough of Barking and Dagenham",
         "corridor": "east",
-        "summary": "Carrier-neutral campus at Yew Tree Avenue, Dagenham. Operator states 32 MW critical IT load in the first building (64 MW once fully built out) with an on-site substation delivering 80 MVA. Operator presents London 1 as operating; held at proposed until a lasting planning portal URL is linked.",
+        "summary": "Carrier-neutral campus at Yew Tree Avenue, Dagenham. Operator states 32 MW critical IT load in the first building (64 MW once fully built out) with an on-site substation delivering 80 MVA. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": {
             "value": 80,
@@ -841,8 +841,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.006,
-          51.5115
+          -0.00143,
+          51.51163
         ]
       },
       "properties": {
@@ -852,7 +852,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Historic Docklands interconnection campus and long-standing LINX home (North, East, West, North Two and further expansions). No single reliable campus megawatt figure — individual buildings are mapped and sized separately (see North Two, West, West Two). Operator presents the campus as operating; held at proposed until lasting Tower Hamlets Public Access URLs are linked. This campus pin aggregates individually mapped halls; it is flagged role \"aggregate\" and excluded from the map, the regional total, and the sites/compare tables to avoid double-counting; the individual halls carry the capacity.",
+        "summary": "Historic Docklands interconnection campus and long-standing LINX home (North, East, West, North Two and further expansions). No single reliable campus megawatt figure — individual buildings are mapped and sized separately (see North Two, West, West Two). This campus pin aggregates individually mapped halls; it is flagged role \"aggregate\" and excluded from the map, the regional total, and the sites/compare tables to avoid double-counting; the individual halls carry the capacity. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -893,8 +893,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.002,
-          51.508
+          -0.0035,
+          51.51094
         ]
       },
       "properties": {
@@ -904,7 +904,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Large Docklands wholesale/colocation hall (GS2). Operator materials describe about 45 MW of power and cooling delivered and ~43 MW of utility supply; a high-density upgrade targets ~74 MW. The 87 MW figure widely quoted in directory summaries is total/gross capacity, not IT load, so it is not used as the headline. Operator presents the campus as operating; held at proposed until a lasting planning portal URL is linked.",
+        "summary": "Large Docklands wholesale/colocation hall (GS2). Operator materials describe about 45 MW of power and cooling delivered and ~43 MW of utility supply; a high-density upgrade targets ~74 MW. The 87 MW figure widely quoted in directory summaries is total/gross capacity, not IT load, so it is not used as the headline. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -956,8 +956,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.008,
-          51.515
+          -0.00557,
+          51.51112
         ]
       },
       "properties": {
@@ -967,7 +967,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Docklands campus building London North. Secondary industry summaries state about 18 MW. Operator presents the campus as operating; held at proposed until a lasting planning portal URL is linked.",
+        "summary": "Docklands campus building London North. Secondary industry summaries state about 18 MW. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -1014,8 +1014,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.28,
-          51.535
+          -0.25923,
+          51.53297
         ]
       },
       "properties": {
@@ -1025,7 +1025,7 @@
         "status": "operating",
         "local_authority": "Old Oak and Park Royal Development Corporation",
         "corridor": "west",
-        "summary": "Vantage’s second London campus in Park Royal. Operator states 20 MW of critical IT load across about 194,000 sq ft. Operator announced opening around September 2025; held at proposed until a lasting planning portal URL is linked.",
+        "summary": "Vantage’s second London campus in Park Royal. Operator states 20 MW of critical IT load across about 194,000 sq ft. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -1091,8 +1091,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.593,
-          51.5195
+          -0.61793,
+          51.51645
         ]
       },
       "properties": {
@@ -1102,7 +1102,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Multi-site Digital Realty presence in the Slough Availability Zone (operator cites a London metro footprint of multiple facilities including Slough). Campus megawatt totals are not yet itemised here from a single operator disclosure. Location pin is approximate for the Slough Trading Estate cluster. Held at proposed until lasting planning URLs and stated MW are linked.",
+        "summary": "Multi-site Digital Realty presence in the Slough Availability Zone (operator cites a London metro footprint of multiple facilities including Slough). Campus megawatt totals are not yet itemised here from a single operator disclosure. Location pin is approximate for the Slough Trading Estate cluster. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -1148,8 +1148,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.0035,
-          51.5128
+          -0.00055,
+          51.5121
         ]
       },
       "properties": {
@@ -1159,7 +1159,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Multi-storey Docklands hall within the Telehouse campus, in service from late 2016, with LINX presence. Operator / Colo-X put its IT load at about 16 MW (an earlier secondary summary of ~73 MW appears to have been a gross/building figure and is not used). Operator presents it as operating; held at proposed until a lasting Tower Hamlets Public Access URL is linked.",
+        "summary": "Multi-storey Docklands hall within the Telehouse campus, in service from late 2016, with LINX presence. Operator / Colo-X put its IT load at about 16 MW (an earlier secondary summary of ~73 MW appears to have been a gross/building figure and is not used). Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -1214,8 +1214,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.45,
-          51.52
+          -0.45429,
+          51.50954
         ]
       },
       "properties": {
@@ -1225,7 +1225,7 @@
         "status": "operating",
         "local_authority": "London Borough of Hillingdon",
         "corridor": "west",
-        "summary": "VIRTUS Stockley Park campus building LONDON5 (Hayes fringe). Operator materials state 24 MW of IT load and over 10,000 m² net technical space. Operator presents the facility as part of an operating campus; held at proposed until a lasting planning portal URL is linked.",
+        "summary": "VIRTUS Stockley Park campus building LONDON5 (Hayes fringe). Operator materials state 24 MW of IT load and over 10,000 m² net technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": {
             "value": 36,
@@ -1306,7 +1306,7 @@
           "id": null,
           "url": null
         },
-        "summary": "Vantage flagship London campus in the PowerGate / North Acton area. Operator states 55 MW of critical IT load once fully built across two multi-storey facilities on about five acres. Operator presents the campus as in delivery / operating phases; held at proposed until a lasting planning portal URL is linked.",
+        "summary": "Vantage flagship London campus in the PowerGate / North Acton area. Operator states 55 MW of critical IT load once fully built across two multi-storey facilities on about five acres. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": {
             "value": 80,
@@ -1377,8 +1377,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.598,
-          51.524
+          -0.63332,
+          51.5268
         ]
       },
       "properties": {
@@ -1388,7 +1388,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Iron Mountain LON-1 on Dundee Road in the Slough Trading Estate corridor. Operator London pages state about 8.7 MW total capacity and 10,400 m² at LON-1. Operator presents the hall as operating; held at proposed until a lasting Slough Public Access URL is linked.",
+        "summary": "Iron Mountain LON-1 on Dundee Road in the Slough Trading Estate corridor. Operator London pages state about 8.7 MW total capacity and 10,400 m² at LON-1. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -1442,8 +1442,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.59,
-          51.521
+          -0.6339,
+          51.5264
         ]
       },
       "properties": {
@@ -1453,7 +1453,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Iron Mountain LON-2 on Buckingham Avenue, Slough Trading Estate. Operator London pages state about 27 MW capacity and 25,000 m² at LON-2. Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "Iron Mountain LON-2 on Buckingham Avenue, Slough Trading Estate. Operator London pages state about 27 MW capacity and 25,000 m² at LON-2. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -1507,8 +1507,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.589,
-          51.52
+          -0.6327,
+          51.5272
         ]
       },
       "properties": {
@@ -1578,8 +1578,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.582,
-          51.519
+          -0.62169,
+          51.52205
         ]
       },
       "properties": {
@@ -1589,7 +1589,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "VIRTUS Slough campus building LONDON3. Operator site lists 7.2 MW IT load and 3,000 m² net technical space. Held at proposed until a lasting Slough Public Access URL is linked.",
+        "summary": "VIRTUS Slough campus building LONDON3. Operator site lists 7.2 MW IT load and 3,000 m² net technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -1648,8 +1648,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.578,
-          51.521
+          -0.61913,
+          51.51886
         ]
       },
       "properties": {
@@ -1659,7 +1659,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "VIRTUS Slough campus building LONDON9. Operator states over 10,000 m² net technical space and 24 MW of IT load. Held at proposed until a lasting Slough Public Access URL is linked.",
+        "summary": "VIRTUS Slough campus building LONDON9. Operator states over 10,000 m² net technical space and 24 MW of IT load. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -1713,8 +1713,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.577,
-          51.518
+          -0.62093,
+          51.52139
         ]
       },
       "properties": {
@@ -1724,7 +1724,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "VIRTUS Slough campus building LONDON10. Operator campus listing states 6.6 MW IT load and 3,000 m² net technical space. Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "VIRTUS Slough campus building LONDON10. Operator campus listing states 6.6 MW IT load and 3,000 m² net technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -1778,8 +1778,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.576,
-          51.522
+          -0.62625,
+          51.51895
         ]
       },
       "properties": {
@@ -1789,7 +1789,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "VIRTUS Slough campus building LONDON11. Operator campus listing states 13 MW IT load and 5,500 m² net technical space. Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "VIRTUS Slough campus building LONDON11. Operator campus listing states 13 MW IT load and 5,500 m² net technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -1843,8 +1843,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.574,
-          51.519
+          -0.6186,
+          51.5194
         ]
       },
       "properties": {
@@ -1854,7 +1854,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "VIRTUS Slough campus building LONDON12. Operator campus listing states 21 MW IT load and 7,800 m² net technical space. Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "VIRTUS Slough campus building LONDON12. Operator campus listing states 21 MW IT load and 7,800 m² net technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -1908,8 +1908,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.573,
-          51.523
+          -0.6223,
+          51.5217
         ]
       },
       "properties": {
@@ -1919,7 +1919,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "VIRTUS Slough campus building LONDON19. Operator campus listing states 32.5 MW. Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "VIRTUS Slough campus building LONDON19. Operator campus listing states 32.5 MW. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -1973,8 +1973,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.425,
-          51.505
+          -0.4045,
+          51.4964
         ]
       },
       "properties": {
@@ -1984,7 +1984,7 @@
         "status": "operating",
         "local_authority": "London Borough of Hillingdon",
         "corridor": "west",
-        "summary": "VIRTUS LONDON2 at Hayes, west London. Operator datasheet states 11.4 MW of IT load and over 6,000 m² net technical space, with a 20 MVA incoming supply. Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "VIRTUS LONDON2 at Hayes, west London. Operator datasheet states 11.4 MW of IT load and over 6,000 m² net technical space, with a 20 MVA incoming supply. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": {
             "value": 20,
@@ -2045,8 +2045,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.048,
-          51.652
+          -0.05536,
+          51.6519
         ]
       },
       "properties": {
@@ -2056,7 +2056,7 @@
         "status": "operating",
         "local_authority": "London Borough of Enfield",
         "corridor": "north",
-        "summary": "VIRTUS LONDON1 at Enfield on the north London / M25 fringe. Operator states over 2,900 m² net technical space and 4.2 MW of IT load. Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "VIRTUS LONDON1 at Enfield on the north London / M25 fringe. Operator states over 2,900 m² net technical space and 4.2 MW of IT load. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -2110,8 +2110,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.448,
-          51.512
+          -0.45381,
+          51.51057
         ]
       },
       "properties": {
@@ -2121,7 +2121,7 @@
         "status": "operating",
         "local_authority": "London Borough of Hillingdon",
         "corridor": "west",
-        "summary": "VIRTUS Stockley Park campus building LONDON6. Operator lists 16 MW IT load and 7,000 m² net technical space. Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "VIRTUS Stockley Park campus building LONDON6. Operator lists 16 MW IT load and 7,000 m² net technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -2175,8 +2175,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.446,
-          51.514
+          -0.45665,
+          51.51088
         ]
       },
       "properties": {
@@ -2186,7 +2186,7 @@
         "status": "operating",
         "local_authority": "London Borough of Hillingdon",
         "corridor": "west",
-        "summary": "VIRTUS Stockley Park campus building LONDON7. Operator lists 28 MW IT load and 13,000 m² net technical space. Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "VIRTUS Stockley Park campus building LONDON7. Operator lists 28 MW IT load and 13,000 m² net technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -2240,8 +2240,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.444,
-          51.511
+          -0.45719,
+          51.50976
         ]
       },
       "properties": {
@@ -2251,7 +2251,7 @@
         "status": "operating",
         "local_authority": "London Borough of Hillingdon",
         "corridor": "west",
-        "summary": "VIRTUS Stockley Park campus building LONDON8. Operator lists 18 MW IT load and 7,000 m² net technical space. Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "VIRTUS Stockley Park campus building LONDON8. Operator lists 18 MW IT load and 7,000 m² net technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -2305,8 +2305,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.575,
-          51.517
+          -0.61602,
+          51.51702
         ]
       },
       "properties": {
@@ -2316,7 +2316,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "NTT Slough 2 on Ajax Avenue, Slough Trading Estate. Operator states a maximum of 1.8 MW of critical IT load with dual HV grid connections. Held at proposed until a lasting Slough Public Access URL is linked.",
+        "summary": "NTT Slough 2 on Ajax Avenue, Slough Trading Estate. Operator states a maximum of 1.8 MW of critical IT load with dual HV grid connections. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -2370,8 +2370,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.021,
-          51.499
+          -0.0149,
+          51.49818
         ]
       },
       "properties": {
@@ -2381,7 +2381,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Equinix LD8 IBX at Harbour Exchange Square in the Docklands interconnection cluster. Operator publishes building area (about 12,769 m²) but not a single campus megawatt figure on the public IBX page. Location pin only for stated size until a lasting MW disclosure or planning URL is linked. Held at proposed.",
+        "summary": "Equinix LD8 IBX at Harbour Exchange Square in the Docklands interconnection cluster. Operator publishes building area (about 12,769 m²) but not a single campus megawatt figure on the public IBX page. Location pin only for stated size until a lasting MW disclosure or planning URL is linked. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -2421,8 +2421,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.278,
-          51.528
+          -0.25589,
+          51.53143
         ]
       },
       "properties": {
@@ -2432,7 +2432,7 @@
         "status": "operating",
         "local_authority": "London Borough of Ealing",
         "corridor": "west",
-        "summary": "Equinix LD9 at Powergate Business Park (Volt Avenue), west London, near other Park Royal / Powergate halls. Operator publishes building area (about 15,372 m²) but not a single public megawatt total on the IBX page. Location pin only for stated size until MW or planning URL is linked. Held at proposed.",
+        "summary": "Equinix LD9 at Powergate Business Park (Volt Avenue), west London, near other Park Royal / Powergate halls. Operator publishes building area (about 15,372 m²) but not a single public megawatt total on the IBX page. Location pin only for stated size until MW or planning URL is linked. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -2472,8 +2472,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.0075,
-          51.5102
+          -0.00231,
+          51.51119
         ]
       },
       "properties": {
@@ -2483,7 +2483,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Telehouse West on the Docklands campus (Coronation Road area), part of the LINX-heavy interconnection cluster. Operator London materials cite about 18 MW total power capacity for the West hall context (2.7 MW per floor in published figures). Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "Telehouse West on the Docklands campus (Coronation Road area), part of the LINX-heavy interconnection cluster. Operator London materials cite about 18 MW total power capacity for the West hall context (2.7 MW per floor in published figures). Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -2538,8 +2538,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.0055,
-          51.5094
+          -0.0025,
+          51.51085
         ]
       },
       "properties": {
@@ -2610,8 +2610,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.0065,
-          51.5075
+          -0.00346,
+          51.50705
         ]
       },
       "properties": {
@@ -2621,7 +2621,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Telehouse South at Blackwall Yard, opened 2022 about 300 metres from the main Docklands campus. Campus-level megawatts are published for other halls; this pin is location-led until a hall-specific lasting MW figure or planning URL is linked. Held at proposed.",
+        "summary": "Telehouse South at Blackwall Yard, opened 2022 about 300 metres from the main Docklands campus. Campus-level megawatts are published for other halls; this pin is location-led until a hall-specific lasting MW figure or planning URL is linked. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -2668,8 +2668,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.408,
-          51.448
+          -0.45427,
+          51.44666
         ]
       },
       "properties": {
@@ -2679,7 +2679,7 @@
         "status": "operating",
         "local_authority": "London Borough of Hounslow",
         "corridor": "west",
-        "summary": "Serverfarm LON1 in Feltham on the west London / Heathrow fringe. Trade and directory sources commonly cite about 11.4 MW of IT capacity for the hall. Held at proposed until a lasting planning portal URL and operator-primary MW page are linked.",
+        "summary": "Serverfarm LON1 in Feltham on the west London / Heathrow fringe. Trade and directory sources commonly cite about 11.4 MW of IT capacity for the hall. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -2744,7 +2744,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Digital Realty (former Interxion) presence in the Harbour Exchange / Docklands interconnection cluster. Operator London metro footprint spans multiple facilities; this pin is a Docklands location seed until hall-specific megawatts and a lasting planning URL are linked. Held at proposed.",
+        "summary": "Digital Realty (former Interxion) presence in the Harbour Exchange / Docklands interconnection cluster. Operator London metro footprint spans multiple facilities; this pin is a Docklands location seed until hall-specific megawatts and a lasting planning URL are linked. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -2879,7 +2879,7 @@
         "status": "operating",
         "local_authority": "Dacorum Borough Council",
         "corridor": "north",
-        "summary": "NTT Hemel Hempstead 1 at Boundary Way / Centro. About 2 MW of IT load. North M25 cluster marketed into the London metro. Held at proposed until a lasting portal URL is linked.",
+        "summary": "NTT Hemel Hempstead 1 at Boundary Way / Centro. About 2 MW of IT load. North M25 cluster marketed into the London metro. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -2944,7 +2944,7 @@
         "status": "operating",
         "local_authority": "Dacorum Borough Council",
         "corridor": "north",
-        "summary": "NTT Hemel Hempstead 2 on Maylands Avenue. Secondary sources put maximum client IT load around 6.2 MW. Held at proposed until a lasting portal URL is linked.",
+        "summary": "NTT Hemel Hempstead 2 on Maylands Avenue. Secondary sources put maximum client IT load around 6.2 MW. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -3009,7 +3009,7 @@
         "status": "operating",
         "local_authority": "Dacorum Borough Council",
         "corridor": "north",
-        "summary": "NTT Hemel Hempstead 3. Operator states a maximum of 20 MW of IT load. Held at proposed until a lasting portal URL is linked.",
+        "summary": "NTT Hemel Hempstead 3. Operator states a maximum of 20 MW of IT load. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -3074,7 +3074,7 @@
         "status": "operating",
         "local_authority": "Dacorum Borough Council",
         "corridor": "north",
-        "summary": "NTT Hemel Hempstead 4 at Blossom Way. Operator states a maximum of 12 MW IT load; on-site substation 60 MVA. Held at proposed until a lasting portal URL is linked.",
+        "summary": "NTT Hemel Hempstead 4 at Blossom Way. Operator states a maximum of 12 MW IT load; on-site substation 60 MVA. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": {
             "value": 60,
@@ -3146,7 +3146,7 @@
         "status": "operating",
         "local_authority": "Harlow District Council",
         "corridor": "north",
-        "summary": "Kao Data campus on London Road, Harlow (M11 corridor). Operator: KLON-01/02 at 8.8 MW each (operational), KLON-03 17.6 MW under development, KLON-04 36 MW planned; about 71 MW ITE when complete. Held at proposed until lasting Harlow portal URLs are linked. This campus pin aggregates individually mapped halls; it is flagged role \"aggregate\" and excluded from the map, the regional total, and the sites/compare tables to avoid double-counting; the individual halls carry the capacity.",
+        "summary": "Kao Data campus on London Road, Harlow (M11 corridor). Operator: KLON-01/02 at 8.8 MW each (operational), KLON-03 17.6 MW under development, KLON-04 36 MW planned; about 71 MW ITE when complete. This campus pin aggregates individually mapped halls; it is flagged role \"aggregate\" and excluded from the map, the regional total, and the sites/compare tables to avoid double-counting; the individual halls carry the capacity. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -3296,7 +3296,7 @@
         "status": "operating",
         "local_authority": "London Borough of Croydon",
         "corridor": "south",
-        "summary": "Pulsant regional edge hall at Imperial Way, Croydon. Operator datasheet: 1.35 MW IT power, 2.5 MW incoming. Held at proposed until a lasting Croydon Public Access URL is linked.",
+        "summary": "Pulsant regional edge hall at Imperial Way, Croydon. Operator datasheet: 1.35 MW IT power, 2.5 MW incoming. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": {
             "value": 2.5,
@@ -3426,8 +3426,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.087,
-          51.527
+          -0.08651,
+          51.52426
         ]
       },
       "properties": {
@@ -3437,7 +3437,7 @@
         "status": "operating",
         "local_authority": "London Borough of Islington",
         "corridor": "inner",
-        "summary": "Colocation hall at Oliver's Yard / City Road, about 100 yards from Old Street roundabout (Silicon Roundabout / Tech City). Directory sources put about 2.3 MW customer power (some listings cite about 4 MW total power). Held at proposed until a lasting planning portal URL is linked.",
+        "summary": "Colocation hall at Oliver's Yard / City Road, about 100 yards from Old Street roundabout (Silicon Roundabout / Tech City). Directory sources put about 2.3 MW customer power (some listings cite about 4 MW total power). Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -3715,8 +3715,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.178,
-          51.138
+          -0.17616,
+          51.12743
         ]
       },
       "properties": {
@@ -3726,7 +3726,7 @@
         "status": "operating",
         "local_authority": "Crawley Borough Council",
         "corridor": "south",
-        "summary": "Digital Realty Crawley Unit 1 (LGW15) on the Manor Royal estate, between Crawley and Gatwick — the main scale colo campus on the south M23 fringe. Directory listings cite about 18 MW. Campus has a large 132 kV / 72 MVA power position shared with Unit 2. Held at proposed until a lasting portal URL is linked.",
+        "summary": "Digital Realty Crawley Unit 1 (LGW15) on the Manor Royal estate, between Crawley and Gatwick — the main scale colo campus on the south M23 fringe. Directory listings cite about 18 MW. Campus has a large 132 kV / 72 MVA power position shared with Unit 2. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -3786,8 +3786,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.172,
-          51.136
+          -0.17679,
+          51.12907
         ]
       },
       "properties": {
@@ -3797,7 +3797,7 @@
         "status": "operating",
         "local_authority": "Crawley Borough Council",
         "corridor": "south",
-        "summary": "Digital Realty Crawley Unit 2 (LGW16) on Connect Way, Manor Royal. Colo-X states 12 MW IT load across four halls; some directories cite about 16 MW total power. Part of the Gatwick Diamond / south London metro campus with 72 MVA campus power availability. Held at proposed until a lasting portal URL is linked.",
+        "summary": "Digital Realty Crawley Unit 2 (LGW16) on Connect Way, Manor Royal. Colo-X states 12 MW IT load across four halls; some directories cite about 16 MW total power. Part of the Gatwick Diamond / south London metro campus with 72 MVA campus power availability. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -3857,8 +3857,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.596,
-          51.5235
+          -0.63607,
+          51.52347
         ]
       },
       "properties": {
@@ -3868,7 +3868,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Equinix LD4 IBX on Buckingham Avenue, Slough Trading Estate — the original core of the Slough interconnection campus. Trade directories commonly assign about 16 MW IT to LD4 within the wider LD4–LD10 cluster. Held at proposed until a lasting Slough Public Access URL is linked.",
+        "summary": "Equinix LD4 IBX on Buckingham Avenue, Slough Trading Estate — the original core of the Slough interconnection campus. Trade directories commonly assign about 16 MW IT to LD4 within the wider LD4–LD10 cluster. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -3923,8 +3923,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.593,
-          51.5245
+          -0.62923,
+          51.522
         ]
       },
       "properties": {
@@ -3934,7 +3934,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Equinix LD5 IBX on Buckingham Avenue, Slough Trading Estate. Trade directories commonly assign about 25 MW IT to LD5. Held at proposed until a lasting Slough Public Access URL is linked.",
+        "summary": "Equinix LD5 IBX on Buckingham Avenue, Slough Trading Estate. Trade directories commonly assign about 25 MW IT to LD5. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -3989,8 +3989,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.5975,
-          51.522
+          -0.63521,
+          51.52458
         ]
       },
       "properties": {
@@ -4000,7 +4000,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Equinix LD6 IBX on the Slough Trading Estate opposite LD4. Trade directories commonly assign about 16 MW IT to LD6. Held at proposed until a lasting Slough Public Access URL is linked.",
+        "summary": "Equinix LD6 IBX on the Slough Trading Estate opposite LD4. Trade directories commonly assign about 16 MW IT to LD6. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4066,7 +4066,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Global Technical Realty GB One campus in Slough. Operator states a 40.5 MW campus across three independent buildings (13.5 MW IT load each). Held at proposed until a lasting portal URL is linked.",
+        "summary": "Global Technical Realty GB One campus in Slough. Operator states a 40.5 MW campus across three independent buildings (13.5 MW IT load each). Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4131,7 +4131,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "inner",
-        "summary": "Digital Realty LON1 at 11 Hanbury Street, Spitalfields — part of the London City Campus with Oliver's Yard. Operator publishes building size (about 5,400 m²) but not a single public megawatt total on the LON1 page. Location pin near Brick Lane / Truman. Held at proposed.",
+        "summary": "Digital Realty LON1 at 11 Hanbury Street, Spitalfields — part of the London City Campus with Oliver's Yard. Operator publishes building size (about 5,400 m²) but not a single public megawatt total on the LON1 page. Location pin near Brick Lane / Truman. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4185,8 +4185,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.46,
-          51.505
+          -0.44633,
+          51.50278
         ]
       },
       "properties": {
@@ -4196,7 +4196,7 @@
         "status": "operating",
         "local_authority": "London Borough of Hillingdon",
         "corridor": "west",
-        "summary": "CyrusOne LON2 at Prologis Park Heathrow, Stockley Road, West Drayton. Operator states 13.92 MW of IT load and 7,484 m² of technical space. Held at proposed until a lasting portal URL is linked.",
+        "summary": "CyrusOne LON2 at Prologis Park Heathrow, Stockley Road, West Drayton. Operator states 13.92 MW of IT load and 7,484 m² of technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4250,8 +4250,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.588,
-          51.522
+          -0.62694,
+          51.52594
         ]
       },
       "properties": {
@@ -4261,7 +4261,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "CyrusOne LON3 at Stirling Road, Slough. Operator states 9 MW of IT capacity and 3,600 m² of technical space. Held at proposed until a lasting portal URL is linked.",
+        "summary": "CyrusOne LON3 at Stirling Road, Slough. Operator states 9 MW of IT capacity and 3,600 m² of technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4315,8 +4315,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.612,
-          51.512
+          -0.62895,
+          51.51655
         ]
       },
       "properties": {
@@ -4326,7 +4326,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "CyrusOne LON4 at 225B Bath Road, Slough. Operator states 18 MW IT capacity and 9,526 m² of technical space. Held at proposed until a lasting portal URL is linked.",
+        "summary": "CyrusOne LON4 at 225B Bath Road, Slough. Operator states 18 MW IT capacity and 9,526 m² of technical space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4380,8 +4380,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.611,
-          51.511
+          -0.62707,
+          51.51593
         ]
       },
       "properties": {
@@ -4391,7 +4391,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "CyrusOne LON5 at 225C Bath Road, Slough. Operator states 18 MW IT capacity and 6,452 m² of technical space, with active/active dual redundant supplies of 27 MVA. Held at proposed until a lasting portal URL is linked.",
+        "summary": "CyrusOne LON5 at 225C Bath Road, Slough. Operator states 18 MW IT capacity and 6,452 m² of technical space, with active/active dual redundant supplies of 27 MVA. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": {
             "value": 27,
@@ -4463,7 +4463,7 @@
         "status": "operating",
         "local_authority": "London Borough of Hillingdon",
         "corridor": "west",
-        "summary": "VIRTUS Stockley Park campus building LONDON14 (bespoke design on the operator campus page; about 8,400 m² NTM). Directory listings commonly cite about 22 MW for LONDON14 at Horton Road / West Drayton. Held at proposed until a lasting portal URL and operator-primary MW line are linked.",
+        "summary": "VIRTUS Stockley Park campus building LONDON14 (bespoke design on the operator campus page; about 8,400 m² NTM). Directory listings commonly cite about 22 MW for LONDON14 at Horton Road / West Drayton. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4517,8 +4517,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.601,
-          51.525
+          -0.63453,
+          51.52554
         ]
       },
       "properties": {
@@ -4528,7 +4528,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Equinix LD7 IBX on Banbury Avenue, Slough Trading Estate. Operator publishes building area (about 6,694 m²) but not a single public megawatt total on the IBX page. Location pin; held at proposed until MW or planning URL is linked.",
+        "summary": "Equinix LD7 IBX on Banbury Avenue, Slough Trading Estate. Operator publishes building area (about 6,694 m²) but not a single public megawatt total on the IBX page. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -4569,8 +4569,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.585,
-          51.52
+          -0.62467,
+          51.5223
         ]
       },
       "properties": {
@@ -4580,7 +4580,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Equinix LD10 at 13 Liverpool Road, Slough (former IO UK). Directory sources put about 9–12 MW at the hall; much of the site capacity was later oriented to the LD13x hyperscale joint venture. Held at proposed until a lasting portal URL is linked.",
+        "summary": "Equinix LD10 at 13 Liverpool Road, Slough (former IO UK). Directory sources put about 9–12 MW at the hall; much of the site capacity was later oriented to the LD13x hyperscale joint venture. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4635,8 +4635,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.584,
-          51.521
+          -0.628,
+          51.5228
         ]
       },
       "properties": {
@@ -4646,7 +4646,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "Equinix LD13x hyperscale portion of the Liverpool Road campus (xScale joint venture with GIC), carved from unused LD10 capacity. Directory listings cite about 9 MW. Held at proposed until a lasting portal URL is linked.",
+        "summary": "Equinix LD13x hyperscale portion of the Liverpool Road campus (xScale joint venture with GIC), carved from unused LD10 capacity. Directory listings cite about 9 MW. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4701,8 +4701,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.0035,
-          51.5118
+          -0.00127,
+          51.51153
         ]
       },
       "properties": {
@@ -4712,7 +4712,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Telehouse East on the Docklands campus (Coronation Road cluster), one of the original LINX-heavy halls alongside North and West. Campus-level megawatts are published for other halls; this pin is a distinct building location until a hall-specific lasting MW figure is linked. Held at proposed.",
+        "summary": "Telehouse East on the Docklands campus (Coronation Road cluster), one of the original LINX-heavy halls alongside North and West. Campus-level megawatts are published for other halls; this pin is a distinct building location until a hall-specific lasting MW figure is linked. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -4753,8 +4753,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.572,
-          51.516
+          -0.6151,
+          51.5166
         ]
       },
       "properties": {
@@ -4764,7 +4764,7 @@
         "status": "operating",
         "local_authority": "Slough Borough Council",
         "corridor": "west",
-        "summary": "NTT Slough 3 at 665 Ajax Avenue, Slough Trading Estate. Operator states a maximum of 2.7 MW of critical IT load and about 1,500+ m² of server space. Held at proposed until a lasting portal URL is linked.",
+        "summary": "NTT Slough 3 at 665 Ajax Avenue, Slough Trading Estate. Operator states a maximum of 2.7 MW of critical IT load and about 1,500+ m² of server space. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4818,8 +4818,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.124,
-          51.776
+          0.12929,
+          51.76917
         ]
       },
       "properties": {
@@ -4829,7 +4829,7 @@
         "status": "operating",
         "local_authority": "Harlow District Council",
         "corridor": "north",
-        "summary": "Kao Data KLON-01 at the Harlow campus. Operator states 8.8 MW operational for KLON-01. Held at proposed until a lasting Harlow portal URL is linked.",
+        "summary": "Kao Data KLON-01 at the Harlow campus. Operator states 8.8 MW operational for KLON-01. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4884,8 +4884,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.127,
-          51.778
+          0.12938,
+          51.7701
         ]
       },
       "properties": {
@@ -4895,7 +4895,7 @@
         "status": "operating",
         "local_authority": "Harlow District Council",
         "corridor": "north",
-        "summary": "Kao Data KLON-02 at the Harlow campus. Operator states 8.8 MW operational for KLON-02. Held at proposed until a lasting Harlow portal URL is linked.",
+        "summary": "Kao Data KLON-02 at the Harlow campus. Operator states 8.8 MW operational for KLON-02. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
@@ -4950,8 +4950,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          0.128,
-          51.775
+          0.13074,
+          51.77087
         ]
       },
       "properties": {
@@ -5082,8 +5082,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.56,
-          51.32
+          -0.58805,
+          51.32384
         ]
       },
       "properties": {
@@ -5093,7 +5093,7 @@
         "status": "operating",
         "local_authority": "Woking Borough Council",
         "corridor": "south",
-        "summary": "Digital Realty LGW14 in Woking on the south-west M25 fringe (Gatwick / Surrey colo set). Hall-specific megawatts not yet itemised here from a single operator disclosure. Location pin; held at proposed.",
+        "summary": "Digital Realty LGW14 in Woking on the south-west M25 fringe (Gatwick / Surrey colo set). Hall-specific megawatts not yet itemised here from a single operator disclosure. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -5134,8 +5134,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.033,
-          51.686
+          -0.04886,
+          51.69619
         ]
       },
       "properties": {
@@ -5149,7 +5149,7 @@
           "id": null,
           "url": null
         },
-        "summary": "Google's first owned-and-operated UK data centre, on the former Maxwell's Farm off the A10 Great Cambridge Road, about one mile from M25 J25. Opened September 2025 on a 33-acre site as part of a two-year £5bn UK investment (about $1bn for this facility). Air-cooled, limiting water to domestic use, with off-site heat-recovery provisions. Operational; held at proposed until a lasting Broxbourne Public Access URL is linked. Google does not publicly disclose a megawatt figure.",
+        "summary": "Google's first owned-and-operated UK data centre, on the former Maxwell's Farm off the A10 Great Cambridge Road, about one mile from M25 J25. Opened September 2025 on a 33-acre site as part of a two-year £5bn UK investment (about $1bn for this facility). Air-cooled, limiting water to domestic use, with off-site heat-recovery provisions. Google does not publicly disclose a megawatt figure. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -5608,8 +5608,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.001,
-          51.5075
+          -0.0055,
+          51.51066
         ]
       },
       "properties": {

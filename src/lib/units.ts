@@ -188,6 +188,9 @@ export function homesEquivalence(power: PowerBlock): Equivalence<Range> | null {
 }
 
 export interface LocalGeoMatch {
+  /** Ready-to-render phrase: a fraction of the smallest authority for sub-borough
+   *  sites, a collapsed single value when both bounds match, else a "X to Y" range. */
+  headline: string;
   lowLabel: string;
   highLabel: string;
   lowGwh: number;
@@ -208,9 +211,29 @@ export function localGeographyEquivalence(
   if (!np) return null;
   const gwh = assumedAnnualGwh(np.mw);
   const sorted = [...authorities].sort((a, b) => a.total_gwh - b.total_gwh);
+  const smallest = sorted[0];
   const low = matchAuthorities(gwh.low, sorted);
   const high = matchAuthorities(gwh.high, sorted);
+  // Most sites use far less electricity than even the smallest local authority.
+  // The cumulative match then returns that one authority for both bounds, which reads
+  // as "equals a whole borough" — so state it honestly as a fraction of that borough.
+  let headline: string;
+  if (smallest && gwh.high < smallest.total_gwh) {
+    const loPct = Math.round((gwh.low / smallest.total_gwh) * 100);
+    const hiPct = Math.round((gwh.high / smallest.total_gwh) * 100);
+    const range =
+      hiPct < 1 ? "under 1%"
+      : loPct < 1 ? `up to ${hiPct}%`
+      : loPct === hiPct ? `about ${hiPct}%`
+      : `about ${loPct}-${hiPct}%`;
+    headline = `${range} of ${smallest.name}'s annual electricity (the lowest-consumption local authority we compare against)`;
+  } else if (low.label === high.label) {
+    headline = `about ${low.label}`;
+  } else {
+    headline = `about ${low.label} to ${high.label}`;
+  }
   const match: LocalGeoMatch = {
+    headline,
     lowLabel: low.label,
     highLabel: high.label,
     lowGwh: gwh.low,
@@ -220,7 +243,7 @@ export function localGeographyEquivalence(
   };
   return {
     value: match,
-    label: `At ${pct(LOAD_FACTOR.low)}-${pct(LOAD_FACTOR.high)} load factor: about ${match.lowLabel} to ${match.highLabel} (annual electricity)`,
+    label: `At ${pct(LOAD_FACTOR.low)}-${pct(LOAD_FACTOR.high)} load factor: ${headline} (annual electricity)`,
     meta: {
       powerKind: np.kind,
       powerBasis: np.basis,

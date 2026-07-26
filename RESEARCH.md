@@ -57,6 +57,12 @@ Planning-milestone statuses (`in_planning`, `approved`) need a `planning_ref.url
 
 - Google Waltham Cross (operational 2025), Equinix South Mimms (~250 MW), Digital Reef East Havering "London Data Freeport" (~600 MW), Colt DCS Hayes (~160 MW campus), Microsoft Park Royal (~£1bn, distinct from Pure/SEGRO Premier Park). All held at `proposed` pending lasting portal URLs; power `null` where the operator discloses none (Google, Microsoft).
 
+## Coordinates verified 2026-07-26 (OSM / Nominatim geocoding pass)
+
+Pin coordinates were re-derived from OpenStreetMap building footprints (Overpass) and Nominatim address geocoding, replacing hand-seeded placeholders that the exact-coordinate uniqueness rule had nudged up to ~3 km off their real position. Corrected clusters: Telehouse and Global Switch (Blackwall), the Slough Trading Estate cluster (Equinix LD4–LD10, VIRTUS London 3/4/9/10/11, CyrusOne LON1/LON3, Iron Mountain LON-1, NTT Slough, Digital Realty LHR26), Stockley VIRTUS (London 5–8), Kao Harlow (KLON-01/02/03), and the Digital Realty LGW/LHR halls; plus Google Waltham Cross, Vantage LHR2, Ada Docklands, Serverfarm LON1.
+
+Still campus-approximate (placed adjacent to the verified operator campus; the individual building is not yet confirmed against a footprint): VIRTUS London 12 and London 19 (Slough), Iron Mountain LON-2 and LON-3, NTT Slough 3, and Equinix LD13x. Confirm these against operator site plans.
+
 ## Not yet on the map
 
 - Stack Infrastructure and EdgeConneX London campuses; Colt Welwyn Garden City (only Colt Hayes is mapped).
