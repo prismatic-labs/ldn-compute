@@ -20,4 +20,34 @@ const sites = getItemizedSites(); // exclude campus overlays
   <div class="mt-8">
     <NearbyFinder client:load sites={sites} baseUrl={base} />
   </div>
+
+  <section id="have-your-say" class="mt-14 border-t border-[var(--line)] pt-8 max-w-2xl">
+    <h2 class="font-display text-xl m-0 tracking-tight">Have your say</h2>
+    <p class="text-sm text-[var(--muted)] mt-2">
+      Found a scheme near you? Here is how to act on it.
+    </p>
+    <ol class="mt-4 space-y-3 text-sm list-none p-0 m-0">
+      <li>
+        <strong>Open its dossier.</strong> Use the finder above or the
+        <a href={`${base}/`}>map</a>, then click through to the site’s page for its status, figures, and sources.
+      </li>
+      <li>
+        <strong>Check the status.</strong> A site marked <em>in planning</em> or on appeal usually has a live
+        window to comment; one that is already operating or consented may not.
+      </li>
+      <li>
+        <strong>Comment on the application.</strong> Each dossier links to the council’s planning portal where
+        one exists. Submit your comment there before the deadline. Councils weigh material planning
+        considerations (traffic, noise, water, environment, design), so specific points land better than
+        general objection.
+      </li>
+      <li>
+        <strong>See the bigger picture.</strong> The <a href={`${base}/context`}>Context</a> page sets out the
+        power, water, land, and noise pressures; contested sites also link their local campaign groups.
+      </li>
+    </ol>
+    <p class="text-xs text-[var(--muted)] mt-4">
+      Spotted a wrong figure or a missing site instead? That goes to <a href={`${base}/contribute`}>Contribute</a>.
+    </p>
+  </section>
 </BaseLayout>
