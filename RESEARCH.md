@@ -6,7 +6,7 @@ Public mirror: `/research` on the site.
 
 ## Hard rule
 
-No status above `proposed` without a `planning_ref.url` that opens the live application or SoS decision page (not a search form). Status `decommissioned` is for halls that operated and later closed; it also requires a resolving source URL.
+Planning-milestone statuses (`in_planning`, `approved`) need a `planning_ref.url` that opens the live application or SoS decision page (not a search form). Factual states are evidenced instead by a resolving source URL: `operating` for halls in service, `decommissioned` for halls that operated and later closed.
 
 ## Site checklist
 

@@ -59,12 +59,14 @@ for (const feature of data.features ?? []) {
   }
 
   if (ABOVE.has(p.status)) {
-    // A closed site is evidenced by any resolving source (operator/news page),
-    // not a live planning application — the rest still need a planning URL.
-    if (p.status === "decommissioned") {
+    // "operating" and "decommissioned" are facts about the building, evidenced by
+    // any resolving source (operator/news page); the planning milestones
+    // (in_planning / approved / …) still need a live planning application URL.
+    const factual = p.status === "operating" || p.status === "decommissioned";
+    if (factual) {
       const hasSourceUrl = (p.sources ?? []).some((s: { url?: string }) => s.url);
       if (!p.planning_ref?.url && !hasSourceUrl) {
-        errors.push(`${p.id}: status "decommissioned" requires a resolving source URL`);
+        errors.push(`${p.id}: status "${p.status}" requires a resolving source URL`);
       }
     } else if (!p.planning_ref?.url) {
       errors.push(`${p.id}: status "${p.status}" requires planning_ref.url`);

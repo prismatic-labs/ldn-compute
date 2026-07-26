@@ -101,7 +101,9 @@ const correctionMailto = correctionsMailto();
         substation plus backup generators) rather than <strong>IT load</strong> — figures that can differ several-fold.
         Where they conflict with an operator IT-load figure, we use the IT load, so sites stay comparable.</li>
       <li>Campaign sources are labelled as campaign sources.</li>
-      <li>No status above <code>proposed</code> without a resolving link to the live planning application.</li>
+      <li>No planning-milestone status (<code>in planning</code>, <code>approved</code>) without a resolving link to
+        the live application. Factual states (<code>operating</code>, <code>decommissioned</code>) are evidenced
+        instead by a resolving operator or third-party source.</li>
       <li>
         When we add a source, we should also save an archived copy.
         Gaps are listed on the <a href={`${base}/research`}>Research</a> page and in the

@@ -5,8 +5,11 @@ import { getItemizedSites, formatBestPower, siteBestPower } from "../lib/sites";
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 const ABOVE_PROPOSED = new Set([
-  "in_planning", "approved", "under_construction", "operating", "refused", "withdrawn",
+  "in_planning", "approved", "under_construction", "refused", "withdrawn",
 ]);
+// Factual building states are evidenced by a source, not a planning application.
+const FACTUAL = new Set(["operating", "decommissioned"]);
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 function portalLabel(url: string): string {
   try {
@@ -28,9 +31,14 @@ const checklist = getItemizedSites()
     const best = siteBestPower(p);
     const power = formatBestPower(p);
     const statusLabel = p.status.replaceAll("_", " ");
+    const factual = FACTUAL.has(p.status);
+    const hasSourceUrl = (p.sources ?? []).some((s) => Boolean(s.url));
+    const sourced = Boolean(url) || (factual && hasSourceUrl);
     let notes: string;
-    if (url) {
-      notes = `${statusLabel[0].toUpperCase()}${statusLabel.slice(1)}; application linked.`;
+    if (factual) {
+      notes = `${cap(statusLabel)}; evidenced by an operator or third-party source.`;
+    } else if (url) {
+      notes = `${cap(statusLabel)}; application linked.`;
     } else if (ABOVE_PROPOSED.has(p.status)) {
       notes = `Status "${statusLabel}" still needs a lasting portal URL.`;
     } else {
@@ -43,9 +51,10 @@ const checklist = getItemizedSites()
       ref,
       url,
       urlLabel: url ? portalLabel(url) : null,
-      urlNote: url ? null : ref !== "—" ? "Reference only; no lasting URL" : "No lasting portal URL yet",
+      urlNote: url ? null : factual ? "—" : ref !== "—" ? "Reference only; no lasting URL" : "No lasting portal URL yet",
       power,
       mw: best ? best.quantity.value : null,
+      sourced,
       notes,
     };
   })
@@ -130,8 +139,9 @@ Yours faithfully,
   <section class="mt-10" id="checklist">
     <h2 class="font-display text-xl m-0">Site checklist</h2>
     <p class="text-sm text-[var(--muted)] mt-1">
-      <span style="color:#0a7f5f">✓</span> the site has a resolving planning application or decision URL;
-      <span class="text-[var(--amber)]">○</span> it still needs one. Largest schemes first.
+      <span style="color:#0a7f5f">✓</span> the site's evidence resolves (a planning application or decision URL, or an
+      operator/third-party record for operating and closed sites); <span class="text-[var(--amber)]">○</span> it still
+      needs a resolving source. Largest schemes first.
     </p>
     <div class="mt-4 overflow-x-auto">
       <table class="w-full text-sm text-left border-collapse min-w-[40rem]">
@@ -150,10 +160,10 @@ Yours faithfully,
             checklist.map((row) => (
               <tr class="border-b border-[var(--line)] align-top">
                 <td class="py-2.5 pr-2 whitespace-nowrap">
-                  {row.url ? (
-                    <span title="Resolving planning URL linked" class="font-medium" style="color:#0a7f5f">✓<span class="sr-only"> sourced</span></span>
+                  {row.sourced ? (
+                    <span title="Evidence resolves (planning URL, or an operator/third-party record for operating and closed sites)" class="font-medium" style="color:#0a7f5f">✓<span class="sr-only"> sourced</span></span>
                   ) : (
-                    <span title="No resolving planning URL yet" class="text-[var(--amber)]">○<span class="sr-only"> outstanding</span></span>
+                    <span title="Still needs a resolving source" class="text-[var(--amber)]">○<span class="sr-only"> outstanding</span></span>
                   )}
                 </td>
                 <td class="py-2.5 pr-3"><a href={`${base}/site/${row.id}`}>{row.site}</a></td>
