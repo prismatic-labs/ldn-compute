@@ -227,10 +227,16 @@ export function localGeographyEquivalence(
       : loPct === hiPct ? `about ${hiPct}%`
       : `about ${loPct}-${hiPct}%`;
     headline = `${range} of ${smallest.name}'s annual electricity (the lowest-consumption local authority we compare against)`;
-  } else if (low.label === high.label) {
-    headline = `about ${low.label}`;
+  } else if (smallest) {
+    // At or above the smallest authority: a multiple of the same yardstick, so the
+    // range reads cleanly instead of concatenating two cumulative borough lists.
+    const fmt = (x: number) => (x >= 10 ? String(Math.round(x)) : x.toFixed(1));
+    const loX = fmt(gwh.low / smallest.total_gwh);
+    const hiX = fmt(gwh.high / smallest.total_gwh);
+    const mult = loX === hiX ? `about ${hiX}×` : `about ${loX}-${hiX}×`;
+    headline = `${mult} ${smallest.name}'s annual electricity (the lowest-consumption local authority we compare against)`;
   } else {
-    headline = `about ${low.label} to ${high.label}`;
+    headline = low.label === high.label ? `about ${low.label}` : `about ${low.label} to ${high.label}`;
   }
   const match: LocalGeoMatch = {
     headline,
