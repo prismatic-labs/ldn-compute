@@ -463,14 +463,14 @@
         "id": "truman-grey-eagle",
         "name": "Truman Brewery data centre (Grey Eagle Street)",
         "operator": "Truman Estates / Grow Places (reported)",
-        "status": "proposed",
+        "status": "approved",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "inner",
         "planning_ref": {
           "id": "PA/24/01450",
-          "url": null
+          "url": "https://www.gov.uk/government/publications/recovered-appeal-sites-on-and-around-the-site-of-truman-brewery-tower-hamlets-london-refs-3367041-3367172-3367179-and-3367369-29-july-2026"
         },
-        "summary": "About 5,200 m² Use Class B8 data centre at Grey Eagle Street / Calvin Street within the Truman Brewery complex, Brick Lane. Tower Hamlets Strategic Development Committee (July 2025) would have refused; appeal and Secretary of State call-in reported. Press cites about 4–5.2 MW. Listed as proposed until a lasting Tower Hamlets Public Access URL is linked.",
+        "summary": "About 5,200 m² Use Class B8 data centre at Grey Eagle Street / Calvin Street within the Truman Brewery complex, Brick Lane. Tower Hamlets refused / would have refused at committee; the appeals were recovered for the Secretary of State, who allowed them on 29 July 2026 (Minister Matthew Pennycook on behalf of the SoS), granting planning permission. Press cites about 4–5.2 MW peak. Local opposition gathered 3,600+ signatures.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -510,6 +510,11 @@
             "date": "2025-10",
             "event": "Secretary of State call-in of Truman Brewery appeals reported",
             "source": "https://www.timeout.com/london/news/controversial-development-plans-have-been-revealed-for-brick-lanes-legendary-truman-brewery-011726"
+          },
+          {
+            "date": "2026-07-29",
+            "event": "Secretary of State allows recovered appeals (Truman Brewery sites, incl. Grey Eagle Street B8 data centre PA/24/01450)",
+            "source": "https://www.gov.uk/government/publications/recovered-appeal-sites-on-and-around-the-site-of-truman-brewery-tower-hamlets-london-refs-3367041-3367172-3367179-and-3367369-29-july-2026"
           }
         ],
         "controversies": [
@@ -529,10 +534,20 @@
             "label": "East End Review: Save Brick Lane",
             "url": "https://www.eastendreview.co.uk/truman-brewery-data-centre-save-brick-lane/",
             "archived": "https://web.archive.org/web/20260419055709/https://www.eastendreview.co.uk/truman-brewery-data-centre-save-brick-lane/"
+          },
+          {
+            "label": "GOV.UK: recovered appeal decision (Truman Brewery, 29 July 2026)",
+            "url": "https://www.gov.uk/government/publications/recovered-appeal-sites-on-and-around-the-site-of-truman-brewery-tower-hamlets-london-refs-3367041-3367172-3367179-and-3367369-29-july-2026",
+            "archived": null
+          },
+          {
+            "label": "DCD: UK government approves 5.2 MW Truman Brewery data centre",
+            "url": "https://www.datacenterdynamics.com/en/news/uk-government-approves-controversial-52mw-truman-brewery-data-center-proposal/",
+            "archived": null
           }
         ],
-        "last_reviewed": "2026-07-20",
-        "operational_reality": "pipeline"
+        "last_reviewed": "2026-08-07",
+        "operational_reality": "consented"
       }
     },
     {
@@ -5672,6 +5687,363 @@
           }
         ],
         "last_reviewed": "2026-07-25"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.3775,
+          51.5045
+        ]
+      },
+      "properties": {
+        "id": "cyrusone-lon7-southall",
+        "name": "CyrusOne LON7 / Honey Monster site (Southall)",
+        "operator": "CyrusOne (developer Apt, reported)",
+        "status": "proposed",
+        "local_authority": "London Borough of Ealing",
+        "corridor": "west",
+        "planning_ref": {
+          "id": "253874FUL",
+          "url": null
+        },
+        "summary": "Hyperscale data centre on the vacant former Honey Monster / Quaker Oats food factory, Bridge Road, Southall UB2 4AE (about 6.8 ha; factory demolished 2022). Scheme is a four-storey data centre of about 52,000 m² with a workspace building, training centre and public realm. Ealing planning committee resolved to grant (ref 253874FUL) on 15 July 2026, subject to a s106 delivering about £17.8m in contributions. Held at proposed until a lasting Ealing Public Access URL is linked; operator has not disclosed a clean MW figure.",
+        "power": {
+          "grid_connection_mw": null,
+          "it_load_mw": null,
+          "phase_1_mw": null,
+          "max_proposed_mw": null
+        },
+        "water_litres_pa": null,
+        "land": {
+          "acres": {
+            "value": 16.8,
+            "unit": "acres",
+            "basis": "planning_doc",
+            "source": "Ealing committee report 253874FUL: about 6.8 hectares (~16.8 acres)",
+            "page": "Committee report",
+            "archived": null
+          },
+          "previous_use": "Honey Monster / Quaker Oats food factory (closed 2016, demolished 2022)",
+          "land_type": "brownfield",
+          "alc_grades": null
+        },
+        "grid_connection": null,
+        "cooling": null,
+        "claims_on_record": [],
+        "operator_response": null,
+        "timeline": [
+          {
+            "date": "2026-07-15",
+            "event": "Ealing planning committee resolves to grant (253874FUL), subject to s106 (~£17.8m)",
+            "source": "https://ealing.moderngov.co.uk/documents/s26379/01%20-%20Former%20Honey%20Monster%20Food%20Factory%20Southall%20UB2%204AE%20-%20253874FUL%20-%20CHNEE.pdf"
+          }
+        ],
+        "controversies": [
+          {
+            "summary": "Objectors and Foxglove raised London grid capacity and power-demand concerns for a hyperscale campus of this scale",
+            "source": "https://www.foxglove.org.uk/2025/11/07/london-council-approves-data-centre-using-power-for-half-a-million-homes/",
+            "label": "campaign"
+          }
+        ],
+        "sources": [
+          {
+            "label": "Ealing committee report (253874FUL, 15 July 2026)",
+            "url": "https://ealing.moderngov.co.uk/documents/s26379/01%20-%20Former%20Honey%20Monster%20Food%20Factory%20Southall%20UB2%204AE%20-%20253874FUL%20-%20CHNEE.pdf",
+            "archived": null
+          },
+          {
+            "label": "DCD: Honey Monster factory site to host CyrusOne data center",
+            "url": "https://www.datacenterdynamics.com/en/news/londons-honey-monster-factory-site-set-to-host-cyrusone-data-center/",
+            "archived": null
+          },
+          {
+            "label": "Architects' Journal: Apt's hyperscale Southall data centre approved",
+            "url": "https://www.architectsjournal.co.uk/news/apts-hyperscale-southall-data-centre-approved",
+            "archived": null
+          }
+        ],
+        "last_reviewed": "2026-08-07",
+        "operational_reality": "consented"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5835,
+          51.5205
+        ]
+      },
+      "properties": {
+        "id": "equinix-wexham-akzonobel",
+        "name": "Equinix Wexham Road (former AkzoNobel paint factory)",
+        "operator": "Equinix",
+        "status": "proposed",
+        "local_authority": "Slough Borough Council",
+        "corridor": "west",
+        "planning_ref": {
+          "id": "P/00072/152",
+          "url": null
+        },
+        "summary": "Outline consent for up to about 90,614 m² (GEA) of data-centre development across three buildings on the former AkzoNobel Decorative Paints (Dulux) factory off Wexham Road / Technology Boulevard, Slough SL2 5DB (about 11.5 acres). Slough Borough Council granted outline permission in November 2025 (ref P/00072/152); the s106 was completed on 30 July 2026 (about £2.5m public realm, £568k transport, plus a waste-heat reuse pledge). Slough Council sold the site to Equinix for £143.75m in 2022. Distinct from the Yondr Slough campus. Held at proposed until a lasting Slough Public Access URL is linked; operator has not disclosed a MW figure.",
+        "power": {
+          "grid_connection_mw": null,
+          "it_load_mw": null,
+          "phase_1_mw": null,
+          "max_proposed_mw": null
+        },
+        "water_litres_pa": null,
+        "land": {
+          "acres": {
+            "value": 11.5,
+            "unit": "acres",
+            "basis": "stated",
+            "source": "Estates Gazette / Slough Observer: about 11.5-acre former AkzoNobel site",
+            "page": null,
+            "archived": null
+          },
+          "previous_use": "AkzoNobel / ICI Dulux decorative paints factory",
+          "land_type": "brownfield",
+          "alc_grades": null
+        },
+        "grid_connection": null,
+        "cooling": null,
+        "claims_on_record": [],
+        "operator_response": null,
+        "timeline": [
+          {
+            "date": "2022",
+            "event": "Slough Borough Council sells former AkzoNobel site to Equinix for £143.75m",
+            "source": "https://www.sloughobserver.co.uk/news/24161875.plans-revealed-100million-site-sold-slough-council/"
+          },
+          {
+            "date": "2025-11",
+            "event": "Slough Borough Council grants outline permission (P/00072/152)",
+            "source": "https://www.datacenterdynamics.com/en/news/equinix-gets-green-light-for-data-center-campus-at-former-paint-factory-in-slough-uk/"
+          },
+          {
+            "date": "2026-07-30",
+            "event": "Section 106 agreement completed",
+            "source": "https://www.sloughobserver.co.uk/news/25820556.bucks-council-green-lights-major-equinix-data-centre/"
+          }
+        ],
+        "controversies": [],
+        "sources": [
+          {
+            "label": "DCD: Equinix green light for former paint factory campus, Slough",
+            "url": "https://www.datacenterdynamics.com/en/news/equinix-gets-green-light-for-data-center-campus-at-former-paint-factory-in-slough-uk/",
+            "archived": null
+          },
+          {
+            "label": "Slough Observer: Bucks council green-lights major Equinix data centre",
+            "url": "https://www.sloughobserver.co.uk/news/25820556.bucks-council-green-lights-major-equinix-data-centre/",
+            "archived": null
+          },
+          {
+            "label": "Slough moderngov: planning background (AkzoNobel, Wexham Road)",
+            "url": "https://slough.moderngov.co.uk/documents/s73324/Appendix%202%20-%20Planning%20Background.pdf",
+            "archived": null
+          }
+        ],
+        "last_reviewed": "2026-08-07",
+        "operational_reality": "consented"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2245,
+          51.5755
+        ]
+      },
+      "properties": {
+        "id": "pure-brent-cross-lon01",
+        "name": "Pure DC Brent Cross (LON01)",
+        "operator": "Pure Data Centres",
+        "status": "operating",
+        "local_authority": "London Borough of Barnet",
+        "corridor": "north",
+        "planning_ref": {
+          "id": null,
+          "url": null
+        },
+        "summary": "About 90 MW data-centre campus at Brent Cross, Barnet, representing more than £1bn of investment. Building 1 (LON01A, about 20 MW) has been operational since 2024 and is fully leased; Building 2 (LON01B2, about 70 MW) is under construction (Glencar appointed for the final phase in 2026; completion reported for around Q2 2029). Features include a large living wall and HVO backup generation. Distinct from Pure DC / SEGRO Premier Park (Park Royal, LON02).",
+        "power": {
+          "grid_connection_mw": null,
+          "it_load_mw": null,
+          "phase_1_mw": {
+            "value": 20,
+            "unit": "MW",
+            "basis": "stated",
+            "source": "Pure DC / Construction News: Building 1 (LON01A) ~20 MW, operational 2024 and fully leased",
+            "page": null,
+            "archived": null
+          },
+          "max_proposed_mw": {
+            "value": 90,
+            "unit": "MW",
+            "basis": "stated",
+            "source": "Pure DC / GlobeNewswire: ~90 MW total Brent Cross campus (LON01)",
+            "page": null,
+            "archived": null
+          }
+        },
+        "water_litres_pa": null,
+        "land": {
+          "acres": null,
+          "previous_use": "Former industrial land, Brent Cross",
+          "land_type": "brownfield",
+          "alc_grades": null
+        },
+        "grid_connection": null,
+        "cooling": null,
+        "claims_on_record": [],
+        "operator_response": null,
+        "timeline": [
+          {
+            "date": "2024",
+            "event": "Building 1 (LON01A, ~20 MW) operational and fully leased",
+            "source": "https://www.constructionnews.co.uk/contracts/glencar-lands-final-phase-of-pure-dcs-1bn-brent-cross-data-centre-campus-28-05-2026/"
+          },
+          {
+            "date": "2026-06",
+            "event": "Glencar appointed for final phase (Building 2, ~70 MW) of the 90 MW campus",
+            "source": "https://www.globenewswire.com/news-release/2026/06/02/3305684/0/en/pure-dc-appoints-glencar-for-next-phase-of-its-90mw-brent-cross-campus-build-out.html"
+          }
+        ],
+        "controversies": [],
+        "sources": [
+          {
+            "label": "Pure DC: London Brent Cross (LON01)",
+            "url": "https://puredc.com/london-brent-cross",
+            "archived": null
+          },
+          {
+            "label": "GlobeNewswire: Pure DC appoints Glencar for 90 MW Brent Cross build-out",
+            "url": "https://www.globenewswire.com/news-release/2026/06/02/3305684/0/en/pure-dc-appoints-glencar-for-next-phase-of-its-90mw-brent-cross-campus-build-out.html",
+            "archived": null
+          },
+          {
+            "label": "Construction News: Glencar lands final phase of £1bn Brent Cross campus",
+            "url": "https://www.constructionnews.co.uk/contracts/glencar-lands-final-phase-of-pure-dcs-1bn-brent-cross-data-centre-campus-28-05-2026/",
+            "archived": null
+          }
+        ],
+        "last_reviewed": "2026-08-07",
+        "operational_reality": "operating"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.5175,
+          51.5185
+        ]
+      },
+      "properties": {
+        "id": "greystoke-woodlands-park-iver",
+        "name": "Greystoke Woodlands Park data centre (Iver)",
+        "operator": "Greystoke Land / Altrad UK",
+        "status": "approved",
+        "local_authority": "Buckinghamshire Council",
+        "corridor": "west",
+        "planning_ref": {
+          "id": "3347353",
+          "url": "https://www.slough.gov.uk/downloads/file/5111/cd-7-01-appeal-decision-relating-to-woodlands-park-landfill-site-dated-9-july-2025-reference-3347353-"
+        },
+        "summary": "Up to 72,000 m² (GEA) Use Class B8 data centre across two buildings, delivering about 90 MW, on the former Woodlands Park landfill, land south of Slough Road, Iver, in the Green Belt near M25 J1 (application PL/24/0754/OA). The Secretary of State (Minister Matthew Pennycook) allowed the recovered appeal APP/N0410/W/24/3347353 on 9 July 2025, overturning Buckinghamshire Council's refusal; an earlier ~147 MW three-building scheme was dismissed at appeal in October 2023. The consent is under judicial review by Foxglove and Global Action Plan; in 2026 the Government conceded a “serious logical error” in screening out EIA while failing to secure the relied-on mitigation, and the permission is expected to be quashed. Distinct from CyrusOne LON6 (Iver Heath, Seven Hills Road).",
+        "power": {
+          "grid_connection_mw": null,
+          "it_load_mw": {
+            "value": 90,
+            "unit": "MW",
+            "basis": "planning_doc",
+            "source": "Recovered appeal 3347353 (9 July 2025): 72,000 m² GEA facility delivering ~90 MW",
+            "page": "DL",
+            "archived": null
+          },
+          "phase_1_mw": null,
+          "max_proposed_mw": {
+            "value": 90,
+            "unit": "MW",
+            "basis": "planning_doc",
+            "source": "Recovered appeal 3347353 (9 July 2025): up to ~90 MW capacity",
+            "page": "DL",
+            "archived": null
+          }
+        },
+        "water_litres_pa": null,
+        "land": {
+          "acres": null,
+          "previous_use": "Former Woodlands Park landfill site (Green Belt)",
+          "land_type": "brownfield",
+          "alc_grades": null
+        },
+        "grid_connection": null,
+        "cooling": null,
+        "claims_on_record": [],
+        "operator_response": null,
+        "timeline": [
+          {
+            "date": "2023-10",
+            "event": "Earlier ~147 MW three-building scheme dismissed at appeal by the previous Secretary of State",
+            "source": "https://www.datacenterdynamics.com/en/news/angela-rayner-greenlights-twice-rejected-buckinghamshire-data-center/"
+          },
+          {
+            "date": "2024-10-24",
+            "event": "Appeal recovered for the Secretary of State's determination (s79 TCPA 1990)",
+            "source": "https://www.slough.gov.uk/downloads/file/5111/cd-7-01-appeal-decision-relating-to-woodlands-park-landfill-site-dated-9-july-2025-reference-3347353-"
+          },
+          {
+            "date": "2025-07-09",
+            "event": "Secretary of State allows recovered appeal 3347353; permission granted (up to 72,000 m² / ~90 MW)",
+            "source": "https://www.slough.gov.uk/downloads/file/5111/cd-7-01-appeal-decision-relating-to-woodlands-park-landfill-site-dated-9-july-2025-reference-3347353-"
+          },
+          {
+            "date": "2025-08",
+            "event": "Foxglove and Global Action Plan launch judicial review of the grant",
+            "source": "https://www.foxglove.org.uk/2025/08/21/new-case-launch-uk-first-legal-challenge-data-centre/"
+          },
+          {
+            "date": "2026",
+            "event": "Government concedes JR, admitting a “serious logical error” on EIA screening; permission expected to be quashed",
+            "source": "https://www.datacenterdynamics.com/en/news/planning-permission-for-buckinghamshire-data-center-likely-to-be-quashed-after-uk-government-admits-serious-logical-error/"
+          }
+        ],
+        "controversies": [
+          {
+            "summary": "Green Belt hyperscale data centre on a former landfill; consent under judicial review by Foxglove and Global Action Plan. Government has conceded a “serious logical error” in screening out EIA, and the permission is expected to be quashed.",
+            "source": "https://www.leighday.co.uk/news/press-releases/2026-news/government-admits-to-serious-error-as-permission-granted-for-legal-case-opposing-hyperscale-data-centre-in-buckinghamshire/",
+            "label": "legal"
+          }
+        ],
+        "sources": [
+          {
+            "label": "SoS recovered appeal decision 3347353 (9 July 2025, Slough-hosted copy)",
+            "url": "https://www.slough.gov.uk/downloads/file/5111/cd-7-01-appeal-decision-relating-to-woodlands-park-landfill-site-dated-9-july-2025-reference-3347353-",
+            "archived": null
+          },
+          {
+            "label": "DCD: permission likely to be quashed after Government admits “serious logical error”",
+            "url": "https://www.datacenterdynamics.com/en/news/planning-permission-for-buckinghamshire-data-center-likely-to-be-quashed-after-uk-government-admits-serious-logical-error/",
+            "archived": null
+          },
+          {
+            "label": "Leigh Day: Government admits serious error over data centre permission",
+            "url": "https://www.leighday.co.uk/news/press-releases/2026-news/government-admits-to-serious-error-as-permission-granted-for-legal-case-opposing-hyperscale-data-centre-in-buckinghamshire/",
+            "archived": null
+          }
+        ],
+        "last_reviewed": "2026-08-07",
+        "operational_reality": "consented"
       }
     }
   ]
