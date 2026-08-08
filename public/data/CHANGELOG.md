@@ -3,8 +3,9 @@
 - **Truman Grey Eagle** `proposed` → `approved`: Secretary of State allowed the recovered Truman Brewery appeals on 29 July 2026 (incl. Grey Eagle Street B8 data centre PA/24/01450); linked the GOV.UK decision page.
 - Added **Greystoke Woodlands Park (Iver)** `approved` — SoS allowed appeal 3347353 on 9 July 2025 (up to 72,000 m² / ~90 MW); flagged the live judicial review the Government has conceded (“serious logical error”, permission expected to be quashed). Distinct from CyrusOne LON6 at Seven Hills Road.
 - Added **Pure DC Brent Cross (LON01)** `operating` — ~90 MW campus; Building 1 (~20 MW) live since 2024 and fully leased, Building 2 (~70 MW) under construction. Distinct from Pure/SEGRO Premier Park (LON02).
-- Added **CyrusOne LON7 / Honey Monster (Southall)** and **Equinix Wexham Road (former AkzoNobel)** — both consented (Ealing committee resolution to grant 15 Jul 2026, ref 253874FUL; Slough outline P/00072/152 with s106 completed 30 Jul 2026) but held at `status: proposed` with `operational_reality: consented` per the hard rule, pending a lasting Public Access URL.
-- New-pin coordinates are geocoded approximations (Southall/Brent Cross/Iver/Wexham Road); confirm against building footprints in a later pass.
+- Added **CyrusOne LON7 / Honey Monster (Southall)** `in_planning` — Ealing committee resolved to grant 15 Jul 2026 (ref 253874FUL); the live Ealing Public Access page still shows "Pending Consideration" (no decision notice), so mapped `in_planning` against that resolving URL, not `approved`.
+- Added **Equinix Wexham Road (former AkzoNobel)** — Slough outline P/00072/152 with s106 completed 30 Jul 2026; held at `status: proposed` / `operational_reality: consented` per the hard rule (Slough's Public Access portal is currently unreachable, no resolving URL).
+- New-pin coordinates geocoded from OSM/Nominatim (Southall UB2 4AE, Wexham Road, Priestley Way/Brent Cross, Slough Road/Iver); confirm against building footprints in a later pass. Source snapshots to archive.org still pending (Wayback rate-limited at time of writing).
 
 ## 2026-07-20 — Reach 75
 
