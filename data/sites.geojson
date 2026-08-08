@@ -5694,22 +5694,22 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.3775,
-          51.5045
+          -0.3709,
+          51.5034
         ]
       },
       "properties": {
         "id": "cyrusone-lon7-southall",
         "name": "CyrusOne LON7 / Honey Monster site (Southall)",
         "operator": "CyrusOne (developer Apt, reported)",
-        "status": "proposed",
+        "status": "in_planning",
         "local_authority": "London Borough of Ealing",
         "corridor": "west",
         "planning_ref": {
           "id": "253874FUL",
-          "url": null
+          "url": "https://pam.ealing.gov.uk/online-applications/applicationDetails.do?activeTab=summary&keyVal=T42GBOJM0KW00"
         },
-        "summary": "Hyperscale data centre on the vacant former Honey Monster / Quaker Oats food factory, Bridge Road, Southall UB2 4AE (about 6.8 ha; factory demolished 2022). Scheme is a four-storey data centre of about 52,000 m² with a workspace building, training centre and public realm. Ealing planning committee resolved to grant (ref 253874FUL) on 15 July 2026, subject to a s106 delivering about £17.8m in contributions. Held at proposed until a lasting Ealing Public Access URL is linked; operator has not disclosed a clean MW figure.",
+        "summary": "Hyperscale data centre (Sui Generis) with ancillary offices, affordable workspace / training centre, substation, access, parking and landscaping on the vacant former Honey Monster / Quaker Oats food factory, Bridge Road, Southall UB2 4AE (about 6.8 ha; factory demolished 2022; scheme about 52,000 m²). Application 253874FUL was validated 3 Oct 2025; Ealing planning committee resolved to grant on 15 July 2026, subject to a s106 delivering about £17.8m in contributions. The council portal still shows the application as 'Pending Consideration' (no decision notice issued), so it is mapped as in_planning against the live Ealing Public Access page; operator has not disclosed a clean MW figure.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -5736,6 +5736,11 @@
         "operator_response": null,
         "timeline": [
           {
+            "date": "2025-10-03",
+            "event": "Application 253874FUL validated (Ealing)",
+            "source": "https://pam.ealing.gov.uk/online-applications/applicationDetails.do?activeTab=summary&keyVal=T42GBOJM0KW00"
+          },
+          {
             "date": "2026-07-15",
             "event": "Ealing planning committee resolves to grant (253874FUL), subject to s106 (~£17.8m)",
             "source": "https://ealing.moderngov.co.uk/documents/s26379/01%20-%20Former%20Honey%20Monster%20Food%20Factory%20Southall%20UB2%204AE%20-%20253874FUL%20-%20CHNEE.pdf"
@@ -5749,6 +5754,11 @@
           }
         ],
         "sources": [
+          {
+            "label": "Ealing Public Access: application 253874FUL (live application page)",
+            "url": "https://pam.ealing.gov.uk/online-applications/applicationDetails.do?activeTab=summary&keyVal=T42GBOJM0KW00",
+            "archived": null
+          },
           {
             "label": "Ealing committee report (253874FUL, 15 July 2026)",
             "url": "https://ealing.moderngov.co.uk/documents/s26379/01%20-%20Former%20Honey%20Monster%20Food%20Factory%20Southall%20UB2%204AE%20-%20253874FUL%20-%20CHNEE.pdf",
@@ -5774,8 +5784,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.5835,
-          51.5205
+          -0.5798,
+          51.5204
         ]
       },
       "properties": {
@@ -5858,8 +5868,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.2245,
-          51.5755
+          -0.2343,
+          51.5721
         ]
       },
       "properties": {
@@ -5944,8 +5954,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.5175,
-          51.5185
+          -0.5135,
+          51.5345
         ]
       },
       "properties": {
