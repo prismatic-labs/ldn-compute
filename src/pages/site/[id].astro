@@ -189,7 +189,7 @@ const replyMailto = correctionsMailto({ kind: "right-of-reply", siteName: p.name
           Local geography ({local.meta.powerKind === "grid_connection_mw" ? "typical operation" : "load-factor range"}): <strong>{local.value.headline}</strong>
           {local.meta.powerKind === "grid_connection_mw" && (
             <span class="block text-sm text-[var(--muted)] mt-1">
-              Estimated from this site's grid-connection capacity — a ceiling, not measured load — assuming it runs at a typical 40–70% of that connection. The actual figure is likely lower.
+              This is an estimate, not a measured figure. It comes from the size of the site's grid connection, which is the most power it could draw, and assumes it runs at 40–70% of that. Its real electricity use is probably lower.
             </span>
           )}
           <details class="text-sm text-[var(--muted)] mt-1">

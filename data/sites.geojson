@@ -2641,7 +2641,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Telehouse South at 1 Blackwall Way, Blackwall Yard — Telehouse's fifth and largest London data centre, a ten-storey facility opened in 2022 about 300 m from the main Docklands campus (the building was acquired from Thomson Reuters and fitted out in phases). Mapped operating from operator / third-party records; a hall-specific MW figure is not separately disclosed and no council planning-application URL is linked.",
+        "summary": "Telehouse South at 1 Blackwall Way, Blackwall Yard. It is Telehouse's fifth and largest London data centre, a ten-storey facility opened in 2022 about 300 m from the main Docklands campus (the building was acquired from Thomson Reuters and fitted out in phases). Mapped operating from operator / third-party records; a hall-specific MW figure is not separately disclosed and no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -2657,7 +2657,7 @@
         "timeline": [
           {
             "date": "2022",
-            "event": "Telehouse South opens — fifth and largest Telehouse London data centre (10 storeys, ex-Thomson Reuters building)",
+            "event": "Telehouse South opens, the fifth and largest Telehouse London data centre (10 storeys, ex-Thomson Reuters building)",
             "source": "https://www.telehouse.net/data-centre-services/uk/london/telehouse-south/"
           }
         ],
@@ -6091,7 +6091,7 @@
           "id": null,
           "url": null
         },
-        "summary": "The original Telehouse building at Coriander Avenue, Blackwall (E14 2AA), opened 1990 as the first purpose-built colocation data centre in Europe and the home of the London Internet Exchange (LINX) since 1994 — one of the most densely connected facilities in the world. About 9,717 m² of colocation across seven floors, served by a dedicated on-site 50 MVA primary substation fed by two 132 kV grid lines. Part of the Telehouse Docklands campus aggregate.",
+        "summary": "The original Telehouse building at Coriander Avenue, Blackwall (E14 2AA), opened 1990 as the first purpose-built colocation data centre in Europe and the home of the London Internet Exchange (LINX) since 1994, and one of the most densely connected facilities in the world. About 9,717 m² of colocation across seven floors, served by a dedicated on-site 50 MVA primary substation fed by two 132 kV grid lines. Part of the Telehouse Docklands campus aggregate.",
         "power": {
           "grid_connection_mw": {
             "value": 50,
@@ -6119,7 +6119,7 @@
         "timeline": [
           {
             "date": "1990",
-            "event": "Telehouse North opens — first purpose-built colocation data centre in Europe",
+            "event": "Telehouse North opens, the first purpose-built colocation data centre in Europe",
             "source": "https://www.telehouse.com/global-data-centers/emea/london-data-centers/telehouse-north/"
           },
           {
