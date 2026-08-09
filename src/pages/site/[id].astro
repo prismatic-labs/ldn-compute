@@ -186,7 +186,12 @@ const replyMailto = correctionsMailto({ kind: "right-of-reply", siteName: p.name
       )}
       {local && (
         <li class="border-b border-[var(--line)] pb-3">
-          Local geography (load-factor range): <strong>{local.value.headline}</strong>
+          Local geography ({local.meta.powerKind === "grid_connection_mw" ? "typical operation" : "load-factor range"}): <strong>{local.value.headline}</strong>
+          {local.meta.powerKind === "grid_connection_mw" && (
+            <span class="block text-sm text-[var(--muted)] mt-1">
+              Estimated from this site's grid-connection capacity — a ceiling, not measured load — assuming it runs at a typical 40–70% of that connection. The actual figure is likely lower.
+            </span>
+          )}
           <details class="text-sm text-[var(--muted)] mt-1">
             <summary>ⓘ Arithmetic and sources</summary>
             <p class="mt-1">{local.label}</p>

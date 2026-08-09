@@ -113,6 +113,27 @@ describe("local geography", () => {
   });
 });
 
+describe("grid-connection basis framing", () => {
+  const gridPower = (mw: number): PowerBlock => ({
+    grid_connection_mw: { value: mw, unit: "MVA", basis: "stated", source: "test" },
+    it_load_mw: null,
+    phase_1_mw: null,
+    max_proposed_mw: null,
+  });
+
+  it("keeps the magnitude but frames a grid connection as a ceiling, not a load factor", () => {
+    const homes = homesEquivalence(gridPower(50));
+    expect(homes?.label).toMatch(/grid connection/i);
+    expect(homes?.label).not.toMatch(/load factor/i);
+    // number is unchanged vs treating the same MW as a nameplate — magnitude is kept
+    expect(homes?.value.low).toBeCloseTo(homesEquivalence(samplePower(50))!.value.low);
+
+    const local = localGeographyEquivalence(gridPower(50), [{ name: "Smallville", total_gwh: 500 }]);
+    expect(local?.label).toMatch(/grid-connection capacity/i);
+    expect(local?.meta.assumptions.join(" ")).toMatch(/ceiling, not measured load/i);
+  });
+});
+
 describe("water and land", () => {
   it("states undisclosed water explicitly", () => {
     expect(waterResidentsEquivalence(null).value).toBeNull();

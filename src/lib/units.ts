@@ -158,9 +158,41 @@ export function assumedAnnualGwh(nameplateMw: number): Range {
   };
 }
 
+/**
+ * How to describe applying the load-factor band, given which power figure drives it.
+ * A grid connection is a capacity ceiling, not a plant nameplate, so we frame the band
+ * as a typical share *of that connection* ("running at 40–70% of its grid connection")
+ * rather than a nameplate load factor — keeps the magnitude but stops it reading as
+ * measured load. See the `grid_connection` discussion in the popup/site page.
+ */
+function loadBandFraming(kind: PowerKind): {
+  labelPrefix: string;
+  parenthetical: string;
+  loadLine: string;
+  ceilingNote: string | null;
+} {
+  const band = `${pct(LOAD_FACTOR.low)}-${pct(LOAD_FACTOR.high)}`;
+  if (kind === "grid_connection_mw") {
+    return {
+      labelPrefix: `Running at a typical ${band} of its grid-connection capacity`,
+      parenthetical: `running at a typical ${band} of its grid connection`,
+      loadLine: `Assumed average load = grid-connection capacity × ${band}.`,
+      ceilingNote:
+        "The grid connection is a capacity ceiling, not measured load; this shows a typical operating band, not the peak.",
+    };
+  }
+  return {
+    labelPrefix: `At ${band} load factor`,
+    parenthetical: `at ${band} load factor`,
+    loadLine: `Assumed average load = nameplate × ${band}.`,
+    ceilingNote: null,
+  };
+}
+
 export function homesEquivalence(power: PowerBlock): Equivalence<Range> | null {
   const np = nameplateMw(power);
   if (!np) return null;
+  const framing = loadBandFraming(np.kind);
   const gwh = assumedAnnualGwh(np.mw);
   const kwhLow = gwh.low * 1_000_000;
   const kwhHigh = gwh.high * 1_000_000;
@@ -170,14 +202,15 @@ export function homesEquivalence(power: PowerBlock): Equivalence<Range> | null {
   };
   return {
     value: homes,
-    label: `${formatRange(homes)} homes' annual electricity (at ${pct(LOAD_FACTOR.low)}-${pct(LOAD_FACTOR.high)} load factor)`,
+    label: `${formatRange(homes)} homes' annual electricity (${framing.parenthetical})`,
     meta: {
       powerKind: np.kind,
       powerBasis: np.basis,
       quantity: "assumed_average_load",
       assumptions: [
         `Uses ${powerKindLabel(np.kind)} = ${np.mw} MW.`,
-        `Assumed average load = nameplate × ${pct(LOAD_FACTOR.low)}-${pct(LOAD_FACTOR.high)}.`,
+        framing.loadLine,
+        ...(framing.ceilingNote ? [framing.ceilingNote] : []),
         `Home use = ${HOME_KWH_PER_YEAR.value} kilowatt-hours/year.`,
         "No operator discloses load factor; this is a bound, not a measurement.",
       ],
@@ -209,6 +242,7 @@ export function localGeographyEquivalence(
 ): Equivalence<LocalGeoMatch> | null {
   const np = nameplateMw(power);
   if (!np) return null;
+  const framing = loadBandFraming(np.kind);
   const gwh = assumedAnnualGwh(np.mw);
   const sorted = [...authorities].sort((a, b) => a.total_gwh - b.total_gwh);
   const smallest = sorted[0];
@@ -249,13 +283,14 @@ export function localGeographyEquivalence(
   };
   return {
     value: match,
-    label: `At ${pct(LOAD_FACTOR.low)}-${pct(LOAD_FACTOR.high)} load factor: ${headline} (annual electricity)`,
+    label: `${framing.labelPrefix}: ${headline} (annual electricity)`,
     meta: {
       powerKind: np.kind,
       powerBasis: np.basis,
       quantity: "assumed_average_load",
       assumptions: [
         `Uses ${powerKindLabel(np.kind)} = ${np.mw} MW.`,
+        ...(framing.ceilingNote ? [framing.ceilingNote] : []),
         `Energy = MW × ${HOURS_PER_YEAR} h × load factor / 1000 → GWh/year.`,
         "Compared to Department for Energy Security and Net Zero local-authority total metered electricity (all sectors).",
         "No operator discloses load factor; this is a bound, not a measurement.",
@@ -437,7 +472,7 @@ export function powerKindLabel(kind: PowerKind): string {
     case "max_proposed_mw":
       return "biggest size stated for this site";
     case "grid_connection_mw":
-      return "grid connection applied for";
+      return "grid connection";
     case "phase_1_mw":
       return "first stage only";
     case "it_load_mw":
