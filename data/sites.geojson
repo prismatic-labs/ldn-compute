@@ -6055,6 +6055,220 @@
         "last_reviewed": "2026-08-07",
         "operational_reality": "consented"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.00187,
+          51.51173
+        ]
+      },
+      "properties": {
+        "id": "telehouse-north",
+        "name": "Telehouse North (Docklands)",
+        "operator": "Telehouse (KDDI)",
+        "status": "operating",
+        "local_authority": "London Borough of Tower Hamlets",
+        "corridor": "east",
+        "planning_ref": {
+          "id": null,
+          "url": null
+        },
+        "summary": "The original Telehouse building at Coriander Avenue, Blackwall (E14 2AA), opened 1990 as the first purpose-built colocation data centre in Europe and the home of the London Internet Exchange (LINX) since 1994 — one of the most densely connected facilities in the world. About 9,717 m² of colocation across seven floors, served by a dedicated on-site 50 MVA primary substation fed by two 132 kV grid lines. Part of the Telehouse Docklands campus aggregate.",
+        "power": {
+          "grid_connection_mw": {
+            "value": 50,
+            "unit": "MVA",
+            "basis": "stated",
+            "source": "Telehouse North: dedicated on-site primary substation, 50 MVA, two 132 kV lines",
+            "page": null,
+            "archived": null
+          },
+          "it_load_mw": null,
+          "phase_1_mw": null,
+          "max_proposed_mw": null
+        },
+        "water_litres_pa": null,
+        "land": {
+          "acres": null,
+          "previous_use": "Docklands regeneration land, Blackwall",
+          "land_type": "industrial_active",
+          "alc_grades": null
+        },
+        "grid_connection": null,
+        "cooling": null,
+        "claims_on_record": [],
+        "operator_response": null,
+        "timeline": [
+          {
+            "date": "1990",
+            "event": "Telehouse North opens — first purpose-built colocation data centre in Europe",
+            "source": "https://www.telehouse.com/global-data-centers/emea/london-data-centers/telehouse-north/"
+          },
+          {
+            "date": "1994",
+            "event": "Becomes the home of the London Internet Exchange (LINX)",
+            "source": "https://www.telehouse.net/data-centre-services/uk/london/telehouse-north/"
+          }
+        ],
+        "controversies": [],
+        "sources": [
+          {
+            "label": "Telehouse: Telehouse North",
+            "url": "https://www.telehouse.com/global-data-centers/emea/london-data-centers/telehouse-north/",
+            "archived": null
+          },
+          {
+            "label": "Datacenters.com: Telehouse North brochure",
+            "url": "https://www.datacenters.com/location_brochures/london-north-data-center-a-core-hub-for-global-connectivity",
+            "archived": null
+          }
+        ],
+        "last_reviewed": "2026-08-09",
+        "part_of": "telehouse-docklands",
+        "operational_reality": "operating"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.63804,
+          51.52246
+        ]
+      },
+      "properties": {
+        "id": "equinix-ld11x-slough",
+        "name": "Equinix LD11x (Slough)",
+        "operator": "Equinix",
+        "status": "operating",
+        "local_authority": "Slough Borough Council",
+        "corridor": "west",
+        "planning_ref": {
+          "id": null,
+          "url": null
+        },
+        "summary": "Equinix xScale hyperscale IBX at 765 Henley Road, Slough SL1 4JW (off Buckingham Avenue, Slough Trading Estate). One of Equinix's two dedicated hyperscale facilities on the Slough campus (with LD13x), operating within the wider Equinix Slough virtual campus. IT load not separately disclosed by the operator.",
+        "power": {
+          "grid_connection_mw": null,
+          "it_load_mw": null,
+          "phase_1_mw": null,
+          "max_proposed_mw": null
+        },
+        "water_litres_pa": null,
+        "land": {
+          "acres": null,
+          "previous_use": null,
+          "land_type": "industrial_active",
+          "alc_grades": null
+        },
+        "grid_connection": null,
+        "cooling": null,
+        "claims_on_record": [],
+        "operator_response": null,
+        "timeline": [],
+        "controversies": [],
+        "sources": [
+          {
+            "label": "Equinix: London LD11x",
+            "url": "https://www.equinix.com/data-centers/europe-colocation/united-kingdom-colocation/london-data-centers/ld11x",
+            "archived": null
+          },
+          {
+            "label": "Datacenters.com: Equinix LD11x London xScale",
+            "url": "https://www.datacenters.com/equinix-ld11x-london-xscale",
+            "archived": null
+          }
+        ],
+        "last_reviewed": "2026-08-09",
+        "part_of": "equinix-slough-campus",
+        "operational_reality": "operating"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.6341,
+          51.526
+        ]
+      },
+      "properties": {
+        "id": "equinix-ld14-slough",
+        "name": "Equinix LD14 (Slough)",
+        "operator": "Equinix",
+        "status": "proposed",
+        "local_authority": "Slough Borough Council",
+        "corridor": "west",
+        "planning_ref": {
+          "id": null,
+          "url": null
+        },
+        "summary": "New five-storey ~15,100 m² data centre at 9–13 Banbury Avenue, Slough Trading Estate (adjacent to the existing LD7 building), on a site of just under a hectare. Slough Borough Council granted detailed approval in May 2024; the scheme is about 30 MW (two data halls per floor, 13× 2.8 MW standby generators). Construction ran from Dec 2024 with completion reported for ~Sept 2026. Held at proposed with operational_reality under_construction until a lasting Slough Public Access URL is linked (Slough's portal is currently unreachable). Part of the Equinix Slough campus.",
+        "power": {
+          "grid_connection_mw": null,
+          "it_load_mw": null,
+          "phase_1_mw": null,
+          "max_proposed_mw": {
+            "value": 30,
+            "unit": "MW",
+            "basis": "stated",
+            "source": "DCD: Equinix LD14 Slough — 30 MW+ data centre",
+            "page": null,
+            "archived": null
+          }
+        },
+        "water_litres_pa": null,
+        "land": {
+          "acres": {
+            "value": 2.2,
+            "unit": "acres",
+            "basis": "stated",
+            "source": "Techerati / DCD: LD14 site just under a hectare (~2.2 acres)",
+            "page": null,
+            "archived": null
+          },
+          "previous_use": "Single-storey commercial building (to be demolished)",
+          "land_type": "industrial_active",
+          "alc_grades": null
+        },
+        "grid_connection": null,
+        "cooling": null,
+        "claims_on_record": [],
+        "operator_response": null,
+        "timeline": [
+          {
+            "date": "2024-05",
+            "event": "Slough Borough Council grants detailed approval for LD14 (30 MW, Banbury Avenue)",
+            "source": "https://www.datacenterdynamics.com/en/news/equinix-seeks-to-build-30mw-data-center-in-slough-uk/"
+          },
+          {
+            "date": "2024-12",
+            "event": "Construction start (reported completion ~Sept 2026)",
+            "source": "https://www.constructionmap.info/site/515401/ld14"
+          }
+        ],
+        "controversies": [],
+        "sources": [
+          {
+            "label": "DCD: Equinix 30 MW+ Slough data center (LD14)",
+            "url": "https://www.datacenterdynamics.com/en/news/equinix-seeks-to-build-30mw-data-center-in-slough-uk/",
+            "archived": null
+          },
+          {
+            "label": "DataCenterMap: Equinix LD14 (11 Banbury Ave, 30 MW)",
+            "url": "https://www.datacentermap.com/united-kingdom/london/equinix-ld14/",
+            "archived": null
+          }
+        ],
+        "last_reviewed": "2026-08-09",
+        "part_of": "equinix-slough-campus",
+        "operational_reality": "under_construction"
+      }
     }
   ]
 }

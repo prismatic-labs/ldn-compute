@@ -2,7 +2,7 @@
 
 Public mirror: `/research` on the site.
 
-§3 protocol status for seed sites on the map (Greater London and M25 fringe). Seed data in `data/sites.geojson` is **not** a complete regional census until checklist items below are closed and further sites are verified. The map now holds **86** dossiers spanning west, east, north, south and inner fringes; Slough alone is still under-sampled at hall level. Campus aggregates that overlap building pins are flagged `role: "aggregate"` and excluded from the regional total **and from the map itself** — only their individual hall pins render, so the campus dossier exists as a data record and detail page but not as a marker (Equinix Slough, Kao Harlow, Telehouse Docklands).
+§3 protocol status for seed sites on the map (Greater London and M25 fringe). Seed data in `data/sites.geojson` is **not** a complete regional census until checklist items below are closed and further sites are verified. The map now holds **89** dossiers spanning west, east, north, south and inner fringes; Slough alone is still under-sampled at hall level. Campus aggregates that overlap building pins are flagged `role: "aggregate"` and excluded from the regional total **and from the map itself** — only their individual hall pins render, so the campus dossier exists as a data record and detail page but not as a marker (Equinix Slough, Kao Harlow, Telehouse Docklands).
 
 ## Hard rule
 
@@ -45,12 +45,15 @@ Planning-milestone statuses (`in_planning`, `approved`) need a `planning_ref.url
 | Microsoft Park Royal | ~96 MW | under_construction |
 | Iron Mountain LON-3 | 25 MW | under_construction |
 | Telehouse West Two | 33 MW | under_construction |
+| Equinix LD14 (Slough, Banbury Ave) | ~30 MW | under_construction (Slough BC approval May 2024; no lasting portal URL) |
 | Kao KLON-03 (Harlow) | 17.6 MW | under_construction |
 | Ark Elstree | ~200 MW | pipeline |
 | Kao KLON-04 (Harlow) | 36 MW | pipeline |
 | Digital Reef (East Havering) | up to 600 MW | pipeline |
 
-Everything else on the map is `operating` (source-evidenced) — including the former "held at `proposed`" colocation halls (Yondr Slough, Equinix LD-series, all VIRTUS London halls, CyrusOne LON1–5, Iron Mountain LON-1/2, NTT Dagenham/Slough/Hemel, Telehouse North Two/West/South/East, Global Switch East/North, Vantage LHR1/2, Serverfarm LON1, Digital Realty Slough/Docklands, Google Waltham Cross, Pure DC Brent Cross) — or `decommissioned` (Netwise London Central).
+Everything else on the map is `operating` (source-evidenced) — including the former "held at `proposed`" colocation halls (Yondr Slough, Equinix LD-series incl. LD11x, all VIRTUS London halls, CyrusOne LON1–5, Iron Mountain LON-1/2, NTT Dagenham/Slough/Hemel, Telehouse North/North Two/West/South/East, Global Switch East/North, Vantage LHR1/2, Serverfarm LON1, Digital Realty Slough/Docklands, Google Waltham Cross, Pure DC Brent Cross) — or `decommissioned` (Netwise London Central).
+
+**Campus itemisation.** With Telehouse North added, the **Telehouse Docklands** aggregate is now fully decomposed into its halls (North, North Two, West, West Two, South, East); the **Equinix Slough** aggregate is likewise complete against the operator roster (LD4/5/6/7/10/11x/13x/14). Both are therefore retire-candidates — once dropped, the campus is represented purely by its hall pins (see the `role: "aggregate"` note above). Two open flags: Telehouse's public roster lists North/East/West/North Two/Central/West Two (not "South"), so the existing `telehouse-south` (Blackwall Yard) pin needs a source check; and **Telehouse Central** (2026 administration building) is deliberately not mapped as it is office/admin, not a data hall.
 
 ## Added 2026-07-20 (named metro projects previously missing)
 
@@ -65,7 +68,7 @@ Still campus-approximate (placed adjacent to the verified operator campus; the i
 ## Not yet on the map
 
 - Stack Infrastructure and EdgeConneX London campuses; Colt Welwyn Garden City (only Colt Hayes is mapped).
-- Further Slough Trading Estate halls (remaining Equinix / Digital Realty buildings as separate pins).
+- Further Slough Trading Estate halls (remaining Digital Realty buildings as separate pins; Equinix Slough is now fully itemised LD4/5/6/7/10/11x/13x/14).
 - Decommissioned or closed halls (status `decommissioned` is ready in schema).
 - Smaller rented server halls and city hosting rooms: inventory separately.
 - Kao Harlow, Abbots Langley, and Pulsant Croydon are now mapped (removed from this list).
