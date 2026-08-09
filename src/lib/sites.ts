@@ -26,10 +26,11 @@ export function getSites(): SiteFeature[] {
 }
 
 /**
- * Sites minus campus "aggregate" overlays. Every count, table, comparison and
- * total uses this so a campus pin is never ranked or summed beside its own
- * halls. Aggregates remain in `getSites()` for the map, which shows them as
- * context.
+ * Sites minus campus "aggregate" overlays. Every count, table, comparison,
+ * total AND the map itself uses this, so a campus pin is never ranked, summed,
+ * or drawn as a marker beside its own halls. Aggregates still exist in
+ * `getSites()` (and keep their /site/[id] detail page) but do not render on the
+ * map; only their individual hall pins do.
  */
 export function getItemizedSites(sites: SiteFeature[] = getSites()): SiteFeature[] {
   return sites.filter((f) => f.properties.role !== "aggregate");

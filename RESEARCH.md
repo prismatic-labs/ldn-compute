@@ -2,7 +2,7 @@
 
 Public mirror: `/research` on the site.
 
-§3 protocol status for seed sites on the map (Greater London and M25 fringe). Seed data in `data/sites.geojson` is **not** a complete regional census until checklist items below are closed and further sites are verified. The map now holds **81** dossiers spanning west, east, north, south and inner fringes; Slough alone is still under-sampled at hall level. Campus aggregates that overlap building pins are flagged `role: "aggregate"` and excluded from the regional total (Equinix Slough, Kao Harlow, Telehouse Docklands).
+§3 protocol status for seed sites on the map (Greater London and M25 fringe). Seed data in `data/sites.geojson` is **not** a complete regional census until checklist items below are closed and further sites are verified. The map now holds **86** dossiers spanning west, east, north, south and inner fringes; Slough alone is still under-sampled at hall level. Campus aggregates that overlap building pins are flagged `role: "aggregate"` and excluded from the regional total **and from the map itself** — only their individual hall pins render, so the campus dossier exists as a data record and detail page but not as a marker (Equinix Slough, Kao Harlow, Telehouse Docklands).
 
 ## Hard rule
 
@@ -10,52 +10,51 @@ Planning-milestone statuses (`in_planning`, `approved`) need a `planning_ref.url
 
 ## Site checklist
 
-| Site | Portal ref | Live URL | Power | Notes |
+`data/sites.geojson` is the source of truth for status. The earlier per-hall census listed operating colocation campuses as `proposed` pending a planning portal URL; that has been reconciled — under the hard rule an in-service hall is a **factual** state evidenced by a resolving operator/source URL, so the ~60 operating halls are `operating` (not planning-gated). The tables below track only the sites that are **not** plainly operating, plus outstanding URL/evidence debt.
+
+### Planning-gated — `approved` / `in_planning` (need a resolving `planning_ref.url`)
+
+| Site | Portal ref | Live URL | Power | Status |
 |---|---|---|---|---|
-| Manor Farm (Poyle) | `3366043` | [GOV.UK](https://www.gov.uk/government/publications/recovered-appeal-land-at-manor-farm-and-land-north-of-wraysbury-reservoir-poyle-road-slough-ref-3366043-10-june-2026) | 107 / 147 MW | `approved` |
-| Yondr Slough campus | unknown | null | 100 MW | held at `proposed` |
-| Pure DC Premier Park | unknown | null | 56 MW IT | held at `proposed` |
-| Ada Docklands | `24/02660/REM` | null | 70 / 210 MW | held at `proposed` |
-| Bidder Street | `24/00088/FUL` | [Newham](https://pa.newham.gov.uk/online-applications/applicationDetails.do?activeTab=summary&keyVal=S7B5SDJYHK500) | null | `in_planning` |
-| Truman Grey Eagle | `PA/24/01450` | null | ~4 MW | held at `proposed` |
-| Equinix Slough (LD4–LD10) | unknown | null | ~67 MW | operating campus; held at `proposed` |
-| Equinix LD8 Harbour Exchange | unknown | null | null | location; held at `proposed` |
-| Equinix LD9 Powergate | unknown | null | null | location; held at `proposed` |
-| VIRTUS LONDON4 Slough | unknown | null | 27 MW IT | held at `proposed` |
-| VIRTUS LONDON3 Slough | unknown | null | 7.2 MW IT | held at `proposed` |
-| VIRTUS LONDON9 Slough | unknown | null | 24 MW IT | held at `proposed` |
-| VIRTUS LONDON10 Slough | unknown | null | 6.6 MW IT | held at `proposed` |
-| VIRTUS LONDON11 Slough | unknown | null | 13 MW IT | held at `proposed` |
-| VIRTUS LONDON12 Slough | unknown | null | 21 MW IT | held at `proposed` |
-| VIRTUS LONDON19 Slough | unknown | null | 32.5 MW | held at `proposed` |
-| VIRTUS LONDON5 Stockley | unknown | null | 24 MW IT | held at `proposed` |
-| VIRTUS LONDON6 Stockley | unknown | null | 16 MW IT | held at `proposed` |
-| VIRTUS LONDON7 Stockley | unknown | null | 28 MW IT | held at `proposed` |
-| VIRTUS LONDON8 Stockley | unknown | null | 18 MW IT | held at `proposed` |
-| VIRTUS LONDON2 Hayes | unknown | null | 11.4 MW IT | held at `proposed` |
-| VIRTUS LONDON1 Enfield | unknown | null | 4.2 MW IT | held at `proposed` |
-| CyrusOne LON1 Slough | unknown | null | 8.72 MW IT | held at `proposed` |
-| Iron Mountain LON-1 | unknown | null | 8.7 MW | held at `proposed` |
-| Iron Mountain LON-2 | unknown | null | 27 MW | held at `proposed` |
-| Iron Mountain LON-3 | unknown | null | 25 MW | in development; held at `proposed` |
-| NTT London 1 Dagenham | unknown | null | 32 / 64 MW | held at `proposed` |
-| NTT Slough 2 | unknown | null | 1.8 MW IT | held at `proposed` |
-| Telehouse Docklands | unknown | null | ~40 MW campus | held at `proposed` |
-| Telehouse North Two | unknown | null | ~73 MW | held at `proposed` |
-| Telehouse West | unknown | null | ~18 MW | held at `proposed` |
-| Telehouse West Two | unknown | null | 33 MW | groundbreaking 2025; held at `proposed` |
-| Telehouse South | unknown | null | null | location; held at `proposed` |
-| Global Switch London East | unknown | null | ~87 MW | held at `proposed` |
-| Global Switch London North | unknown | null | ~18 MW | held at `proposed` |
-| Vantage LHR1 PowerGate | unknown | null | 55 MW | held at `proposed` |
-| Vantage LHR2 Park Royal | unknown | null | 20 MW | held at `proposed` |
-| Serverfarm LON1 Feltham | unknown | null | ~11.4 MW IT | secondary MW; held at `proposed` |
-| Digital Realty Slough | unknown | null | null | location seed; MW TBD |
-| Digital Realty Docklands | unknown | null | null | location seed; MW TBD |
+| Manor Farm (Poyle) | `3366043` | [GOV.UK](https://www.gov.uk/government/publications/recovered-appeal-land-at-manor-farm-and-land-north-of-wraysbury-reservoir-poyle-road-slough-ref-3366043-10-june-2026) | ~72 MW IT (+100 MW BESS) | `approved` |
+| Truman Grey Eagle | `PA/24/01450` | [GOV.UK](https://www.gov.uk/government/publications/recovered-appeal-sites-on-and-around-the-site-of-truman-brewery-tower-hamlets-london-refs-3367041-3367172-3367179-and-3367369-29-july-2026) | ~4–5.2 MW | `approved` — SoS allowed 29 Jul 2026 |
+| Abbots Langley (Bedmond Rd) | `3346061` | [GOV.UK](https://www.gov.uk/government/publications/recovered-appeal-land-off-bedmond-road-abbots-langley-ref-3346061-12-may-2025) | ~96 MW IT | `approved` |
+| CorScale Iver (Court Lane) | `3337981` | [GOV.UK](https://www.gov.uk/government/publications/recovered-appeal-court-lane-industrial-estate-court-lane-iver-ref-3337981-6-december-2024) | 140 MW | `approved` |
+| Greystoke Woodlands Park (Iver) | `3347353` | [SoS decision](https://www.slough.gov.uk/downloads/file/5111/cd-7-01-appeal-decision-relating-to-woodlands-park-landfill-site-dated-9-july-2025-reference-3347353-) | ~90 MW | `approved` — under judicial review; Govt conceded, quash expected |
+| Bidder Street | `24/00088/FUL` | [Newham](https://pa.newham.gov.uk/online-applications/applicationDetails.do?activeTab=summary&keyVal=S7B5SDJYHK500) | undisclosed | `in_planning` |
+| Thurrock (Arena Essex) | `25/00573/OUT` | [Thurrock](https://regs.thurrock.gov.uk/online-applications/applicationDetails.do?activeTab=summary&keyVal=SW5PMMQGMBJ00) | undisclosed | `in_planning` |
+| CyrusOne LON7 / Honey Monster (Southall) | `253874FUL` | [Ealing](https://pam.ealing.gov.uk/online-applications/applicationDetails.do?activeTab=summary&keyVal=T42GBOJM0KW00) | undisclosed | `in_planning` — committee resolved to grant 15 Jul 2026; portal shows "Pending Consideration" |
+
+### Held at `proposed` — consented, no lasting portal URL
+
+| Site | Portal ref | Power | operational_reality |
+|---|---|---|---|
+| Pure DC / SEGRO Premier Park | unknown | 56 MW IT | consented (OPDC committee approval Mar 2026) |
+| CyrusOne LON6 (Iver Heath) | unknown | 90 MW | consented |
+| SEGRO Iver (Thorney) | unknown | — | consented |
+| Equinix South Mimms | unknown | ~250 MW | consented |
+| Colt DCS Hayes | unknown | ~160 MW | consented |
+| Global Switch London South | unknown | ~40 MW | consented |
+| Equinix Wexham Rd (former AkzoNobel) | `P/00072/152` | undisclosed | consented (outline Nov 2025, s106 30 Jul 2026; Slough portal unreachable) |
+
+### Held at `proposed` — building or pipeline
+
+| Site | Power | operational_reality |
+|---|---|---|
+| Ada Docklands (`24/02660/REM`) | up to 210 MW | under_construction |
+| Microsoft Park Royal | ~96 MW | under_construction |
+| Iron Mountain LON-3 | 25 MW | under_construction |
+| Telehouse West Two | 33 MW | under_construction |
+| Kao KLON-03 (Harlow) | 17.6 MW | under_construction |
+| Ark Elstree | ~200 MW | pipeline |
+| Kao KLON-04 (Harlow) | 36 MW | pipeline |
+| Digital Reef (East Havering) | up to 600 MW | pipeline |
+
+Everything else on the map is `operating` (source-evidenced) — including the former "held at `proposed`" colocation halls (Yondr Slough, Equinix LD-series, all VIRTUS London halls, CyrusOne LON1–5, Iron Mountain LON-1/2, NTT Dagenham/Slough/Hemel, Telehouse North Two/West/South/East, Global Switch East/North, Vantage LHR1/2, Serverfarm LON1, Digital Realty Slough/Docklands, Google Waltham Cross, Pure DC Brent Cross) — or `decommissioned` (Netwise London Central).
 
 ## Added 2026-07-20 (named metro projects previously missing)
 
-- Google Waltham Cross (operational 2025), Equinix South Mimms (~250 MW), Digital Reef East Havering "London Data Freeport" (~600 MW), Colt DCS Hayes (~160 MW campus), Microsoft Park Royal (~£1bn, distinct from Pure/SEGRO Premier Park). All held at `proposed` pending lasting portal URLs; power `null` where the operator discloses none (Google, Microsoft).
+- Google Waltham Cross (operational 2025), Equinix South Mimms (~250 MW), Digital Reef East Havering "London Data Freeport" (~600 MW), Colt DCS Hayes (~160 MW campus), Microsoft Park Royal (~£1bn, distinct from Pure/SEGRO Premier Park). Google Waltham Cross is now `operating`; the rest remain held at `proposed` pending lasting portal URLs (see the checklist above). Power `null` where the operator discloses none (Google, Microsoft).
 
 ## Coordinates verified 2026-07-26 (OSM / Nominatim geocoding pass)
 
