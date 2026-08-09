@@ -2636,7 +2636,7 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Telehouse South at Blackwall Yard, opened 2022 about 300 metres from the main Docklands campus. Campus-level megawatts are published for other halls; this pin is location-led until a hall-specific lasting MW figure or planning URL is linked. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
+        "summary": "Telehouse South at 1 Blackwall Way, Blackwall Yard — Telehouse's fifth and largest London data centre, a ten-storey facility opened in 2022 about 300 m from the main Docklands campus (the building was acquired from Thomson Reuters and fitted out in phases). Mapped operating from operator / third-party records; a hall-specific MW figure is not separately disclosed and no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -2652,11 +2652,21 @@
         "timeline": [
           {
             "date": "2022",
-            "event": "Telehouse South opened at Blackwall Yard",
-            "source": "https://www.telehouse.net/data-centre-services/uk/london/"
+            "event": "Telehouse South opens — fifth and largest Telehouse London data centre (10 storeys, ex-Thomson Reuters building)",
+            "source": "https://www.telehouse.net/data-centre-services/uk/london/telehouse-south/"
           }
         ],
         "sources": [
+          {
+            "label": "Telehouse: Telehouse South",
+            "url": "https://www.telehouse.net/data-centre-services/uk/london/telehouse-south/",
+            "archived": null
+          },
+          {
+            "label": "DataCenterMap: Telehouse London Docklands South (1 Blackwall Way)",
+            "url": "https://www.datacentermap.com/united-kingdom/london/telehouse-london-docklands-south/",
+            "archived": null
+          },
           {
             "label": "Telehouse: London data centres",
             "url": "https://www.telehouse.net/data-centre-services/uk/london/",
@@ -2673,7 +2683,7 @@
         "claims_on_record": [],
         "operator_response": null,
         "controversies": [],
-        "last_reviewed": "2026-07-20",
+        "last_reviewed": "2026-08-09",
         "part_of": "telehouse-docklands",
         "operational_reality": "operating"
       }
