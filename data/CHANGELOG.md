@@ -1,3 +1,18 @@
+## 2026-10-06 — Audit corrections (evidence basis, MVA, borough reload)
+
+- **Operating total rebuilt on what is running today.** NTT Dagenham counts only its 32 MW operating phase; Pure Brent Cross split into Building 1 (20 MW, operating) and Building 2 (70 MW, under construction); Colt Hayes split into the existing campus (~63 MW, operating) and the consented expansion (97 MW).
+- **MVA is no longer summed as MW.** Substation ratings are apparent power, so `bestPower` now requires `unit: "MW"` and falls through to the next field otherwise. This removes 98 MW from the regional total: Telehouse North (50 MVA, now no power figure) and NTT Dagenham (80 MVA, now its 32 MW phase 1). Twelve other sites carry MVA grid connections but are unaffected, because a planning-document MW figure already took priority.
+- **Borough electricity reloaded from DESNZ for all 12 authorities.** The previous rows were Phase 0 seeds that the note itself flagged as unreconciled. Two swings matter for comparisons: **Slough 812.4 → 1,984.9 GWh**, so every "% of Slough" figure falls by roughly 59% (this affects VIRTUS LONDON4, CyrusOne LON1 and both Equinix Slough sites); and **Barking and Dagenham 654.2 → 577.5 GWh**, so "% of Barking and Dagenham" rises by about 13%.
+- **CorScale Iver** 140 → 103 MW, with 90 MW of computing load and 140 MVA of reserved grid capacity, all sourced to the decision documents.
+- **Greystoke** 90 MW removed: the decision letter's "90MW" refers to a different site. Consent flagged as contested.
+- **Microsoft Park Royal** unsourced 96 MW removed; timeline corrected to permission December 2020, construction 2023.
+- **Telehouse** 18 MW moved from West to South, matching Telehouse's own page.
+- **Yondr** pin moved ~2 km to the Environment Agency permit location at Wexham Road; "gas works" wording and dead source link fixed.
+- **Abbots Langley** area corrected to 76.6 acres (31 ha); 96 MW now sourced to the decision document.
+- **Status labels** now say what is reported: sites held at `proposed` render "(reported under construction)" or "(reported consented)" via a shared `statusText` helper, used by the map, compare, sites, index, dossier and research pages. Map stat reads "building, consented or proposed".
+- **Methodology** now states plainly that most megawatts on the map are operator figures, documents the IT-load fallback and the MVA exclusion, and the "last reviewed" line shows the oldest and newest review dates rather than only the newest.
+- Removed leftover Drax and Elsham text and the "two 1 GW schemes" line; map scale legend top reference dropped from 1 GW to 500 MW.
+
 ## 2026-08-07 — Tier-1 stress-test patch (86 dossiers)
 
 - **Truman Grey Eagle** `proposed` → `approved`: Secretary of State allowed the recovered Truman Brewery appeals on 29 July 2026 (incl. Grey Eagle Street B8 data centre PA/24/01450); linked the GOV.UK decision page.

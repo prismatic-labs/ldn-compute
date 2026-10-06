@@ -2,6 +2,7 @@
 import BaseLayout from "../../components/BaseLayout.astro";
 import BasisTag from "../../components/BasisTag.astro";
 import { correctionsEmail, correctionsMailto } from "../../lib/contact";
+import { statusText } from "../../lib/mapScale";
 import {
   disclosureChecklist,
   getLocalAuthorities,
@@ -57,7 +58,7 @@ const replyMailto = correctionsMailto({ kind: "right-of-reply", siteName: p.name
   </p>
   <h1 class="font-display text-3xl sm:text-4xl m-0 mt-2 tracking-tight">{p.name}</h1>
   <p class="mt-2 mb-0 text-[var(--muted)]">
-    {p.operator} · <span class="capitalize">{p.status.replaceAll("_", " ")}</span> · {p.local_authority}
+    {p.operator} · <span class="capitalize">{statusText(p)}</span> · {p.local_authority}
     {p.beyond_m25 && (
       <span class="ml-2 inline-block rounded border border-[var(--line)] px-1.5 py-0.5 text-xs uppercase tracking-wider" title="Materially beyond the M25 orbital; included on the operator's London-metro branding.">beyond M25</span>
     )}

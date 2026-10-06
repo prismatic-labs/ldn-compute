@@ -4,6 +4,7 @@ import BrandLink from "../components/BrandLink.astro";
 import SiteMap from "../components/SiteMap";
 import { correctionsMailto } from "../lib/contact";
 import { getConfig, getSites, getItemizedSites, regionalTotals, formatBestPower, siteBestPower } from "../lib/sites";
+import { statusText } from "../lib/mapScale";
 import { formatNumber } from "../lib/units";
 
 const config = getConfig();
@@ -15,10 +16,9 @@ const sites = getItemizedSites();
 const totals = regionalTotals(getSites());
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const center = config.region.map.center as [number, number];
-const lastUpdated = sites
-  .map((s) => s.properties.last_reviewed)
-  .sort()
-  .at(-1);
+const reviewDates = sites.map((s) => s.properties.last_reviewed).sort();
+const oldestReview = reviewDates.at(0);
+const newestReview = reviewDates.at(-1);
 
 // Headline stat for the map panel: running today vs still-to-be-built.
 const PIPELINE_REALITY = new Set(["pipeline", "consented", "under_construction"]);
@@ -31,7 +31,7 @@ for (const f of sites) {
   if (r === "operating") operatingMw += best.quantity.value;
   else if (r && PIPELINE_REALITY.has(r)) pipelineMw += best.quantity.value;
 }
-const stat = `≈${formatNumber(operatingMw)} MW operating · ≈${formatNumber(pipelineMw)} MW proposed`;
+const stat = `≈${formatNumber(operatingMw)} MW operating · ≈${formatNumber(pipelineMw)} MW building, consented or proposed`;
 ---
 
 <BaseLayout fullBleed description="Map of data centre sites across Greater London and the M25 fringe.">
@@ -62,8 +62,8 @@ const stat = `≈${formatNumber(operatingMw)} MW operating · ≈${formatNumber(
       )}
       . The “at least” symbol (≥) marks incomplete disclosure. Megawatts are stated size on paper
       (nameplate/contracted), not day-to-day regional electricity use.
-      {lastUpdated && (
-        <span class="block mt-1 text-xs">Map data last reviewed {lastUpdated}.</span>
+      {oldestReview && (
+        <span class="block mt-1 text-xs">Site figures last reviewed between {oldestReview} and {newestReview}.</span>
       )}
     </p>
 
@@ -137,7 +137,7 @@ const stat = `≈${formatNumber(operatingMw)} MW operating · ≈${formatNumber(
           {sites.map((f) => (
             <tr class="border-b border-[var(--line)]">
               <td class="py-2"><a href={`${base}/site/${f.properties.id}`}>{f.properties.name}</a></td>
-              <td class="py-2 capitalize">{f.properties.status.replaceAll("_", " ")}</td>
+              <td class="py-2 capitalize">{statusText(f.properties)}</td>
               <td class="py-2 font-tabular">{formatBestPower(f.properties)}</td>
               <td class="py-2 font-tabular">
                 {f.properties.land.acres

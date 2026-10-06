@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../components/BaseLayout.astro";
 import { disclosureChecklist, formatBestPower, getItemizedSites } from "../lib/sites";
+import { statusText } from "../lib/mapScale";
 import { formatNumber, formatWaterUse } from "../lib/units";
 
 // Itemized halls only; campus overlays live on the map, not in this ranked table.
@@ -26,9 +27,9 @@ function acresLabel(acres: number | undefined | null) {
   </p>
   <p class="text-sm text-[var(--muted)] mt-3 max-w-2xl">
     <strong class="text-[var(--ink)] font-semibold">Stated size</strong> is how large <em>this site</em> claims to be, in megawatts:
-    the biggest size stated for that site if published, otherwise the grid connection applied for, otherwise the first stage only.
+    the biggest size stated for that site if published, otherwise the grid connection applied for, otherwise the first stage only, otherwise the IT-equipment load.
     It is a size on paper for that scheme, not day-to-day electricity use, and not a regional total.
-    Equal figures (two 1&nbsp;GW schemes) are joint maxima: neither outranks the other.
+    Equal figures (two schemes publishing the same megawatts) are joint maxima: neither outranks the other.
     <strong class="text-[var(--ink)] font-semibold"> Site area</strong> is land take in acres and what kind of land it is.
   </p>
 
@@ -65,7 +66,7 @@ function acresLabel(acres: number | undefined | null) {
             >
               <td class="py-2.5 pr-3"><a href={`${base}/site/${p.id}`}>{p.name}</a></td>
               <td class="py-2.5 pr-3">{p.operator}</td>
-              <td class="py-2.5 pr-3 capitalize">{p.status.replaceAll("_", " ")}</td>
+              <td class="py-2.5 pr-3 capitalize">{statusText(p)}</td>
               <td class="py-2.5 pr-3 font-tabular">{formatBestPower(p)}</td>
               <td class="py-2.5 pr-3 font-tabular">{formatWaterUse(p.water_litres_pa)}</td>
               <td class="py-2.5 pr-3 font-tabular">
