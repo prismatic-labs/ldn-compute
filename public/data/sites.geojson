@@ -111,8 +111,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -0.548,
-          51.512
+          -0.5781,
+          51.5132
         ]
       },
       "properties": {
@@ -126,7 +126,7 @@
           "id": null,
           "url": null
         },
-        "summary": "Hyperscale campus on the former Uxbridge Road gas works / Akzo Nobel paint factory in Slough. Operator materials describe about 100 MW across three buildings, with phases reported ready for service from 2024 onward. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
+        "summary": "Hyperscale campus on the former AkzoNobel paint factory at Wexham Road, Slough (SL2 5DS). Operator materials describe a planned 100 MW campus across three buildings; the first phase entered service in 2024 and a third building (Building C) was permitted later that year. Pin placed at the Environment Agency permit grid reference (SU 98768 80317). No council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
@@ -135,7 +135,7 @@
             "value": 100,
             "unit": "MW",
             "basis": "stated",
-            "source": "Yondr Group: 100 MW London campus in Slough",
+            "source": "DCD (2024): Yondr's planned 100 MW campus in Slough",
             "page": null,
             "archived": null
           }
@@ -143,7 +143,7 @@
         "water_litres_pa": null,
         "land": {
           "acres": null,
-          "previous_use": "Former gas works / paint factory (reported)",
+          "previous_use": "Former AkzoNobel Decorative Coatings manufacturing site, Wexham Road",
           "land_type": "brownfield",
           "alc_grades": null
         },
@@ -166,17 +166,22 @@
         "controversies": [],
         "sources": [
           {
-            "label": "Yondr: third building RFS on 100 MW London campus",
-            "url": "https://www.yondrgroup.com/newsroom/press-release/yondr-achieves-first-rfs-for-third-data-center-on-100mw-london-campus/",
+            "label": "DCD: Yondr launches first data center on Slough campus",
+            "url": "https://www.datacenterdynamics.com/en/news/yondr-launches-first-data-center-on-slough-campus/",
             "archived": null
           },
           {
             "label": "DCD: Yondr third building permission",
             "url": "https://www.datacenterdynamics.com/en/news/yondr-granted-planning-permission-for-third-data-center-at-slough-uk-campus/",
             "archived": "https://web.archive.org/web/20251219111536/https://www.datacenterdynamics.com/en/news/yondr-granted-planning-permission-for-third-data-center-at-slough-uk-campus/"
+          },
+          {
+            "label": "Environment Agency permit NP3829SP (Wexham Road Datacentre, grid reference)",
+            "url": "https://assets.publishing.service.gov.uk/media/656604f3d6ad75000d02fc0b/Permit_NP3829SP.pdf",
+            "archived": null
           }
         ],
-        "last_reviewed": "2026-07-20",
+        "last_reviewed": "2026-10-05",
         "operational_reality": "operating"
       }
     },
@@ -793,7 +798,7 @@
         "status": "operating",
         "local_authority": "London Borough of Barking and Dagenham",
         "corridor": "east",
-        "summary": "Carrier-neutral campus at Yew Tree Avenue, Dagenham. Operator states 32 MW critical IT load in the first building (64 MW once fully built out) with an on-site substation delivering 80 MVA. Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
+        "summary": "Carrier-neutral campus at Yew Tree Avenue, Dagenham. Operator states 32 MW critical IT load in the first building, rising to 64 MW once fully built out, with an on-site substation delivering 80 MVA. Only the 32 MW operating today is counted; the further 32 MW has no published timetable or planning reference. Mapped as operating from operator records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": {
             "value": 80,
@@ -819,14 +824,7 @@
             "page": null,
             "archived": null
           },
-          "max_proposed_mw": {
-            "value": 64,
-            "unit": "MW",
-            "basis": "stated",
-            "source": "NTT London 1: 64 MW critical IT load once fully built out",
-            "page": null,
-            "archived": null
-          }
+          "max_proposed_mw": null
         },
         "land": {
           "acres": null,
@@ -852,7 +850,7 @@
         "claims_on_record": [],
         "operator_response": null,
         "controversies": [],
-        "last_reviewed": "2026-07-20",
+        "last_reviewed": "2026-10-05",
         "operational_reality": "operating"
       }
     },
@@ -2503,26 +2501,12 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Telehouse West on the Docklands campus (Coronation Road area), part of the LINX-heavy interconnection cluster. Operator London materials cite about 18 MW total power capacity for the West hall context (2.7 MW per floor in published figures). Mapped as operating from operator or third-party records; no council planning-application URL is linked.",
+        "summary": "Telehouse West on the Docklands campus (Coronation Road area), part of the LINX-heavy interconnection cluster. Telehouse publishes per-rack power (2 kW to 4 kW) for West but no total megawatt figure. Mapped as operating from operator records; no council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
-          "it_load_mw": {
-            "value": 18,
-            "unit": "MW",
-            "basis": "stated",
-            "source": "Telehouse London pages: West / campus power figures citing 18 MW total power capacity (2.7 MW per floor)",
-            "page": null,
-            "archived": null
-          },
+          "it_load_mw": null,
           "phase_1_mw": null,
-          "max_proposed_mw": {
-            "value": 18,
-            "unit": "MW",
-            "basis": "stated",
-            "source": "Telehouse West: about 18 MW total power capacity (operator London materials)",
-            "page": null,
-            "archived": null
-          }
+          "max_proposed_mw": null
         },
         "land": {
           "acres": null,
@@ -2548,7 +2532,7 @@
         "claims_on_record": [],
         "operator_response": null,
         "controversies": [],
-        "last_reviewed": "2026-07-20",
+        "last_reviewed": "2026-10-05",
         "part_of": "telehouse-docklands",
         "operational_reality": "operating"
       }
@@ -2641,12 +2625,26 @@
         "status": "operating",
         "local_authority": "London Borough of Tower Hamlets",
         "corridor": "east",
-        "summary": "Telehouse South at 1 Blackwall Way, Blackwall Yard. It is Telehouse's fifth and largest London data centre, a ten-storey facility opened in 2022 about 300 m from the main Docklands campus (the building was acquired from Thomson Reuters and fitted out in phases). Mapped operating from operator / third-party records; a hall-specific MW figure is not separately disclosed and no council planning-application URL is linked.",
+        "summary": "Telehouse South at 1 Blackwall Way, Blackwall Yard. It is Telehouse's fifth and largest London data centre, a ten-storey facility opened in 2022 about 300 m from the main Docklands campus (the building was acquired from Thomson Reuters and fitted out in phases). Mapped operating from operator / third-party records; Telehouse gives a total power capacity of 18 MW (2.7 MW per floor). No council planning-application URL is linked.",
         "power": {
           "grid_connection_mw": null,
-          "it_load_mw": null,
+          "it_load_mw": {
+            "value": 18,
+            "unit": "MW",
+            "basis": "stated",
+            "source": "Telehouse London page: Telehouse South total power capacity 18MW (2.7MW per floor)",
+            "page": null,
+            "archived": "https://web.archive.org/web/20260305103713/https://www.telehouse.net/data-centre-services/uk/london/"
+          },
           "phase_1_mw": null,
-          "max_proposed_mw": null
+          "max_proposed_mw": {
+            "value": 18,
+            "unit": "MW",
+            "basis": "stated",
+            "source": "Telehouse London page: Telehouse South total power capacity 18MW (2.7MW per floor)",
+            "page": null,
+            "archived": "https://web.archive.org/web/20260305103713/https://www.telehouse.net/data-centre-services/uk/london/"
+          }
         },
         "land": {
           "acres": null,
@@ -2688,7 +2686,7 @@
         "claims_on_record": [],
         "operator_response": null,
         "controversies": [],
-        "last_reviewed": "2026-08-09",
+        "last_reviewed": "2026-10-05",
         "part_of": "telehouse-docklands",
         "operational_reality": "operating"
       }
@@ -2825,34 +2823,34 @@
         "status": "approved",
         "local_authority": "Three Rivers District Council",
         "corridor": "north",
-        "summary": "Hyperscale campus of up to 84,000 m² across two buildings off Bedmond Road, Abbots Langley, plus a country park. Coverage puts IT load at about 96 MW. Secretary of State recovered appeal allowed 12 May 2025.",
+        "summary": "Hyperscale campus of up to 84,000 m² across two buildings off Bedmond Road, Abbots Langley, plus a country park. The decision cites 96 MW of data centre capacity on a site of about 31 ha. Secretary of State recovered appeal allowed 12 May 2025.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": {
             "value": 96,
             "unit": "MW",
-            "basis": "stated",
-            "source": "DCD / decision coverage: about 96 MW IT load for Bedmond Road campus",
-            "page": null,
+            "basis": "planning_doc",
+            "source": "https://assets.publishing.service.gov.uk/media/6821f977c66deec8488f7f42/Recovered_appeal_-_land_off_Bedmond_Road__Abbots_Langley.pdf",
+            "page": "Decision: the provision of 96 MW of data centre capacity",
             "archived": null
           },
           "phase_1_mw": null,
           "max_proposed_mw": {
             "value": 96,
             "unit": "MW",
-            "basis": "stated",
-            "source": "Abbots Langley: about 96 MW IT load",
-            "page": null,
+            "basis": "planning_doc",
+            "source": "https://assets.publishing.service.gov.uk/media/6821f977c66deec8488f7f42/Recovered_appeal_-_land_off_Bedmond_Road__Abbots_Langley.pdf",
+            "page": "Decision: the provision of 96 MW of data centre capacity",
             "archived": null
           }
         },
         "land": {
           "acres": {
-            "value": 81.5,
+            "value": 76.6,
             "unit": "acres",
-            "basis": "stated",
-            "source": "Appeal materials: about 33 ha development site (about 81.5 acres)",
-            "page": null,
+            "basis": "planning_doc",
+            "source": "https://assets.publishing.service.gov.uk/media/6821f977c66deec8488f7f42/Recovered_appeal_-_land_off_Bedmond_Road__Abbots_Langley.pdf (site approximately 31 ha, two parcels; ≈76.6 acres)",
+            "page": "Decision: site approximately 31 ha",
             "archived": null
           },
           "previous_use": "Green Belt / grey-belt land off Bedmond Road",
@@ -2871,6 +2869,11 @@
             "label": "GOV.UK: recovered appeal 3346061",
             "url": "https://www.gov.uk/government/publications/recovered-appeal-land-off-bedmond-road-abbots-langley-ref-3346061-12-may-2025",
             "archived": "https://web.archive.org/web/20260630205815/https://www.gov.uk/government/publications/recovered-appeal-land-off-bedmond-road-abbots-langley-ref-3346061-12-may-2025"
+          },
+          {
+            "label": "Recovered appeal decision 3346061 (PDF)",
+            "url": "https://assets.publishing.service.gov.uk/media/6821f977c66deec8488f7f42/Recovered_appeal_-_land_off_Bedmond_Road__Abbots_Langley.pdf",
+            "archived": null
           }
         ],
         "planning_ref": {
@@ -2889,7 +2892,7 @@
             "label": "procedural"
           }
         ],
-        "last_reviewed": "2026-07-20",
+        "last_reviewed": "2026-10-05",
         "operational_reality": "consented"
       }
     },
@@ -3532,24 +3535,31 @@
         "status": "approved",
         "local_authority": "Buckinghamshire Council",
         "corridor": "west",
-        "summary": "Hyperscale campus on Court Lane Industrial Estate, Iver (between Slough and Hayes on the M25 fringe). Outline consent for up to 65,000 m² GEA across two data centre buildings. SoS recovered appeal allowed 6 December 2024. Decision materials cite a 140 MW grid connection reserved; trade reporting treats the campus as about 140 MW.",
+        "summary": "Hyperscale campus on Court Lane Industrial Estate, Iver (between Slough and Hayes on the M25 fringe). Outline consent for up to 65,000 m² GEA across two data centre buildings. SoS recovered appeal allowed 6 December 2024. The decision documents describe a 103 MW scheme with 90 MW of IT load and 140 MVA reserved from the planned Uxbridge Moor substation; trade reporting rounds this up to 140 MW.",
         "power": {
           "grid_connection_mw": {
             "value": 140,
-            "unit": "MW",
-            "basis": "stated",
-            "source": "SoS recovered appeal decision: 140 MW grid connection reserved",
-            "page": null,
+            "unit": "MVA",
+            "basis": "planning_doc",
+            "source": "https://assets.publishing.service.gov.uk/media/6752d28020bcf083762a6c99/Recovered_appeal_decision_-_Court_Lane_Industrial_Estate_Court_Lane_Iver_SL0_9HL.pdf",
+            "page": "IR136: Court Lane has reserved 140 MVA from Uxbridge Moor substation",
             "archived": null
           },
-          "it_load_mw": null,
+          "it_load_mw": {
+            "value": 90,
+            "unit": "MW",
+            "basis": "planning_doc",
+            "source": "https://assets.publishing.service.gov.uk/media/6752d28020bcf083762a6c99/Recovered_appeal_decision_-_Court_Lane_Industrial_Estate_Court_Lane_Iver_SL0_9HL.pdf",
+            "page": "IR136: a data centre load of 90 MW of IT power",
+            "archived": null
+          },
           "phase_1_mw": null,
           "max_proposed_mw": {
-            "value": 140,
+            "value": 103,
             "unit": "MW",
-            "basis": "stated",
-            "source": "CorScale Court Lane Iver: about 140 MW (grid connection reserved)",
-            "page": null,
+            "basis": "planning_doc",
+            "source": "https://assets.publishing.service.gov.uk/media/6752d28020bcf083762a6c99/Recovered_appeal_decision_-_Court_Lane_Industrial_Estate_Court_Lane_Iver_SL0_9HL.pdf",
+            "page": "Decision documents: the 103 MW proposed here",
             "archived": null
           }
         },
@@ -3606,7 +3616,7 @@
             "label": "procedural"
           }
         ],
-        "last_reviewed": "2026-07-20",
+        "last_reviewed": "2026-10-05",
         "operational_reality": "consented"
       }
     },
@@ -5429,13 +5439,71 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          -0.4216,
+          51.5084
+        ]
+      },
+      "properties": {
+        "id": "colt-dcs-hayes-existing",
+        "name": "Colt DCS Hayes Digital Park (existing campus)",
+        "operator": "Colt Data Centre Services",
+        "status": "operating",
+        "local_authority": "London Borough of Hillingdon",
+        "corridor": "west",
+        "planning_ref": {
+          "id": null,
+          "url": null
+        },
+        "summary": "Colt DCS's existing Hayes Digital Park data centres. Colt says its approved expansion adds 97 MW and takes the campus to about 160 MW, which puts today's IT power at about 63 MW; that figure is derived from the two operator numbers, not published on its own. Mapped as operating from operator records; pin nudged from the expansion.",
+        "power": {
+          "grid_connection_mw": null,
+          "it_load_mw": null,
+          "phase_1_mw": null,
+          "max_proposed_mw": {
+            "value": 63,
+            "unit": "MW",
+            "basis": "stated",
+            "source": "Colt DCS: expansion adds 97MW, taking the campus to about 160MW, so about 63MW of IT power exists today (derived from the two operator figures)",
+            "page": null,
+            "archived": null
+          }
+        },
+        "water_litres_pa": null,
+        "land": {
+          "acres": null,
+          "previous_use": "Hayes industrial / existing Colt data-centre campus",
+          "land_type": "industrial_active",
+          "alc_grades": null
+        },
+        "grid_connection": null,
+        "cooling": null,
+        "claims_on_record": [],
+        "operator_response": null,
+        "timeline": [],
+        "controversies": [],
+        "sources": [
+          {
+            "label": "Colt DCS: £2.5bn West London Hayes expansion",
+            "url": "https://www.coltdatacentres.net/en-GB/press-releases/data-centres/2025/11/colt-dcs-london-hayes-expansion",
+            "archived": "https://web.archive.org/web/20260309021908/https://www.coltdatacentres.net/en-GB/press-releases/data-centres/2025/11/colt-dcs-london-hayes-expansion"
+          }
+        ],
+        "last_reviewed": "2026-10-05",
+        "operational_reality": "operating"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           -0.421,
           51.508
         ]
       },
       "properties": {
         "id": "colt-dcs-hayes",
-        "name": "Colt DCS Hayes Digital Park",
+        "name": "Colt DCS Hayes Digital Park (expansion)",
         "operator": "Colt Data Centre Services",
         "status": "proposed",
         "local_authority": "London Borough of Hillingdon",
@@ -5444,16 +5512,16 @@
           "id": null,
           "url": null
         },
-        "summary": "Colt DCS hyperscale campus at Hayes, West London. Hillingdon approved a £2.5bn expansion adding three new hyperscale data centres plus an Innovation Hub — about 97 MW of new capacity, taking the campus to about 160 MW total. Construction expected to start mid-2026 with the first building (London 6) live early 2029. Held at proposed until a lasting Hillingdon Public Access URL is linked.",
+        "summary": "£2.5bn expansion of Colt DCS's Hayes campus approved by Hillingdon: three new hyperscale data centres plus an Innovation Hub, adding about 97 MW of IT power and taking the campus to about 160 MW. Construction expected to start mid-2026 with the first building (London 6) live early 2029. The existing campus (about 63 MW) is mapped separately as operating. Held at proposed until a lasting Hillingdon Public Access URL is linked.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
           "phase_1_mw": null,
           "max_proposed_mw": {
-            "value": 160,
+            "value": 97,
             "unit": "MW",
             "basis": "stated",
-            "source": "Colt DCS: about 160 MW total campus capacity after the +97 MW expansion",
+            "source": "Colt DCS: the expansion will add an additional 97MW to the available IT power at the Hayes Digital Park",
             "page": null,
             "archived": null
           }
@@ -5484,7 +5552,7 @@
             "archived": "https://web.archive.org/web/20260309021908/https://www.coltdatacentres.net/en-GB/press-releases/data-centres/2025/11/colt-dcs-london-hayes-expansion"
           }
         ],
-        "last_reviewed": "2026-07-20",
+        "last_reviewed": "2026-10-05",
         "operational_reality": "consented"
       }
     },
@@ -5508,19 +5576,12 @@
           "id": null,
           "url": null
         },
-        "summary": "Microsoft's Park Royal data centre (Azure; code LON01-02) — its largest single data centre in the UK, about 520,750 sq ft over five storeys and roughly 96 MW. Contractor Mace; shell construction reported completing around early 2026 with full Azure operation targeted for 2029. Distinct from the neighbouring Pure DC / SEGRO Premier Park scheme. Held at proposed until a lasting planning portal URL is linked; location pin is approximate.",
+        "summary": "Microsoft's Park Royal data centre in West London, developed with Goodman (contractor Mace). Microsoft says planning permission was granted in December 2020 and construction began in 2023. No megawatt figure appears in the sources reviewed. Distinct from the neighbouring Pure DC / SEGRO Premier Park scheme. Held at proposed until a lasting planning portal URL is linked; location pin is approximate.",
         "power": {
           "grid_connection_mw": null,
           "it_load_mw": null,
           "phase_1_mw": null,
-          "max_proposed_mw": {
-            "value": 96,
-            "unit": "MW",
-            "basis": "stated",
-            "source": "Microsoft / reporting: about 96 MW across 520,750 sq ft over five storeys — Microsoft's largest single UK data centre",
-            "page": null,
-            "archived": null
-          }
+          "max_proposed_mw": null
         },
         "water_litres_pa": null,
         "land": {
@@ -5535,18 +5596,18 @@
         "operator_response": null,
         "timeline": [
           {
-            "date": "2025",
-            "event": "Planners approve about £1bn Microsoft data centre in Park Royal (contractor Mace)",
-            "source": "https://uk.finance.yahoo.com/news/huge-1bn-data-centre-park-121117297.html"
+            "date": "2020-12",
+            "event": "Microsoft and developer Goodman receive planning permission for the Park Royal data centre",
+            "source": "https://local.microsoft.com/blog/park-royal-datacentre-construction-overview/"
+          },
+          {
+            "date": "2023",
+            "event": "Construction begins (Microsoft: first half of 2023; site set-up six months, building 24 months)",
+            "source": "https://local.microsoft.com/blog/park-royal-datacentre-construction-overview/"
           }
         ],
         "controversies": [],
         "sources": [
-          {
-            "label": "Reporting: £1bn Park Royal data centre approved",
-            "url": "https://uk.finance.yahoo.com/news/huge-1bn-data-centre-park-121117297.html",
-            "archived": null
-          },
           {
             "label": "Baxtel: Microsoft Park Royal",
             "url": "https://baxtel.com/data-center/microsoft-park-royal",
@@ -5558,7 +5619,7 @@
             "archived": null
           }
         ],
-        "last_reviewed": "2026-07-25",
+        "last_reviewed": "2026-10-05",
         "operational_reality": "under_construction"
       }
     },
@@ -5889,7 +5950,7 @@
       },
       "properties": {
         "id": "pure-brent-cross-lon01",
-        "name": "Pure DC Brent Cross (LON01)",
+        "name": "Pure DC Brent Cross (LON01, Building 1)",
         "operator": "Pure Data Centres",
         "status": "operating",
         "local_authority": "London Borough of Barnet",
@@ -5898,26 +5959,19 @@
           "id": null,
           "url": null
         },
-        "summary": "About 90 MW data-centre campus at Brent Cross, Barnet, representing more than £1bn of investment. Building 1 (LON01A, about 20 MW) has been operational since 2024 and is fully leased; Building 2 (LON01B2, about 70 MW) is under construction (Glencar appointed for the final phase in 2026; completion reported for around Q2 2029). Features include a large living wall and HVO backup generation. Distinct from Pure DC / SEGRO Premier Park (Park Royal, LON02).",
+        "summary": "Building 1 (LON01A, about 20 MW) of Pure DC's 90 MW Brent Cross campus in Barnet, operational since 2024 and fully leased. Building 2 (about 70 MW) is under construction and mapped separately. Features include a large living wall and HVO backup generation. Distinct from Pure DC / SEGRO Premier Park (Park Royal, LON02).",
         "power": {
           "grid_connection_mw": null,
-          "it_load_mw": null,
-          "phase_1_mw": {
+          "it_load_mw": {
             "value": 20,
             "unit": "MW",
             "basis": "stated",
-            "source": "Pure DC / Construction News: Building 1 (LON01A) ~20 MW, operational 2024 and fully leased",
+            "source": "Pure DC London Brent Cross page: Building 1 (20MW) is fully operational",
             "page": null,
             "archived": null
           },
-          "max_proposed_mw": {
-            "value": 90,
-            "unit": "MW",
-            "basis": "stated",
-            "source": "Pure DC / GlobeNewswire: ~90 MW total Brent Cross campus (LON01)",
-            "page": null,
-            "archived": null
-          }
+          "phase_1_mw": null,
+          "max_proposed_mw": null
         },
         "water_litres_pa": null,
         "land": {
@@ -5960,8 +6014,82 @@
             "archived": null
           }
         ],
-        "last_reviewed": "2026-08-07",
+        "last_reviewed": "2026-10-05",
         "operational_reality": "operating"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.2337,
+          51.5723
+        ]
+      },
+      "properties": {
+        "id": "pure-brent-cross-lon01-b2",
+        "name": "Pure DC Brent Cross (LON01, Building 2)",
+        "operator": "Pure Data Centres",
+        "status": "proposed",
+        "local_authority": "London Borough of Barnet",
+        "corridor": "north",
+        "planning_ref": {
+          "id": null,
+          "url": null
+        },
+        "summary": "Building 2 (LON01B2, about 70 MW) of Pure DC's 90 MW Brent Cross campus, under construction (Glencar appointed for the final phase in 2026; completion reported for around Q2 2029). Operator says the campus has full planning permission and power secured for 90 MW. Held at proposed until a live Barnet planning-application URL is linked; pin nudged from Building 1.",
+        "power": {
+          "grid_connection_mw": null,
+          "it_load_mw": {
+            "value": 70,
+            "unit": "MW",
+            "basis": "stated",
+            "source": "Pure DC London Brent Cross page: Building 2 (70MW) is currently under construction",
+            "page": null,
+            "archived": null
+          },
+          "phase_1_mw": null,
+          "max_proposed_mw": null
+        },
+        "water_litres_pa": null,
+        "land": {
+          "acres": null,
+          "previous_use": "Former industrial land, Brent Cross",
+          "land_type": "brownfield",
+          "alc_grades": null
+        },
+        "grid_connection": null,
+        "cooling": null,
+        "claims_on_record": [],
+        "operator_response": null,
+        "timeline": [
+          {
+            "date": "2026-06",
+            "event": "Glencar appointed for final phase (Building 2, ~70 MW) of the 90 MW campus",
+            "source": "https://www.globenewswire.com/news-release/2026/06/02/3305684/0/en/pure-dc-appoints-glencar-for-next-phase-of-its-90mw-brent-cross-campus-build-out.html"
+          }
+        ],
+        "controversies": [],
+        "sources": [
+          {
+            "label": "Pure DC: London Brent Cross (LON01)",
+            "url": "https://puredc.com/london-brent-cross",
+            "archived": null
+          },
+          {
+            "label": "GlobeNewswire: Pure DC appoints Glencar for 90 MW Brent Cross build-out",
+            "url": "https://www.globenewswire.com/news-release/2026/06/02/3305684/0/en/pure-dc-appoints-glencar-for-next-phase-of-its-90mw-brent-cross-campus-build-out.html",
+            "archived": null
+          },
+          {
+            "label": "Construction News: Glencar lands final phase of £1bn Brent Cross campus",
+            "url": "https://www.constructionnews.co.uk/contracts/glencar-lands-final-phase-of-pure-dcs-1bn-brent-cross-data-centre-campus-28-05-2026/",
+            "archived": null
+          }
+        ],
+        "last_reviewed": "2026-10-05",
+        "operational_reality": "under_construction"
       }
     },
     {
@@ -5984,26 +6112,12 @@
           "id": "3347353",
           "url": "https://www.slough.gov.uk/downloads/file/5111/cd-7-01-appeal-decision-relating-to-woodlands-park-landfill-site-dated-9-july-2025-reference-3347353-"
         },
-        "summary": "Up to 72,000 m² (GEA) Use Class B8 data centre across two buildings, delivering about 90 MW, on the former Woodlands Park landfill, land south of Slough Road, Iver, in the Green Belt near M25 J1 (application PL/24/0754/OA). The Secretary of State (Minister Matthew Pennycook) allowed the recovered appeal APP/N0410/W/24/3347353 on 9 July 2025, overturning Buckinghamshire Council's refusal; an earlier ~147 MW three-building scheme was dismissed at appeal in October 2023. The consent is under judicial review by Foxglove and Global Action Plan; in 2026 the Government conceded a “serious logical error” in screening out EIA while failing to secure the relied-on mitigation, and the permission is expected to be quashed. Distinct from CyrusOne LON6 (Iver Heath, Seven Hills Road).",
+        "summary": "Up to 72,000 m² (GEA) Use Class B8 data centre across two buildings on the former Woodlands Park landfill, land south of Slough Road, Iver, in the Green Belt near M25 J1 (application PL/24/0754/OA). The Secretary of State (Minister Matthew Pennycook) allowed the recovered appeal APP/N0410/W/24/3347353 on 9 July 2025, overturning Buckinghamshire Council's refusal; an earlier ~147 MW three-building scheme was dismissed at appeal in October 2023. The consent is under judicial review by Foxglove and Global Action Plan; in 2026 the Government conceded a “serious logical error” in screening out EIA while failing to secure the relied-on mitigation, and the permission is expected to be quashed. Distinct from CyrusOne LON6 (Iver Heath, Seven Hills Road). The decision letter gives no megawatt figure for this scheme (its only “90MW” refers to Court Lane's IT load); campaigners put it at about 90 MW, so no figure is counted here. Consent contested: shown as approved until the permission is formally quashed.",
         "power": {
           "grid_connection_mw": null,
-          "it_load_mw": {
-            "value": 90,
-            "unit": "MW",
-            "basis": "planning_doc",
-            "source": "Recovered appeal 3347353 (9 July 2025): 72,000 m² GEA facility delivering ~90 MW",
-            "page": "DL",
-            "archived": null
-          },
+          "it_load_mw": null,
           "phase_1_mw": null,
-          "max_proposed_mw": {
-            "value": 90,
-            "unit": "MW",
-            "basis": "planning_doc",
-            "source": "Recovered appeal 3347353 (9 July 2025): up to ~90 MW capacity",
-            "page": "DL",
-            "archived": null
-          }
+          "max_proposed_mw": null
         },
         "water_litres_pa": null,
         "land": {
@@ -6029,7 +6143,7 @@
           },
           {
             "date": "2025-07-09",
-            "event": "Secretary of State allows recovered appeal 3347353; permission granted (up to 72,000 m² / ~90 MW)",
+            "event": "Secretary of State allows recovered appeal 3347353; permission granted (up to 72,000 m²)",
             "source": "https://www.slough.gov.uk/downloads/file/5111/cd-7-01-appeal-decision-relating-to-woodlands-park-landfill-site-dated-9-july-2025-reference-3347353-"
           },
           {
@@ -6067,7 +6181,7 @@
             "archived": null
           }
         ],
-        "last_reviewed": "2026-08-07",
+        "last_reviewed": "2026-10-05",
         "operational_reality": "consented"
       }
     },
@@ -6091,13 +6205,13 @@
           "id": null,
           "url": null
         },
-        "summary": "The original Telehouse building at Coriander Avenue, Blackwall (E14 2AA), opened 1990 as the first purpose-built colocation data centre in Europe and the home of the London Internet Exchange (LINX) since 1994, and one of the most densely connected facilities in the world. About 9,717 m² of colocation across seven floors, served by a dedicated on-site 50 MVA primary substation fed by two 132 kV grid lines. Part of the Telehouse Docklands campus aggregate.",
+        "summary": "The original Telehouse building at Coriander Avenue, Blackwall (E14 2AA), opened 1990 as the first purpose-built colocation data centre in Europe and the home of the London Internet Exchange (LINX) since 1994, and one of the most densely connected facilities in the world. About 9,717 m² of colocation across seven floors, served by the Docklands campus's on-site 50 MVA primary substation fed by two 132 kV grid lines. That substation serves the whole campus and is in MVA, so it is not counted as this building's megawatts. Part of the Telehouse Docklands campus aggregate.",
         "power": {
           "grid_connection_mw": {
             "value": 50,
             "unit": "MVA",
             "basis": "stated",
-            "source": "Telehouse North: dedicated on-site primary substation, 50 MVA, two 132 kV lines",
+            "source": "Telehouse London page: on-site private dual primary substation at the Docklands campus, total capacity 50MVA, two 132kV lines (campus-wide, in MVA; not counted as megawatts)",
             "page": null,
             "archived": null
           },
@@ -6141,7 +6255,7 @@
             "archived": null
           }
         ],
-        "last_reviewed": "2026-08-09",
+        "last_reviewed": "2026-10-05",
         "part_of": "telehouse-docklands",
         "operational_reality": "operating"
       }

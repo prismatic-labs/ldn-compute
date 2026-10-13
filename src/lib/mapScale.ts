@@ -4,7 +4,7 @@
  * Undisclosed power → dashed circle sized by land acres.
  * No power and no acres → fixed location marker (still on the map).
  *
- * Map uses sqrt-compressed radius so 5.6 MW remains clickable beside 1 GW.
+ * Map uses sqrt-compressed radius so small sites remain clickable beside the largest schemes.
  * Compare view uses area-true scaling separately.
  */
 
@@ -126,6 +126,18 @@ export function statusColour(status: SiteProperties["status"]): string {
     case "withdrawn":
       return "#999999"; // grey
   }
+}
+
+/**
+ * Status text for labels. Sites stay "proposed" until a live planning URL is
+ * linked, so say what is reported rather than letting "proposed" read as unbuilt.
+ */
+export function statusText(p: Pick<SiteProperties, "status" | "operational_reality">): string {
+  const base = p.status.replaceAll("_", " ");
+  if (p.status !== "proposed") return base;
+  if (p.operational_reality === "under_construction") return `${base} (reported under construction)`;
+  if (p.operational_reality === "consented") return `${base} (reported consented)`;
+  return base;
 }
 
 function clamp(n: number, lo: number, hi: number): number {

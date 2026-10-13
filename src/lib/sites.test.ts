@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getItemizedSites, regionalTotals } from "./sites";
+import { getItemizedSites, regionalTotals, siteBestPower } from "./sites";
 import type { PowerBlock, SiteFeature } from "./types";
 
 function mw(value: number): PowerBlock {
@@ -97,13 +97,13 @@ describe("getItemizedSites", () => {
     const itemized = getItemizedSites().filter(
       (f) => f.properties.status !== "decommissioned",
     );
-    const itemizedMw = itemized.reduce((sum, f) => {
-      const q = f.properties.power.max_proposed_mw
-        ?? f.properties.power.grid_connection_mw
-        ?? f.properties.power.phase_1_mw
-        ?? f.properties.power.it_load_mw;
-      return sum + (q?.value ?? 0);
-    }, 0);
+    // Use the same selector the headline uses, rather than re-implementing the
+    // field priority here: a hand-rolled chain silently drops the MVA exclusion
+    // and the two totals then disagree for reasons the test cannot see.
+    const itemizedMw = itemized.reduce(
+      (sum, f) => sum + (siteBestPower(f.properties)?.quantity.value ?? 0),
+      0,
+    );
     expect(regionalTotals().disclosedMw).toBe(itemizedMw);
   });
 });

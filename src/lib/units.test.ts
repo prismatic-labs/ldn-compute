@@ -115,7 +115,7 @@ describe("local geography", () => {
 
 describe("grid-connection basis framing", () => {
   const gridPower = (mw: number): PowerBlock => ({
-    grid_connection_mw: { value: mw, unit: "MVA", basis: "stated", source: "test" },
+    grid_connection_mw: { value: mw, unit: "MW", basis: "stated", source: "test" },
     it_load_mw: null,
     phase_1_mw: null,
     max_proposed_mw: null,
@@ -178,5 +178,43 @@ describe("basis weakness", () => {
   it("inherits the weakest basis", () => {
     expect(weakestBasis("measured", "estimated")).toBe("estimated");
     expect(weakestBasis("planning_doc", "stated")).toBe("stated");
+  });
+});
+
+describe("MVA is never counted as MW", () => {
+  // Substation ratings are apparent power. Summing them as megawatts overstated
+  // the regional total by 98 MW (Telehouse North 50 MVA, NTT Dagenham 80 MVA).
+  const mva = (value: number): PowerBlock => ({
+    grid_connection_mw: { value, unit: "MVA", basis: "stated", source: "test" },
+    it_load_mw: null,
+    phase_1_mw: null,
+    max_proposed_mw: null,
+  });
+
+  it("ignores an MVA grid connection entirely", () => {
+    expect(bestPower(mva(50))).toBeNull();
+    expect(homesEquivalence(mva(50))).toBeNull();
+  });
+
+  it("falls through to a lower-priority field that is in MW", () => {
+    const best = bestPower({
+      grid_connection_mw: { value: 80, unit: "MVA", basis: "stated", source: "test" },
+      it_load_mw: null,
+      phase_1_mw: { value: 32, unit: "MW", basis: "planning_doc", source: "test" },
+      max_proposed_mw: null,
+    });
+    expect(best?.kind).toBe("phase_1_mw");
+    expect(best?.quantity.value).toBe(32);
+  });
+
+  it("ignores an MVA it_load fallback too", () => {
+    expect(
+      bestPower({
+        grid_connection_mw: null,
+        it_load_mw: { value: 20, unit: "MVA", basis: "stated", source: "test" },
+        phase_1_mw: null,
+        max_proposed_mw: null,
+      }),
+    ).toBeNull();
   });
 });

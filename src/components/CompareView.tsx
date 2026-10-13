@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 import type { SiteFeature } from "../lib/types";
-import { compareRadiusPx, statusColour } from "../lib/mapScale";
+import { compareRadiusPx, statusColour, statusText } from "../lib/mapScale";
 import {
   bestPower,
   compareSitesByPower,
@@ -223,7 +223,7 @@ export default function CompareView({ sites, baseUrl, siteUrl }: Props) {
                   <span>
                     <span className="font-display block leading-snug">{site.properties.name}</span>
                     <span className="text-xs text-[var(--muted)] capitalize">
-                      {site.properties.status.replaceAll("_", " ")}
+                      {statusText(site.properties)}
                     </span>
                   </span>
                   <span className="font-tabular text-sm sm:text-right col-span-3 sm:col-span-1 pl-[calc(2rem+5.5rem+0.75rem)] sm:pl-0">
@@ -279,7 +279,7 @@ export default function CompareView({ sites, baseUrl, siteUrl }: Props) {
                     <span>
                       <span className="font-display block leading-snug">{site.properties.name}</span>
                       <span className="text-xs text-[var(--muted)] capitalize">
-                        {site.properties.status.replaceAll("_", " ")}
+                        {statusText(site.properties)}
                       </span>
                     </span>
                     <span className="font-tabular text-sm sm:text-right text-[var(--muted)] col-span-2 sm:col-span-1 pl-[calc(5.5rem+0.75rem)] sm:pl-0">

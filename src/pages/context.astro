@@ -33,7 +33,7 @@ const COMPARE = [
   {
     id: "loudoun",
     label: "Loudoun County, Virginia",
-    detail: "5.33 GW measured cluster load (2025)",
+    detail: "5.33 GW data-centre power consumption (2025), Supervisor Mike Turner citing Dominion Energy",
     barLabel: "5.33 GW",
     mw: 5330,
     colour: "#E69F00",
@@ -79,12 +79,13 @@ const pct = (v: number, of: number) => (of > 0 ? (v / of) * 100 : 0);
       </p>
       <p class="mt-3">
         <strong>US.</strong> Northern Virginia’s “Data Center Alley” is the world’s densest cluster. Loudoun
-        County alone reported about <strong>5.33 GW</strong> of data-centre power consumption in 2025, up
-        from about 2.0 GW in 2021. Dominion Energy has reported tens of gigawatts of data-centre capacity
+        County supervisor Mike Turner, citing Dominion Energy figures, puts the county’s data-centre power
+        consumption at about <strong>5.33 GW</strong> in 2025, up from 4.14 GW in 2024 (his earlier years are
+        read off a Dominion chart). The presentation is his own and states it does not represent the county. Dominion Energy has reported tens of gigawatts of data-centre capacity
         under contract across its Virginia service area. Residents and regulators have argued over how much
         of rising bills and grid spend is driven by that load; Dominion disputes a simple causal story, and
         a new large-load rate class (GS-5) is due from 2027 to shift more cost onto big users.
-        (<a href="https://www.loudoun.gov/DocumentCenter/View/217605/Loudoun-County-Data-Center-Brief---Turner">Loudoun County brief, 2025</a>;
+        (<a href="https://www.loudoun.gov/DocumentCenter/View/217605/Loudoun-County-Data-Center-Brief---Turner">Turner, “Data Center Growth”, July 2026</a>;
         <a href="https://www.datacenterdynamics.com/en/news/dominion-energy-nearly-doubles-data-center-capacity-under-contract-to-40gw/">DCD on Dominion contract pipeline, 2025</a>;
         <a href="https://www.loudounnow.com/news/scc-approves-new-data-center-rate-class-for-dominion/article_02d5fa0c-1ed8-4771-b57d-c24765739854.html">Loudoun Now on GS-5, 2025</a>.)
       </p>
@@ -236,7 +237,7 @@ const pct = (v: number, of: number) => (of > 0 ? (v / of) * 100 : 0);
       <h2 class="font-display text-xl m-0">How London compares with the US</h2>
       <p class="mt-3">
         Single US AI and cloud campuses are often quoted in the <strong>multi-gigawatt</strong> range, and
-        Loudoun County’s measured cluster load alone was about <strong>5.33 GW in 2025</strong>. London’s
+        Loudoun County’s data-centre consumption alone was about <strong>5.33 GW in 2025</strong> (Turner, citing Dominion). London’s
         entire mapped build-out, running plus proposed, is about <strong>{londonGw} GW</strong> stated; its
         largest single scheme is about <strong>600 MW</strong> (Digital Reef East Havering). London is
         smaller per site and far more constrained on land, water, and grid headroom, so friction such as
@@ -245,7 +246,7 @@ const pct = (v: number, of: number) => (of > 0 ? (v / of) * 100 : 0);
       </p>
 
       <div class="mt-6 space-y-4" role="img"
-        aria-label={`Scale comparison: London's whole mapped build-out about ${londonGw} gigawatts stated; Loudoun County 2025 measured cluster load 5.33 gigawatts.`}>
+        aria-label={`Scale comparison: London's whole mapped build-out about ${londonGw} gigawatts stated; Loudoun County 2025 data-centre consumption 5.33 gigawatts.`}>
         {COMPARE.map((row) => (
           <div>
             <div class="flex flex-wrap items-baseline justify-between gap-2 text-sm">
@@ -269,8 +270,9 @@ const pct = (v: number, of: number) => (of > 0 ? (v / of) * 100 : 0);
 
       <p class="mt-4 text-sm text-[var(--muted)]">
         Metric caution: both sides are cluster-scale, but they are not the same measurement. London’s figure
-        is the stated total of every mapped site, running and proposed. Loudoun’s is measured power actually
-        consumed across the county cluster in 2025. Read it as scale, not a like-for-like league table.
+        is the stated total of every mapped site, running and proposed, and mixes IT load with a few whole-site
+        figures. Loudoun’s is power consumed across the county cluster in 2025, as reported by Supervisor Turner
+        from Dominion data. Read it as scale, not a like-for-like league table.
       </p>
     </section>
 

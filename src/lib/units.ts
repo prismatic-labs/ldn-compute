@@ -47,7 +47,7 @@ export const ACRES_PER_FOOTBALL_PITCH = 1.76;
 
 /**
  * Indicative UK winter wheat yield (tonnes/ha/year) for BMV arable —
- * only used where ALC grades support a yield comparison (Elsham: grades 1–3a present).
+ * only used where ALC grades support a yield comparison (grades 1–3a present).
  * Range reflects yield variability; not a site soil survey.
  */
 export const WHEAT_TONNES_PER_HA = {
@@ -103,14 +103,15 @@ export function weakestBasis(...bases: Array<Basis | null | undefined>): Basis |
 
 /** Best available power figure for map/compare scaling and equivalences. */
 export function bestPower(power: PowerBlock): BestPower | null {
+  // MVA is apparent power at a substation, not megawatts; never sum it as MW.
   for (const kind of POWER_PRIORITY) {
     const q = power[kind];
-    if (q && typeof q.value === "number") {
+    if (q && typeof q.value === "number" && q.unit === "MW") {
       return { kind, quantity: q };
     }
   }
   // it_load only if nothing else — not in map priority, but usable for dossiers
-  if (power.it_load_mw) {
+  if (power.it_load_mw && power.it_load_mw.unit === "MW") {
     return { kind: "it_load_mw", quantity: power.it_load_mw };
   }
   return null;
@@ -496,7 +497,7 @@ export function powerKindExplanation(kind: PowerKind): string {
 
 /**
  * Sort helper: higher MW first; equal MW ordered A–Z by site name so
- * joint maxima (e.g. two 1 GW schemes) stay stable and do not invent a sole “largest”.
+ * joint maxima (two schemes with the same figure) stay stable and do not invent a sole “largest”.
  */
 export function compareSitesByPower(
   aMw: number,

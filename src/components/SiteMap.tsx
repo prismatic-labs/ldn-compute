@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import maplibregl from "maplibre-gl";
 import type { Corridor, SiteFeature } from "../lib/types";
 import type { FeatureCollection } from "geojson";
-import { circleScale, mapRadiusMetres, statusColour } from "../lib/mapScale";
+import { circleScale, mapRadiusMetres, statusColour, statusText } from "../lib/mapScale";
 import {
   ellipseCollectionForSites,
   emptyEllipseCollection,
@@ -607,7 +607,7 @@ export default function SiteMap({ sites, baseUrl, center, zoom, stat }: Props) {
         >
           <div className="flex items-start justify-between gap-3">
             <div>
-              <p className="m-0 text-xs uppercase tracking-wider text-[var(--muted)]">{selected.properties.status.replaceAll("_", " ")}</p>
+              <p className="m-0 text-xs uppercase tracking-wider text-[var(--muted)]">{statusText(selected.properties)}</p>
               <h2 className="font-display text-xl m-0 mt-1">{selected.properties.name}</h2>
               <p className="m-0 mt-1 text-sm text-[var(--muted)]">{selected.properties.operator} · {selected.properties.local_authority}</p>
             </div>
@@ -676,7 +676,7 @@ function ScaleBar() {
   const refs = [
     { label: "5 MW", mw: 5 },
     { label: "100 MW", mw: 100 },
-    { label: "1 GW", mw: 1000 },
+    { label: "500 MW", mw: 500 },
   ];
   const statusKeys: Array<{ label: string; colour: string }> = [
     { label: "Proposed", colour: statusColour("proposed") },

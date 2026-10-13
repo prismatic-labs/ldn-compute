@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../components/BaseLayout.astro";
 import { getItemizedSites, formatBestPower, siteBestPower } from "../lib/sites";
+import { statusText } from "../lib/mapScale";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -30,7 +31,7 @@ const checklist = getItemizedSites()
     const ref = p.planning_ref?.id ?? "—";
     const best = siteBestPower(p);
     const power = formatBestPower(p);
-    const statusLabel = p.status.replaceAll("_", " ");
+    const statusLabel = statusText(p);
     const factual = FACTUAL.has(p.status);
     const hasSourceUrl = (p.sources ?? []).some((s) => Boolean(s.url));
     const sourced = Boolean(url) || (factual && hasSourceUrl);
@@ -42,7 +43,15 @@ const checklist = getItemizedSites()
     } else if (ABOVE_PROPOSED.has(p.status)) {
       notes = `Status "${statusLabel}" still needs a lasting portal URL.`;
     } else {
-      notes = "Held at proposed until a lasting portal URL is linked.";
+      // Say what is reported before saying what we hold it at, so a site that is
+      // visibly being built does not read as merely an idea.
+      const reported =
+        p.operational_reality === "under_construction"
+          ? "Reported under construction; h"
+          : p.operational_reality === "consented"
+            ? "Reported consented; h"
+            : "H";
+      notes = `${reported}eld at proposed until a lasting portal URL is linked.`;
     }
     if (power === "Not disclosed") notes += " Megawatts not yet extracted.";
     return {
